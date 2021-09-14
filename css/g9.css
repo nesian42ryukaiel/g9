@@ -2,6 +2,16 @@
   margin: 0;
   padding: 0;
 }
+#navi {
+  display: grid;
+  grid-template-rows: 2fr 5fr;
+}
+#login {
+  grid-row: 1 / 2;
+}
+#navi-others {
+  grid-row: 2 / 3;
+}
 .g9 {
   display: grid;
   grid-template: auto 1fr auto / 1fr auto;
@@ -22,6 +32,7 @@ nav {
 }
 main {
   grid-column: 1 / 2;
+  background-color: rgb(80, 80, 80);
 }
 footer {
   grid-column: 1 / 3;
