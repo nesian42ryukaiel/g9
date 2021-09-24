@@ -7,7 +7,7 @@ class Nav extends Component {
         <div>Login</div>
         <div>Others</div>
       </nav>
-    )
+    );
   }
 }
 

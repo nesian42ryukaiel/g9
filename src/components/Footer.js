@@ -7,7 +7,7 @@ class Footer extends Component {
       <footer>
         <em>Webmaster: {wm}</em>
       </footer>
-    )
+    );
   }
 }
 

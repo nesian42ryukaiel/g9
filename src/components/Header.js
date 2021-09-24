@@ -9,7 +9,7 @@ class Header extends Component {
         <span>Search</span>
         <span>Options</span>
       </header>
-    )
+    );
   }
 }
 
