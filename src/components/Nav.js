@@ -4,7 +4,9 @@ class Nav extends Component {
   render() {
     return (
       <nav>
-        <div>Login</div>
+        <div>
+          <button>Sign-up</button>
+        </div>
         <div>Others</div>
       </nav>
     );

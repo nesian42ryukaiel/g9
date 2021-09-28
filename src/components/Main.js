@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
+import Article from './Article';
 
 class Main extends Component {
   render() {
     return (
-      <main>Main</main>
+      <main>
+        <Article></Article>
+        <Article></Article>
+        <Article></Article>
+        <Article></Article>
+      </main>
     );
   }
 }
