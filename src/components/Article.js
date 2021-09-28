@@ -4,9 +4,9 @@ class Article extends Component {
   render() {
     return (
       <article>
-        <div>Title</div>
-        <div>Image</div>
-        <div>Text</div>
+        <div className="article__title">Title</div>
+        <div className="article__image">Image</div>
+        <div className="article__text">Text</div>
       </article>
     );
   }
