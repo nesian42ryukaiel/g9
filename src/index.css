@@ -41,9 +41,9 @@ body {
 header {
   grid-column: 1 / 4;
   background-color: #252525;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: subgrid;
+  /* display: grid; */
+  /* grid-template-rows: 1fr; */
+  /* grid-template-columns: subgrid; */
 }
 nav {
   grid-column: 3 / 4;
