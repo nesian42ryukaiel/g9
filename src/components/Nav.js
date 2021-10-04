@@ -4,7 +4,7 @@ function Nav() {
   return (
     <nav>
       <div>
-        <button>Sign-up</button>
+        <button className="signup--button">Sign-up</button>
       </div>
       <div>
         Others

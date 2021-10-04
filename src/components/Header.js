@@ -11,7 +11,7 @@ function Header() {
         <button>Login</button>
       </span>
       <span>
-        <button>Sign-up</button>
+        <button className="signup--button">Sign-up</button>
       </span>
     </header>
   );
