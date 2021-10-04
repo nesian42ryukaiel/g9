@@ -5,8 +5,13 @@ function PasswordUpdate() {
 
   const handleChange = ({ target: { value } }) => setPassword(value);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`변경된 패스워드: ${password}`);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="password"
         name="password"
