@@ -9,7 +9,9 @@ function Header() {
       </span>
       <span id="header_middle">
         <span>Options</span>
-        <span>Search</span>
+        <span>
+          <input type="text" placeholder="Search" />
+        </span>
       </span>
       <span id="header_right">
         <button>Login</button>
