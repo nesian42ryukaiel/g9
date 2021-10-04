@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import Dispatcher from './dispatcher/Dispatcher';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Main></Main>
       <Nav></Nav>
       <Footer></Footer>
+      <Dispatcher />
     </div>
   );
   const leedr0730 = (
