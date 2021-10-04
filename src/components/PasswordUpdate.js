@@ -10,7 +10,11 @@ function PasswordUpdate() {
     setDisabled(true);
     event.preventDefault();
     await new Promise((r) => setTimeout(r, 1000));
-    alert(`변경된 패스워드: ${password}`);
+    if (password.length < 8) {
+      alert("8자의 이상의 비밀번호를 사용하셔야 합니다.");
+    } else {
+      alert(`변경된 패스워드: ${password}`);
+    }
     setDisabled(false);
   };
 
