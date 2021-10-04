@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Article from './Article';
 
 function Main() {
@@ -11,18 +11,5 @@ function Main() {
     </main>
   );
 }
-
-// class Main extends Component {
-//   render() {
-//     return (
-//       <main>
-//         <Article></Article>
-//         <Article></Article>
-//         <Article></Article>
-//         <Article></Article>
-//       </main>
-//     );
-//   }
-// }
 
 export default Main;

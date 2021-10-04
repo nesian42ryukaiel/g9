@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 const wm = 'Lucas Yew';
 
 function Footer() {
@@ -8,15 +8,5 @@ function Footer() {
     </footer>
   );
 }
-
-// class Footer extends Component {
-//   render() {
-//     return (
-//       <footer>
-//         <em>Webmaster: {wm}</em>
-//       </footer>
-//     );
-//   }
-// }
 
 export default Footer;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 function Nav() {
   return (
@@ -12,18 +12,5 @@ function Nav() {
     </nav>
   );
 }
-
-// class Nav extends Component {
-//   render() {
-//     return (
-//       <nav>
-//         <div>
-//           <button>Sign-up</button>
-//         </div>
-//         <div>Others</div>
-//       </nav>
-//     );
-//   }
-// }
 
 export default Nav;
