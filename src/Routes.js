@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Redirect, Route } from "react-router-dom";
 import Login from "./pages/Login";
-import Layout from "./components/Layout";
+import Layout from "./Components/Layout";
 function Routes() {
   let isAuthorized = sessionStorage.getItem("isAuthorized");
 

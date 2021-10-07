@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
 
-import Header from './components/Header';
-import Main from './components/Main';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Dispatcher from './dispatcher/Dispatcher';
+import Header from './Components/Header';
+import Main from './Components/Main';
+import Nav from './Components/Nav';
+import Footer from './Components/Footer';
+import Dispatcher from './Dispatcher/Dispatcher';
 import './App.css';
 
 function App() {
