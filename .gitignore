@@ -12,7 +12,9 @@ app/**/*.js.map
 
 # dependencies
 node_modules/
+/node_modules
 bower_components/
+/.pnp
 
 # IDEs and editors
 .idea/
@@ -21,6 +23,7 @@ bower_components/
 .sass-cache/
 connect.lock/
 coverage/
+/coverage
 libpeerconnection.log/
 npm-debug.log
 testem.log
@@ -109,6 +112,10 @@ web_modules/
 .env
 .env.test
 .env.production
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -152,6 +159,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.pnp.js
 
 ### react ###
 .DS_*
@@ -196,6 +204,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
+/build
 develop-eggs/
 dist/
 downloads/
@@ -361,26 +370,3 @@ garbage/
 *.mp4
 *.png
 *.wmv
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
