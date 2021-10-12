@@ -9,6 +9,8 @@ import Footer from './Components/Footer';
 import Dispatcher from './Dispatcher/Dispatcher';
 import './App.css';
 
+// 잘 생각해보자, 앱의 기본 레이아웃을 어찌 해야할 지...
+
 function App() {
   const myDesign = (
     <div className="App">
