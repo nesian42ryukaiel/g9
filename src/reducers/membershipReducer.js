@@ -1,6 +1,6 @@
 const initialState = {};
 
-export default function taskReducer(state = initialState, action) {
+export default function membershipReducer(state = initialState, action) {
   switch (action.type) {
     case 'SIGNUP_TASK':
       return {
