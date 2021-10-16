@@ -1,4 +1,6 @@
 import React from 'react';
+import LoginButton from './LoginButton';
+import SignupButton from './SignupButton';
 
 function Header() {
   return (
@@ -14,8 +16,8 @@ function Header() {
         </span>
       </span>
       <span id="header_right">
-        <button>Login</button>
-        <button className="signup--button">Sign-up</button>
+        <LoginButton />
+        <SignupButton />
       </span>
     </header>
   );

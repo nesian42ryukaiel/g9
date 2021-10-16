@@ -1,10 +1,11 @@
 import React from 'react';
+import SignupButton from './SignupButton';
 
 function Nav() {
   return (
     <nav>
       <div>
-        <button className="signup--button">Sign-up</button>
+        <SignupButton />
       </div>
       <div>
         Others
