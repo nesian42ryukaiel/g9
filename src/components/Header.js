@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginButton from './LoginButton';
 import SignupButton from './SignupButton';
+import MemberInput from './MemberInput';
 
 function Header() {
   return (
