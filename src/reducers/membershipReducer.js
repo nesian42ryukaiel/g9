@@ -4,8 +4,8 @@ export default function membershipReducer(state = initialState, action) {
   switch (action.type) {
     case 'LOGIN_TASK':
       if (
-        state.id === state.members[0].id &&
-        state.password === state.members[0].password
+        state.id === state.members[0].mid &&
+        state.password === state.members[0].mpw
       ) {
         return {
           ...state,

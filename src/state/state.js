@@ -4,8 +4,8 @@ export const initialState = {
   password: '',
   members: [
     {
-      id: 'tester',
-      password: '1019'
+      mid: 'tester',
+      mpw: '1019'
     }
   ],
   page: 'registerPage',

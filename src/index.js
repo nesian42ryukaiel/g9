@@ -3,12 +3,13 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { render } from 'react-dom';
 
+import { initialState } from './state/state';
 import rootReducer from './reducers/rootReducer';
-import App from './containers/App';
+import App from './components/App';
 
 import './css/index.css';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, initialState);
 
 render(
   <Provider store={store}>
