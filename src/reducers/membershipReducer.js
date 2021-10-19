@@ -7,6 +7,7 @@ export default function membershipReducer(state = initialState, action) {
         state.id === state.members[0].mid &&
         state.password === state.members[0].mpw
       ) {
+        console.log(`Welcome, ${state.id}!`);
         return {
           ...state,
           login: true,
