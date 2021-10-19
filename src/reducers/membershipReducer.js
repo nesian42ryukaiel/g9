@@ -7,7 +7,7 @@ export default function membershipReducer(state = initialState, action) {
         state.id === state.members[0].mid &&
         state.password === state.members[0].mpw
       ) {
-        console.log(`Welcome, ${state.id}!`);
+        console.log(`Welcome back, ${state.id}!`);
         return {
           ...state,
           login: true,
@@ -18,10 +18,22 @@ export default function membershipReducer(state = initialState, action) {
         return state;
       }
     case 'SIGNUP_TASK':
-      return {
-        ...state,
-        tasks: state.tasks.concat([action.payload.task])
-      };
+      if (
+        state.id === state.members[0].mid
+      ) {
+        console.log('Member exists!');
+        return state;
+      } else {
+        console.log(`Welcome to G9, ${state.id}!`);
+        const newmem = {
+          mid: state.id,
+          mpw: state.password
+        };
+        return {
+          ...state,
+          members: state.members.concat([newmem])
+        };
+      }
     default:
       return state;
   }
