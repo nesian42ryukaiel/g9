@@ -8,14 +8,7 @@ import App from './containers/App';
 
 import './css/index.css';
 
-const initialState = {
-  login: false,
-  id: '',
-  password: '',
-  articles: []
-}
-
-const store = createStore(rootReducer, initialState);
+const store = createStore(rootReducer);
 
 render(
   <Provider store={store}>

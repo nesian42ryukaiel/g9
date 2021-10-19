@@ -8,7 +8,7 @@ import SignupScreen from '../components/SignupScreen';
 
 // 잘 생각해보자, 앱의 기본 레이아웃을 어찌 해야할 지...
 
-function App(page) {
+function App() {
   const indexPage = (
     <div className="App">
       <Header></Header>
