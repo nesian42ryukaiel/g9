@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 
 import { initialState } from './state/state';
 import rootReducer from './reducers/rootReducer';
-import App from './components/App';
+import App from './components/App'; // should be containers, apparently
 
 import './css/index.css';
 
