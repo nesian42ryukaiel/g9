@@ -9,8 +9,7 @@ import inputReducer from "./input";
 import membershipReducer from "./membership";
 
 const rootReducer = combineReducers({
-  inputReducer,
-  membershipReducer
+  membershipReducer // , routerReducer
 });
 
 export default rootReducer;

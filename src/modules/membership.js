@@ -1,6 +1,20 @@
+const INPUT_ID = 'membership/ID';
+const INPUT_PASS = 'membership/PASS';
 const LOGIN = 'membership/LOGIN';
 const SIGNUP = 'membership/SIGNUP';
 
+const inputID = (task) => ({
+  type: INPUT_ID,
+  payload: {
+    task
+  }
+});
+const inputPass = (task) => ({
+  type: INPUT_PASS,
+  payload: {
+    task
+  }
+});
 export const login = () => ({
   type: 'LOGIN_TASK',
 });
@@ -24,6 +38,16 @@ const initialState = {
 
 export default function membershipReducer(state = initialState, action) {
   switch (action.type) {
+    case INPUT_ID:
+      return {
+        ...state,
+        id: action.payload.task
+      };
+    case INPUT_PASS:
+      return {
+      ...state,
+      password: action.payload.task
+      };
     case LOGIN:
       if (
         state.id === state.members[0].mid &&

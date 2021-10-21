@@ -1,13 +1,13 @@
-export const INPUT_ID = 'input/ID';
-export const INPUT_PASS = 'input/PASS';
+const INPUT_ID = 'input/ID';
+const INPUT_PASS = 'input/PASS';
 
-export const inputID = (task) => ({
+const inputID = (task) => ({
   type: INPUT_ID,
   payload: {
     task
   }
 });
-export const inputPass = (task) => ({
+const inputPass = (task) => ({
   type: INPUT_PASS,
   payload: {
     task
