@@ -1,8 +1,9 @@
 import { initialState } from "../state/state";
+import { LOGIN_TASK, SIGNUP_TASK } from "../actions/membershipActions";
 
 export default function membershipReducer(state = initialState, action) {
   switch (action.type) {
-    case 'LOGIN_TASK':
+    case LOGIN_TASK:
       if (
         state.id === state.members[0].mid &&
         state.password === state.members[0].mpw
@@ -17,7 +18,7 @@ export default function membershipReducer(state = initialState, action) {
         console.log('Login Failed!');
         return state;
       }
-    case 'SIGNUP_TASK':
+    case SIGNUP_TASK:
       if (
         state.id === state.members[0].mid
       ) {
