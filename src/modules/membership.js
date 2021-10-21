@@ -15,10 +15,10 @@ const inputPass = (task) => ({
     task
   }
 });
-export const login = () => ({
+const login = () => ({
   type: 'LOGIN_TASK',
 });
-export const signup = () => ({
+const signup = () => ({
   type: 'SIGNUP_TASK',
 });
 

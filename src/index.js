@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux'
-import rootReducer from './modules';
-// import store from './store/store';
-import App from './components/App'; // should be containers, apparently
+import rootReducer from './modules/rootReducer';
+import App from './components/App';
 
 import './css/index.css';
 
