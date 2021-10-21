@@ -1,5 +1,3 @@
-import { initialState } from "../state/state";
-
 export const INPUT_ID = 'input/ID';
 export const INPUT_PASS = 'input/PASS';
 
@@ -15,6 +13,11 @@ export const inputPass = (task) => ({
     task
   }
 });
+
+const initialState = {
+  id: '',
+  password: ''
+}
 
 export default function inputReducer(state = initialState, action) {
   switch (action.type) {

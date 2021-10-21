@@ -1,11 +1,3 @@
-/**
- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- *
- * Membership: my first true Ducks pattern module
- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- *
- */
-
-import { initialState } from "../state/state";
-
 const LOGIN = 'membership/LOGIN';
 const SIGNUP = 'membership/SIGNUP';
 
@@ -15,6 +7,20 @@ export const login = () => ({
 export const signup = () => ({
   type: 'SIGNUP_TASK',
 });
+
+const ducky = {
+  mid: 'ducky',
+  mpw: '1021'
+}
+
+const initialState = {
+  login: false,
+  id: '',
+  password: '',
+  members: [
+    ducky
+  ],
+}
 
 export default function membershipReducer(state = initialState, action) {
   switch (action.type) {
