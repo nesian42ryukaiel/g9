@@ -16,14 +16,14 @@ function mapDispatchToProps(dispatch) {
   // 대충 모든 디스패처를 여기에 모으는 것 같음
   /**
    * return (
-   *   action1(tast) {
-   *     dispatch(action1(tast));
+   *   action1(task) {
+   *     dispatch(action1(task));
    *   },
-   *   action2(tast) {
-   *     dispatch(action2(tast));
+   *   action2(task) {
+   *     dispatch(action2(task));
    *   },
-   *   action3(tast) {
-   *     dispatch(action3(tast));
+   *   action3(task) {
+   *     dispatch(action3(task));
    *   }
    * );
    */
