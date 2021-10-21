@@ -69,6 +69,9 @@ export default function membershipReducer(state = initialState, action) {
       ) {
         console.log('Member exists!');
         return state;
+      } else if (state.id === '' || state.password === '') {
+        console.log('Please input new member properly!');
+        return state;
       } else {
         console.log(`Welcome to G9, ${state.id}!`);
         const newmem = {

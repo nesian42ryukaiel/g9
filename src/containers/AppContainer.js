@@ -1,4 +1,5 @@
-import { connect } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import App from 'components/App';
 
 function mapStateToProps({login, id, password, members, page, articles}) {
