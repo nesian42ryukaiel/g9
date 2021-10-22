@@ -1,5 +1,5 @@
 import React from "react";
-import { inputID, inputPass } from "../actions/inputActions";
+// import { inputID, inputPass } from "../actions/inputActions";
 
 export default function MemberInput() {
   return (
