@@ -16,6 +16,17 @@ function SignupContainer() {
   const onLogin = () => dispatch(login());
   const onSignup = () => dispatch(signup());
   return (
-    <SignupScreen />
+    <SignupScreen
+    loggedin={loggedin}
+    id={id}
+    password={password}
+    members={members}
+    onInputID={onInputID}
+    onInputPass={onInputPass}
+    onLogin={onLogin}
+    onSignup={onSignup}
+    />
   );
 }
+
+export default SignupContainer;
