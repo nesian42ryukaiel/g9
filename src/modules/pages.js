@@ -12,7 +12,7 @@ const initialState = {
   articles: []
 };
 
-export default function pagesReducer(state = initialState, action) {
+export default function pages(state = initialState, action) {
   switch (action.type) {
     case MOVE:
       return {

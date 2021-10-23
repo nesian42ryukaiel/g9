@@ -5,12 +5,12 @@
  */
 
 import { combineReducers } from "redux";
-import membershipReducer from "./membership";
-import pagesReducer from "./pages";
+import membership from "./membership";
+import pages from "./pages";
 
 const rootReducer = combineReducers({
-  membership: membershipReducer,
-  pages: pagesReducer
+  membership,
+  pages
 });
 
 export default rootReducer;

@@ -7,6 +7,7 @@ export default function SignupScreen({
   loggedin, id, password, members,
   onInputID, onInputPass, onLogin, onSignup}) {
   const onChangeUserID = e => {
+    // console.log(e.target.value);
     onInputID(e.target.value);
   }
   const onChangeUserPW = e => {

@@ -36,7 +36,7 @@ const initialState = {
   ],
 }
 
-export default function membershipReducer(state = initialState, action) {
+export default function membership(state = initialState, action) {
   switch (action.type) {
     case INPUT_ID:
       return {
