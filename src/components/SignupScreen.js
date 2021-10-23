@@ -22,8 +22,8 @@ export default function SignupScreen() {
       </div>
       <div className='memberInput'>
         <span>
-          <LoginButton />
-          <SignupButton />
+          <button className='login--button'>Login</button>
+          <button className="signup--button">Sign-up</button>
         </span>
       </div>
     </main>
