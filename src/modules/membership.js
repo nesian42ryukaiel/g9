@@ -16,10 +16,10 @@ export const inputPass = (task) => ({
   }
 });
 export const login = () => ({
-  type: 'LOGIN_TASK',
+  type: LOGIN,
 });
 export const signup = () => ({
-  type: 'SIGNUP_TASK',
+  type: SIGNUP,
 });
 
 const ducky = {
