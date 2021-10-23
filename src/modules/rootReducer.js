@@ -9,8 +9,8 @@ import membershipReducer from "./membership";
 import pagesReducer from "./pages";
 
 const rootReducer = combineReducers({
-  membershipReducer,
-  pagesReducer
+  membership: membershipReducer,
+  pages: pagesReducer
 });
 
 export default rootReducer;

@@ -28,7 +28,7 @@ const ducky = {
 }
 
 const initialState = {
-  login: false,
+  loggedin: false,
   id: '',
   password: '',
   members: [
