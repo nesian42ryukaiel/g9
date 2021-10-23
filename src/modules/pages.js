@@ -1,6 +1,6 @@
 const MOVE = 'pages/MOVE';
 
-const movePage = (page) => ({
+export const movePage = (page) => ({
   type: MOVE,
   payload: {
     page

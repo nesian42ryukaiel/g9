@@ -1,7 +1,7 @@
 import React from 'react';
-import LoginButton from './LoginButton';
 // import MemberInput from './MemberInput';
-import SignupButton from './SignupButton';
+// import LoginButton from './LoginButton';
+// import SignupButton from './SignupButton';
 
 export default function SignupScreen({
   loggedin, id, password, members,
