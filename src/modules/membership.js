@@ -3,22 +3,22 @@ const INPUT_PASS = 'membership/PASS';
 const LOGIN = 'membership/LOGIN';
 const SIGNUP = 'membership/SIGNUP';
 
-const inputID = (task) => ({
+export const inputID = (task) => ({
   type: INPUT_ID,
   payload: {
     task
   }
 });
-const inputPass = (task) => ({
+export const inputPass = (task) => ({
   type: INPUT_PASS,
   payload: {
     task
   }
 });
-const login = () => ({
+export const login = () => ({
   type: 'LOGIN_TASK',
 });
-const signup = () => ({
+export const signup = () => ({
   type: 'SIGNUP_TASK',
 });
 
