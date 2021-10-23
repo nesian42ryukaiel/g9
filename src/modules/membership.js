@@ -69,24 +69,29 @@ export default function membership(state = initialState, action) {
         }
       }
     case SIGNUP:
-      if (
-        state.id === state.members[0].mid
-      ) {
-        console.log('Member exists!');
-        return state;
-      } else if (state.id === '' || state.password === '') {
-        console.log('Please input new member properly!');
+      if (state.loggedin === true) {
+        console.log('You cannot sign up while logged in!');
         return state;
       } else {
-        console.log(`Welcome to G9, ${state.id}!`);
-        const newmem = {
-          mid: state.id,
-          mpw: state.password
-        };
-        return {
-          ...state,
-          members: state.members.concat([newmem])
-        };
+        if (
+          state.id === state.members[0].mid
+        ) {
+          console.log('Member exists!');
+          return state;
+        } else if (state.id === '' || state.password === '') {
+          console.log('Please input new member properly!');
+          return state;
+        } else {
+          console.log(`Welcome to G9, ${state.id}!`);
+          const newmem = {
+            mid: state.id,
+            mpw: state.password
+          };
+          return {
+            ...state,
+            members: state.members.concat([newmem])
+          };
+        }
       }
     default:
       return state;
