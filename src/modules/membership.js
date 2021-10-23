@@ -49,19 +49,24 @@ export default function membership(state = initialState, action) {
       password: action.payload.task
       };
     case LOGIN:
-      if (
-        state.id === state.members[0].mid &&
-        state.password === state.members[0].mpw
-      ) {
-        console.log(`Welcome back, ${state.id}!`);
-        return {
-          ...state,
-          login: true,
-          page: 'indexPage'
-        }
-      } else {
-        console.log('Login Failed!');
+      if (state.loggedin === true) {
+        console.log('You are already logged in!');
         return state;
+      } else {
+        if (
+          state.id === state.members[0].mid &&
+          state.password === state.members[0].mpw
+        ) {
+          console.log(`Welcome back, ${state.id}!`);
+          return {
+            ...state,
+            loggedin: true,
+            page: 'indexPage'
+          }
+        } else {
+          console.log('Login Failed!');
+          return state;
+        }
       }
     case SIGNUP:
       if (
