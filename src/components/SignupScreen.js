@@ -7,16 +7,13 @@ export default function SignupScreen({
   loggedin, id, password, members,
   onInputID, onInputPass, onLogin, onSignup}) {
   const onChangeUserID = e => {
-    // console.log(e.target.value); // works
     onInputID(e.target.value);
   }
   const onChangeUserPW = e => {
     onInputPass(e.target.value);
   }
   const onClickLogin = () => {
-    // console.log('Attempt!'); // works
     onLogin();
-    // console.log('Post-Attempt!'); // works
   }
   const onClickSignup = () => {
     onSignup();
