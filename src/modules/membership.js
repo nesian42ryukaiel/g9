@@ -37,6 +37,7 @@ const initialState = {
 }
 
 export default function membership(state = initialState, action) {
+  console.log('Enter membership reducer');
   switch (action.type) {
     case INPUT_ID:
       return {
