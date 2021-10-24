@@ -36,6 +36,17 @@ const initialState = {
   ],
 }
 
+function isMember(state) {
+  for (let i = 0; i < state.members.length; i++) {
+    if (state.id === state.members[i].mid) {
+      return true;
+    } else if (state.password === state.members[i].mpw) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export default function membership(state = initialState, action) {
   switch (action.type) {
     case INPUT_ID:
