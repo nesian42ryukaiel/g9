@@ -76,7 +76,13 @@ export default function membership(state = initialState, action) {
             page: 'indexPage'
           }
         } else {
-          console.log('Login Failed!');
+          let liblurb = '';
+          if (!auth[0]) {
+            liblurb += ' ID does not exist.';
+          } else if (auth[0] && !auth[1]) {
+            liblurb += ' Wrong password.';
+          }
+          console.log(`Login Failed!${liblurb}`);
           return state;
         }
       }
