@@ -22,18 +22,11 @@ export const signup = () => ({
   type: SIGNUP,
 });
 
-const ducky = {
-  mid: 'ducky',
-  mpw: '1021'
-}
-
 const initialState = {
   loggedin: false,
   id: '',
   password: '',
-  members: [
-    ducky
-  ],
+  members: [],
 }
 
 function isMember(state) {

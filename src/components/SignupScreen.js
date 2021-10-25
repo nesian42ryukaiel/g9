@@ -29,7 +29,7 @@ export default function SignupScreen({
         </div>
         <div>
           <input
-          type='text' className='password--input'
+          type='password' className='password--input'
           placeholder='Password' onChange={onChangeUserPW}
           />
         </div>
