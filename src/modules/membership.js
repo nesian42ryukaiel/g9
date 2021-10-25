@@ -40,9 +40,9 @@ function isMember(state) {
   for (let i = 0; i < state.members.length; i++) {
     if (state.id === state.members[i].mid) {
       return true;
-    } else if (state.password === state.members[i].mpw) {
+    } /*else if (state.password === state.members[i].mpw) {
       return true;
-    }
+    }*/
   }
   return false;
 }
@@ -64,10 +64,7 @@ export default function membership(state = initialState, action) {
         console.log('You are already logged in!');
         return state;
       } else {
-        if (
-          state.id === state.members[0].mid &&
-          state.password === state.members[0].mpw
-        ) {
+        if (isMember(state)) {
           console.log(`Welcome back, ${state.id}!`);
           return {
             ...state,
@@ -84,9 +81,7 @@ export default function membership(state = initialState, action) {
         console.log('You cannot sign up while logged in!');
         return state;
       } else {
-        if (
-          state.id === state.members[0].mid
-        ) {
+        if (isMember(state)) {
           console.log('Member exists!');
           return state;
         } else if (state.id === '' || state.password === '') {
