@@ -37,14 +37,17 @@ const initialState = {
 }
 
 function isMember(state) {
+  let auth = [false, false];
   for (let i = 0; i < state.members.length; i++) {
     if (state.id === state.members[i].mid) {
-      return true;
-    } /*else if (state.password === state.members[i].mpw) {
-      return true;
-    }*/
+      auth[0] = true;
+      if (state.password === state.members[i].mpw) {
+        auth[1] = true;
+      }
+      break;
+    }
   }
-  return false;
+  return auth;
 }
 
 export default function membership(state = initialState, action) {
@@ -64,7 +67,8 @@ export default function membership(state = initialState, action) {
         console.log('You are already logged in!');
         return state;
       } else {
-        if (isMember(state)) {
+        let auth = isMember(state);
+        if (auth[0] && auth[1]) {
           console.log(`Welcome back, ${state.id}!`);
           return {
             ...state,
@@ -81,7 +85,8 @@ export default function membership(state = initialState, action) {
         console.log('You cannot sign up while logged in!');
         return state;
       } else {
-        if (isMember(state)) {
+        let auth = isMember(state);
+        if (auth[0]) {
           console.log('Member exists!');
           return state;
         } else if (state.id === '' || state.password === '') {
