@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Article() {
+function Article(title, image, text) {
   return(
     <article>
       <div className="article__title">Title</div>

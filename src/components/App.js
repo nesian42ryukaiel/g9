@@ -26,7 +26,7 @@ function App() {
     </div>
   );
   return (
-    registerPage
+    indexPage
   );
 }
 

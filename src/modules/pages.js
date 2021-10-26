@@ -7,9 +7,19 @@ export const movePage = (page) => ({
   }
 });
 
+const articleFormat = (titleText, imageURL, textText) => ({
+  title: titleText,
+  image: imageURL,
+  text: textText
+});
+
 const initialState = {
   page: 'index',
-  articles: []
+  articles: [
+    articleFormat('Aum', '../mock/aum.png', 'The letter Aum.'),
+    articleFormat('Internet', '../mock/internet.png', 'The basics of the Internet.'),
+    articleFormat('OOP', '../mock/oop.png', 'Object Oriented Programming.'),
+  ]
 };
 
 export default function pages(state = initialState, action) {
