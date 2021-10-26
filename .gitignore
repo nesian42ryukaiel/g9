@@ -359,6 +359,7 @@ dmypy.json
 
 ### Personal ###
 garbage/
+mock/
 .DS_Store
 *.avi
 *.bmp
