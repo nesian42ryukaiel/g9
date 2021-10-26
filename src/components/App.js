@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from '../components/Header';
-import Main from '../components/Main';
+import MainContainer from '../containers/MainContainer';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import SignupContainer from '../containers/SignupContainer';
@@ -12,7 +12,7 @@ function App() {
   const indexPage = (
     <div className="App">
       <Header></Header>
-      <Main></Main>
+      <MainContainer />
       <Nav></Nav>
       <Footer></Footer>
     </div>

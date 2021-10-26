@@ -12,7 +12,10 @@ function MainContainer() {
    * functions go here
    */
   return (
-    <Main />
+    <Main
+    page={page}
+    articles={articles}
+    />
   );
 }
 
