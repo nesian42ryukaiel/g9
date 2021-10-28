@@ -22,11 +22,13 @@ export const signup = () => ({
   type: SIGNUP,
 });
 
+const memberMap = new Map();
+
 const initialState = {
   loggedin: false,
   id: '',
   password: '',
-  members: [],
+  members: memberMap,
 }
 
 function isMember(state) {
