@@ -33,15 +33,24 @@ const initialState = {
 
 function isMember(state) {
   let auth = [false, false];
-  for (let i = 0; i < state.members.length; i++) {
-    if (state.id === state.members[i].mid) {
+  for (const [key, value] of state.members) {
+    if (state.id === key) {
       auth[0] = true;
-      if (state.password === state.members[i].mpw) {
+      if (state.password === value.mpw) {
         auth[1] = true;
       }
       break;
     }
   }
+  // for (let i = 0; i < state.members.length; i++) {
+  //   if (state.id === state.members[i].mid) {
+  //     auth[0] = true;
+  //     if (state.password === state.members[i].mpw) {
+  //       auth[1] = true;
+  //     }
+  //     break;
+  //   }
+  // }
   return auth;
 }
 
@@ -95,13 +104,14 @@ export default function membership(state = initialState, action) {
           return state;
         } else {
           console.log(`Welcome to G9, ${state.id}!`);
+          const newkey = state.id;
           const newmem = {
-            mid: state.id,
+            mid: "u/" + state.id,
             mpw: state.password
           };
           return {
             ...state,
-            members: state.members.concat([newmem])
+            members: state.members.set(newkey, newmem)
           };
         }
       }
