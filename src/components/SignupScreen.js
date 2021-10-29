@@ -19,7 +19,7 @@ export default function SignupScreen({
     onSignup();
   }
   return (
-    <main>
+    <main className='corefunc'>
       <div className='signup__memberInput'>
         <div>
           <input
