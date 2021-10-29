@@ -8,25 +8,24 @@ import SignupContainer from '../containers/SignupContainer';
 
 // 잘 생각해보자, 앱의 기본 레이아웃을 어찌 해야할 지...
 
-function App() {
-  const indexPage = (
-    <div className="App">
-      <Header></Header>
-      <MainContainer />
-      <Nav></Nav>
-      <Footer></Footer>
-    </div>
-  );
-  const registerPage = (
+function defaultLayout(page) {
+  return(
     <div className="App">
       <Header />
-      <SignupContainer />
+      {page}
       <Nav />
       <Footer />
     </div>
   );
+}
+
+function App() {
+  const pagelist = {
+    'index': <MainContainer />,
+    "signup": <SignupContainer />
+  }
   return (
-    indexPage
+    defaultLayout(pagelist['index'])
   );
 }
 
