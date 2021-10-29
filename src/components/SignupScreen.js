@@ -19,7 +19,7 @@ export default function SignupScreen({
     onSignup();
   }
   return (
-    <main className='corefunc'>
+    <main className='SignupScreen centralize corefunc'>
       <div className='signup__memberInput'>
         <div>
           <input

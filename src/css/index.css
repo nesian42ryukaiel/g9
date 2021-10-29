@@ -5,6 +5,9 @@
 #root {
   height: 100%;
 }
+.centralize {
+  text-align: center;
+}
 .App {
   height: 100%;
   display: grid;
