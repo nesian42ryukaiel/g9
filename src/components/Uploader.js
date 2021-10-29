@@ -10,8 +10,8 @@ function Uploader() {
           <label for='file'>Choose image or video to upload</label><br />
           <input type="file" id="input-article-image" class="image_inputType_file"
           accept=".gif, .jpeg, .jpg, .png, .mp4" /><br />
-          <input type='text' id='input-article-title' placeholder='Title' /><br />
-          <input type='text' id='input-article-text' placeholder='addttional text' />
+          <input type='text' id='input-article-title' placeholder='Title (required)' /><br />
+          <input type='text' id='input-article-text' placeholder='optional text' />
         </div>
         <div>
         <button class="input-article-new">Upload</button>
