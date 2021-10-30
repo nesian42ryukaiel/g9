@@ -10,9 +10,16 @@ export const upload = (file, title, text) => ({
 });
 
 const initialState = {
-  file: '',
-  title: '',
-  text: ''
+  uploader: {
+    ufile: '',
+    utitle: '',
+    utext: ''
+  },
+  editor: {
+    efile: '',
+    etitle: '',
+    etext: ''
+  },
 }
 
 export default function editor(state = initialState, action) {
