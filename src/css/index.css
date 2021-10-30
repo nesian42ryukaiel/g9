@@ -72,7 +72,9 @@ article {
 span {
   margin: 4px;
 }
-button {
+button,
+.input--button,
+.input--file {
   padding: 4px;
   background-color: #252525;
   color: #e0e0e0;
