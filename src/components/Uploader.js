@@ -7,8 +7,8 @@ function Uploader() {
     <div className='Uploader centralize corefunc'>
       <form>
         <div>
-          <label for='file'>Choose image or video to upload</label><br />
-          <input type="file" id="input-article-image input--file" class="image_inputType_file"
+          <label htmlFor='file'>Choose image or video to upload</label><br />
+          <input type="file" id="input-article-image input--file" className="image_inputType_file"
           accept=".gif, .jpeg, .jpg, .png, .mp4" /><br />
           <input type='text' id='input-article-title' placeholder='Title (required)' /><br />
           <input type='text' id='input-article-text' placeholder='optional text' />
