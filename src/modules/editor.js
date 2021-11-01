@@ -1,5 +1,6 @@
 const UPLOAD = 'editor/UPLOAD'
 
+// action creators
 export const upload = (file, title, text) => ({
   type: UPLOAD,
   payload: {
@@ -22,6 +23,7 @@ const initialState = {
   },
 }
 
+// reducer
 export default function editor(state = initialState, action) {
   switch (action.type) {
     case UPLOAD:
