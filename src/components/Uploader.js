@@ -9,11 +9,9 @@ function Uploader() {
   const changeHandler = (e) => {
     setSelectedFile(e.target.files[0]);
     setIsFilePicked(true);
-    console.log('Accessed changeHandler('+e.target.files[0].name+')!');
   };
   const handleSubmission = () => {
-    // console.log('Submitted!');
-    // in association with "https://freeimage.host/":
+    // intended for testing via association with "https://freeimage.host/":
     const formData = new FormData();
     formData.append('File', selectedFile);
     fetch(
