@@ -1,34 +1,25 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import App from 'components/App';
+import App from '../components/App';
 
-function mapStateToProps({login, id, password, members, page, articles}) {
-  return {
-    login,
-    id,
-    password,
-    members,
-    page,
-    articles
-  }
-}
+/**
+ * move page state to here, and leave only articles in main?
+ */
 
-function mapDispatchToProps(dispatch) {
-  // 대충 모든 디스패처를 여기에 모으는 것 같음
+function AppContainer() {
+  const { page } = useSelector(state => ({
+    page: state.pages.page,
+    // articles: state.pages.articles
+  }));
   /**
-   * return (
-   *   action1(task) {
-   *     dispatch(action1(task));
-   *   },
-   *   action2(task) {
-   *     dispatch(action2(task));
-   *   },
-   *   action3(task) {
-   *     dispatch(action3(task));
-   *   }
-   * );
+   * functions go here
    */
+  return (
+    <App
+    page={page}
+    />
+  );
 }
 
 // 대충 원하는 component 수 만큼 각각 connect로 연결하기
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default AppContainer;

@@ -20,14 +20,14 @@ function defaultLayout(page) {
   );
 }
 
-function App() {
+function App(page) {
   const pagelist = {
     'index': <MainContainer />,
     'poster': <Uploader />,
     "signup": <SignupContainer />
   }
   return (
-    defaultLayout(pagelist['poster'])
+    defaultLayout(pagelist[page])
   );
 }
 

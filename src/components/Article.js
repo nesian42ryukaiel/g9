@@ -1,7 +1,8 @@
 import React from 'react';
 
-function Article({title, image, text}) {
+function Article({key, title, image, text}) {
   // const pic = require(image);
+  // so far no usage for key
   return(
     <article>
       <div className="article__title">{title}</div>

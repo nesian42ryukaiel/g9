@@ -4,8 +4,8 @@ import Main from "../components/Main";
 import { movePage } from "../modules/pages";
 
 function MainContainer() {
-  const { page, articles } = useSelector(state => ({
-    page: state.pages.page,
+  const { articles } = useSelector(state => ({
+    // page: state.pages.page,
     articles: state.pages.articles
   }));
   /**
@@ -13,7 +13,6 @@ function MainContainer() {
    */
   return (
     <Main
-    page={page}
     articles={articles}
     />
   );

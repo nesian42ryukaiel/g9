@@ -1,10 +1,10 @@
 import React from 'react';
 import Article from './Article';
 
-function Main({page, articles}) {
+function Main({articles}) {
   return (
     <main className='corefunc'>
-      {articles.map((object, i) => <Article title={object.title} image={object.image} text={object.text} />)}
+      {articles.map((object, i) => <Article key={i} title={object.title} image={object.image} text={object.text} />)}
     </main>
   );
 }
