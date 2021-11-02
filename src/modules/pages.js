@@ -14,7 +14,7 @@ const articleFormat = (titleText, imageURL, textText) => ({
 });
 
 const initialState = {
-  currentPage: 'index',
+  currentPage: 'poster',
   articles: [
     articleFormat('Aum', '../mock/aum.png', 'The letter Aum.'),
     articleFormat('Internet', '../mock/internet.png', 'The basics of the Internet.'),

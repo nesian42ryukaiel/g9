@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Uploader() {
   const author = 'u/author';
   // fetch a function through reducer to add new article when clicked
+  // tips from https://www.pluralsight.com/guides/uploading-files-with-reactjs
+  const [selectedFile, setSelectedFile] = useState();
+  const [isFilePicked, setIsFilePicked] = useState(false);
   return (
     <div className='Uploader centralize corefunc'>
       <form>
