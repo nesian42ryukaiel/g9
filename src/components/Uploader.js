@@ -12,7 +12,24 @@ function Uploader() {
     console.log('Accessed changeHandler('+e.target.files[0].name+')!');
   };
   const handleSubmission = () => {
-    console.log('Submitted!');
+    // console.log('Submitted!');
+    // in association with "https://freeimage.host/":
+    const formData = new FormData();
+    formData.append('File', selectedFile);
+    fetch(
+      'https://freeimage.host/api/1/upload?key=<YOUR_API_KEY>',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        console.log('Success:', result);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
   return (
     <div className='Uploader centralize corefunc'>
