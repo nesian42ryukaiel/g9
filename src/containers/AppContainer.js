@@ -7,8 +7,8 @@ import App from '../components/App';
  */
 
 function AppContainer() {
-  const { page } = useSelector(state => ({
-    page: state.pages.page,
+  const { currentPage } = useSelector(state => ({
+    currentPage: state.pages.currentPage,
     // articles: state.pages.articles
   }));
   /**
@@ -16,7 +16,7 @@ function AppContainer() {
    */
   return (
     <App
-    page={page}
+    page={currentPage}
     />
   );
 }
