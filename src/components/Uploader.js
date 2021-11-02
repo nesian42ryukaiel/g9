@@ -14,6 +14,7 @@ function Uploader() {
     // intended for testing via association with "https://freeimage.host/":
     const formData = new FormData();
     formData.append('File', selectedFile);
+    // fetch only if a file exists + the title field is filled
     fetch(
       'https://freeimage.host/api/1/upload?key=<YOUR_API_KEY>',
       {
