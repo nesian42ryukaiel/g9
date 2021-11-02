@@ -26,8 +26,9 @@ function App(page) {
     'poster': <Uploader />,
     "signup": <SignupContainer />
   }
+  // console.log('pagekey:', pagekey.page);
   return (
-    defaultLayout(pagelist[page])
+    defaultLayout(pagelist[page.page])
   );
 }
 
