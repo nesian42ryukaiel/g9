@@ -5,12 +5,10 @@ function Nav() {
   return (
     <nav className='Nav'>
       <div>
-        <p>Menu 1</p>
-        <p>Menu 2</p>
-        <p>Menu 3</p>
+        <h4>Advertisement</h4>
       </div>
       <div>
-        Others
+      <h4>Featured Posts</h4>
       </div>
     </nav>
   );
