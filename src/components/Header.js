@@ -5,18 +5,18 @@ import SignupButton from './SignupButton';
 
 function Header() {
   return (
-    <header>
-      <span id="header_left">
+    <header className='Header'>
+      <span id="header__left">
         <span>三</span>
         <span>G9</span>
       </span>
-      <span id="header_middle">
+      <span id="header__middle">
         <span>Options</span>
         <span>
           <input type="text" placeholder="Search" />
         </span>
       </span>
-      <span id="header_right">
+      <span id="header__right">
         <LoginButton />
         <SignupButton />
       </span>

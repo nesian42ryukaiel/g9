@@ -3,7 +3,7 @@ const wm = 'Lucas Yew';
 
 function Footer() {
   return(
-    <footer>
+    <footer className='Footer'>
       <em>Webmaster: {wm}</em>
     </footer>
   );

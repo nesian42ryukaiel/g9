@@ -3,7 +3,7 @@ import SignupButton from './SignupButton';
 
 function Nav() {
   return (
-    <nav>
+    <nav className='Nav'>
       <div>
         <SignupButton />
       </div>
