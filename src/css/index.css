@@ -56,15 +56,15 @@ body {
   grid-row: row2 / row3;
   grid-column: col1 / col3;
 }
-main {
+.Main {
   /* grid-column: 1 / 3; */
   background-color: #404040;
 }
-footer {
+.Footer {
   grid-column: 1 / 4;
   background-color: #252525;
 }
-article {
+.Article {
   margin: 8px;
   padding: 4px;
   background-color: #505050;
