@@ -42,6 +42,7 @@ body {
 .header__middle {
   grid-row: row--topmost / row--header_to_main;
   grid-column: col2 / col--main_to_sidebar;
+  text-align: center;
 }
 .header__right {
   grid-row: row--topmost / row--header_to_main;

@@ -11,7 +11,7 @@ function Header() {
         <span>G9</span>
       </span>
       <span className="header__middle">
-        <span>Options</span>
+        {/* <span>Options</span> */}
         <span>
           <input type="text" placeholder="Search" />
         </span>
