@@ -15,6 +15,7 @@ function Nav({articles}) {
         title={revart[0].title}
         image={revart[0].image}
         text={revart[0].text}
+        location='nav__featuredPosts'
         />
       </div>
       </div>
