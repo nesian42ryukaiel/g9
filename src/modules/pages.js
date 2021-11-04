@@ -16,9 +16,9 @@ const articleFormat = (titleText, imageURL, textText) => ({
 const initialState = {
   currentPage: 'index',
   articles: [
-    articleFormat('Aum', '../mock/aum.png', 'The letter Aum.'),
-    articleFormat('Internet', '../mock/internet.png', 'The basics of the Internet.'),
-    articleFormat('OOP', '../mock/oop.png', 'Object Oriented Programming.'),
+    articleFormat('Aum', './mock/aum.png', 'The letter Aum.'),
+    articleFormat('Internet', './mock/internet.png', 'The basics of the Internet.'),
+    articleFormat('OOP', './mock/oop.png', 'Object Oriented Programming.'),
     articleFormat('Link-test', './logo192.png', '...in the public directory!'),
   ]
 };

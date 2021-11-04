@@ -8,9 +8,9 @@ function Article({title, image, text, location}) {
       {(location === 'main__articles')
       ? <div className="article__title">{title}</div>
       : <></>}
-      <div className="article__image">
+      <div className="article__image_box">
         <img src={image}
-        className={`${location}`}
+        className={`article__image ${location}`}
         alt='the main dish'
         />
       </div>
