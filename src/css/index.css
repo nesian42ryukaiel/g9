@@ -35,6 +35,12 @@ body {
   grid-template-rows: 1fr;
   grid-template-columns: auto auto auto; */
 }
+.hamburger {
+  font-family: sans-serif;
+}
+.header--logo {
+  font-family: fantasy;
+}
 .header__left {
   grid-row: row--topmost / row--header_to_main;
   grid-column: col--leftmost / col2;

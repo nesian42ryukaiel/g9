@@ -7,8 +7,8 @@ function Header() {
   return (
     <>
       <span className="header__left">
-        <span>三</span>
-        <span>G9</span>
+        <span className='hamburger'>🍔</span>
+        <span className='header--logo'>G9</span>
       </span>
       <span className="header__middle">
         {/* <span>Options</span> */}
