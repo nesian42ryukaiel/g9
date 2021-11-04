@@ -38,6 +38,7 @@ body {
 .header__left {
   grid-row: row--topmost / row--header_to_main;
   grid-column: col--leftmost / col2;
+  text-align: left;
 }
 .header__middle {
   grid-row: row--topmost / row--header_to_main;
@@ -47,6 +48,7 @@ body {
 .header__right {
   grid-row: row--topmost / row--header_to_main;
   grid-column: col--main_to_sidebar / col--rightmost;
+  text-align: center;
 }
 .Nav {
   grid-column: col--main_to_sidebar / col--rightmost;
