@@ -24,7 +24,7 @@ function defaultLayout(page) {
 function App(currentPage) {
   const pagelist = {
     'index': <MainContainer />,
-    'poster': <Uploader />,
+    'upload': <Uploader />,
     "signup": <SignupContainer />
   }
   // console.log('pagekey:', pagekey.page);

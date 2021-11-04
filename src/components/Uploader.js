@@ -32,7 +32,7 @@ function Uploader() {
   };
   return (
     <div className='Uploader centralize corefunc'>
-      <form>
+      <form className='uploader__form'>
         <div>
           <img id='ul--output' width='256' alt='preview frame' />
         </div>
