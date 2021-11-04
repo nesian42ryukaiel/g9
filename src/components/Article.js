@@ -12,7 +12,9 @@ function Article({title, image, text, location}) {
         alt='the main dish'
         />
       </div>
-      <div className="article__text">{text}</div>
+      {(location === 'main__articles')
+      ? <div className="article__text">{text}</div>
+      : <></>}
     </article>
   );
 }
