@@ -77,7 +77,7 @@ export default function membership(state = initialState, action) {
           return {
             ...state,
             loggedin: true,
-            page: 'indexPage'
+            // currentPage: 'index'
           }
         } else {
           let liblurb = '';

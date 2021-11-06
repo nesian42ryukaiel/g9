@@ -4,8 +4,7 @@ import React from 'react';
 // import SignupButton from './SignupButton';
 
 export default function SignupScreen({
-  loggedin, id, password, members,
-  onInputID, onInputPass, onLogin, onSignup}) {
+  onInputID, onInputPass, onLogin, onSignup, loggedin, afterSuccess}) {
   const onChangeUserID = e => {
     onInputID(e.target.value);
   }
@@ -14,6 +13,10 @@ export default function SignupScreen({
   }
   const onClickLogin = () => {
     onLogin();
+    if (loggedin) {
+      console.log('passed!')
+      afterSuccess('index');
+    }
   }
   const onClickSignup = () => {
     onSignup();

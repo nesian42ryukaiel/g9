@@ -22,6 +22,7 @@ function App({page, move}) {
   const pagelist = {
     'index': <MainContainer />,
     'upload': <Uploader />,
+    'login': <SignupContainer />,
     "signup": <SignupContainer />
   }
   // console.log('pagekey:', pagekey.page);

@@ -3,20 +3,22 @@ import LoginButton from './LoginButton';
 import SignupButton from './SignupButton';
 // import MemberInput from './MemberInput';
 
-function Header({moveFunc}) {
+function Header({ loggedin, id, moveFunc }) {
+  const onClickMoveToIndexPage = () => {
+    moveFunc('index');
+  }
   const onClickMoveToLoginPage = () => {
-    moveFunc('signup');
+    moveFunc('login');
   }
   const onClickMoveToSignupPage = () => {
-    console.log('Did you move to signup?');
     moveFunc('signup');
-    console.log('You didn\'t move to signup');
   }
   return (
     <>
       <span className="header__left">
         <span className='hamburger'>🍔</span>
-        <span className='header--logo'>G9</span>
+        <span className='header--logo'
+        onClick={onClickMoveToIndexPage}>G9</span>
       </span>
       <span className="header__middle">
         {/* <span>Options</span> */}
@@ -25,10 +27,14 @@ function Header({moveFunc}) {
         </span>
       </span>
       <span className="header__right">
-        <button className='login--button'
-        onClick={onClickMoveToLoginPage}>Login</button>
-        <button className='signup--button'
-        onClick={onClickMoveToSignupPage}>Sign-up</button>
+        {loggedin 
+        ? <>Welcome, {id}!</>
+        : <>
+          <button className='login--button'
+          onClick={onClickMoveToLoginPage}>Login</button>
+          <button className='signup--button'
+          onClick={onClickMoveToSignupPage}>Sign-up</button>
+        </>}
       </span>
     </>
   );
