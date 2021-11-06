@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import Nav from "../components/Nav";
-import { movePage } from "../modules/pages";
+// import { movePage } from "../modules/pages";
 
 function NavContainer() {
   const { articles } = useSelector(state => ({

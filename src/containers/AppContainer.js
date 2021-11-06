@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import App from '../components/App';
-import { movePage } from '../modules/pages';
+// import { movePage } from '../modules/pages';
 
 /**
  * move page state to here, and leave only articles in main?
