@@ -21,7 +21,7 @@ function defaultLayout(page) {
   );
 }
 
-function App(currentPage) {
+function App({page, move}) {
   const pagelist = {
     'index': <MainContainer />,
     'upload': <Uploader />,
@@ -29,7 +29,7 @@ function App(currentPage) {
   }
   // console.log('pagekey:', pagekey.page);
   return (
-    defaultLayout(pagelist[currentPage.page])
+    defaultLayout(pagelist[page])
   );
 }
 

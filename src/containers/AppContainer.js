@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import App from '../components/App';
+import { movePage } from '../modules/pages';
 
 /**
  * move page state to here, and leave only articles in main?
@@ -14,9 +15,12 @@ function AppContainer() {
   /**
    * functions go here
    */
+   const dispatch = useDispatch();
+   const onMovePage = (page) => dispatch(movePage(page));
   return (
     <App
     page={currentPage}
+    move={onMovePage}
     />
   );
 }

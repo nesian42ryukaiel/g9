@@ -3,7 +3,7 @@ import LoginButton from './LoginButton';
 import SignupButton from './SignupButton';
 // import MemberInput from './MemberInput';
 
-function Header() {
+function Header({move}) {
   return (
     <>
       <span className="header__left">
