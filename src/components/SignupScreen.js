@@ -13,38 +13,51 @@ export default function SignupScreen({
   }
   const onClickLogin = () => {
     onLogin();
+  }
+  const onClickSignup = () => {
+    onSignup();
+  }
+  const ifLoggedIn = () => {
     if (loggedin) {
       console.log('passed!')
       afterSuccess('index');
     }
   }
-  const onClickSignup = () => {
-    onSignup();
-  }
   return (
     <main className='SignupScreen centralize corefunc'>
-      <div className='signup__memberInput'>
-        <div>
-          <input
-          type='text' className='user_id--input'
-          placeholder='ID' onChange={onChangeUserID}
-          />
-        </div>
-        <div>
-          <input
-          type='password' className='password--input'
-          placeholder='Password' onChange={onChangeUserPW}
-          />
-        </div>
-      </div>
-      <div className='memberInput'>
-        <span>
-          <button className='login--button'
-          onClick={onClickLogin}>Login</button>
-          <button className="signup--button"
-          onClick={onClickSignup}>Sign-up</button>
-        </span>
-      </div>
+      {loggedin
+      ? <>
+          <div>
+            <p>Success!</p>
+            <p><strong onClick={ifLoggedIn} style={{color: '#aaaaff'}}>Click</strong> to return to the main page.</p>
+          </div>
+        </>
+      : <>
+          <div className='signup__memberInput'>
+            <div>
+              <input
+              type='text' className='user_id--input'
+              placeholder='ID' onChange={onChangeUserID}
+              />
+            </div>
+            <div>
+              <input
+              type='password' className='password--input'
+              placeholder='Password' onChange={onChangeUserPW}
+              />
+            </div>
+          </div>
+          <div className='memberInput'>
+            <span>
+              <button className='login--button'
+              onClick={onClickLogin}>Login</button>
+              <button className="signup--button"
+              onClick={onClickSignup}>Sign-up</button>
+            </span>
+          </div>
+        </>
+      }
+      
     </main>
   );
 }
