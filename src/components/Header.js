@@ -3,7 +3,15 @@ import LoginButton from './LoginButton';
 import SignupButton from './SignupButton';
 // import MemberInput from './MemberInput';
 
-function Header({move}) {
+function Header({moveFunc}) {
+  const onClickMoveToLoginPage = () => {
+    moveFunc('signup');
+  }
+  const onClickMoveToSignupPage = () => {
+    console.log('Did you move to signup?');
+    moveFunc('signup');
+    console.log('You didn\'t move to signup');
+  }
   return (
     <>
       <span className="header__left">
@@ -17,8 +25,10 @@ function Header({move}) {
         </span>
       </span>
       <span className="header__right">
-        <LoginButton />
-        <SignupButton />
+        <button className='login--button'
+        onClick={onClickMoveToLoginPage}>Login</button>
+        <button className='signup--button'
+        onClick={onClickMoveToSignupPage}>Sign-up</button>
       </span>
     </>
   );

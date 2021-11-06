@@ -15,12 +15,9 @@ function AppContainer() {
   /**
    * functions go here
    */
-   const dispatch = useDispatch();
-   const onMovePage = (page) => dispatch(movePage(page));
   return (
     <App
     page={currentPage}
-    move={onMovePage}
     />
   );
 }

@@ -28,7 +28,7 @@ export default function pages(state = initialState, action) {
     case MOVE:
       return {
         ...state,
-        page: action.payload.page
+        currentPage: action.payload.page
       };
     default:
       return state;
