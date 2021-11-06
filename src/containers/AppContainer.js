@@ -10,11 +10,7 @@ import { movePage } from '../modules/pages';
 function AppContainer() {
   const { currentPage } = useSelector(state => ({
     currentPage: state.pages.currentPage,
-    // articles: state.pages.articles
   }));
-  /**
-   * functions go here
-   */
   return (
     <App
     page={currentPage}
