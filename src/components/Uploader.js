@@ -65,9 +65,10 @@ function Uploader({id}) {
       alert(uploadError); return;
     }
     const newFileName = id+'-'+Base64.encode(selectedFile.name);
-    formData.append('articleFile', selectedFile, newFileName); console.log(newFileName);
-    formData.append('articleTitle', articleTitle); console.log(articleTitle);
-    formData.append('articleText', articleText); console.log(articleText);
+    formData.append('articleFile', selectedFile, newFileName);
+    formData.append('articleTitle', articleTitle);
+    formData.append('articleText', articleText);
+    console.log('Preparing upload...\n\n' + newFileName + '\n' + articleTitle + '\n' + articleText);
     fetch(
       'https://freeimage.host/api/1/upload?key=<YOUR_API_KEY>',
       {
