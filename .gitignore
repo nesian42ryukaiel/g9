@@ -360,6 +360,8 @@ dmypy.json
 ### Personal ###
 garbage/
 mock/
+pseudoLinks/
+pseudoServer/
 .DS_Store
 *.avi
 *.bmp

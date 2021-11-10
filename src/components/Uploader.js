@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Base64 from '../modules/Base64';
+import serverLink from "../pseudoLinks/links";
 
 function Uploader({id}) {
   // const author = 'u/author';
@@ -70,7 +71,7 @@ function Uploader({id}) {
     formData.append('articleText', articleText);
     console.log('Preparing upload...\n\n' + newFileName + '\n' + articleTitle + '\n' + articleText);
     fetch(
-      'https://freeimage.host/api/1/upload?key=<YOUR_API_KEY>',
+      serverLink,
       {
         method: 'POST',
         body: formData,
