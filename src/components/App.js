@@ -4,7 +4,7 @@ import HeaderContainer from '../containers/HeaderContainer';
 import NavContainer from '../containers/NavContainer';
 import Footer from '../components/Footer';
 import MainContainer from '../containers/MainContainer';
-import Uploader from './Uploader';
+import UploadContainer from '../containers/UploaderContainer';
 import SignupContainer from '../containers/SignupContainer';
 
 function defaultLayout(page) {
@@ -21,7 +21,7 @@ function defaultLayout(page) {
 function App({page, move}) {
   const pagelist = {
     'index': <MainContainer />,
-    'upload': <Uploader />,
+    'upload': <UploadContainer />,
     'login': <SignupContainer />,
     "signup": <SignupContainer />
   }
