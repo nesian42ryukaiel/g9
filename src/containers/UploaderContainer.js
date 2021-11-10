@@ -4,11 +4,13 @@ import Uploader from "../components/Uploader";
 import { movePage } from "../modules/pages";
 
 function UploadContainer() {
-  // so far nothing from the store is required
+  const { id } = useSelector(state => ({
+    id: state.membership.id
+  }));
   const dispatch = useDispatch();
   // function to concat new article
   return (
-    <Uploader />
+    <Uploader id={id}/>
   );
 }
 

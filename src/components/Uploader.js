@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import Base64 from '../modules/Base64';
 
-function Uploader() {
+function Uploader({id}) {
   // const author = 'u/author';
   // fetch a function through reducer to add new article when clicked
   // tips from https://www.pluralsight.com/guides/uploading-files-with-reactjs
   const [selectedFile, setSelectedFile] = useState(); // should contain info on currently picked file
   const [isFilePicked, setIsFilePicked] = useState(false); // should determine if a file has been picked or not
   const changeHandler = (e) => {
-    const newFile = new File(e.target.files, Base64.encode(e.target.files[0].name), {
+    const newFile = new File(e.target.files, id+'-'+Base64.encode(e.target.files[0].name), {
       type: e.target.files[0].type
     });
     setSelectedFile(newFile);
