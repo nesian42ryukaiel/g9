@@ -81,11 +81,11 @@ function Uploader({id}) {
         console.log('Success:', result);
         // post received URI as new article;
         // as such, add the received dispatch function HERE!
-        this.form.reset();
+        resetUploader();
       })
       .catch((error) => {
         console.error('Error:', error);
-        this.reset();
+        resetUploader();
       });
   };
   return (
