@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Base64 from '../modules/Base64';
 
 function Uploader() {
   // const author = 'u/author';
@@ -7,7 +8,10 @@ function Uploader() {
   const [selectedFile, setSelectedFile] = useState(); // should contain info on currently picked file
   const [isFilePicked, setIsFilePicked] = useState(false); // should determine if a file has been picked or not
   const changeHandler = (e) => {
-    setSelectedFile(e.target.files[0]);
+    const newFile = new File(e.target.files, Base64.encode(e.target.files[0].name), {
+      type: e.target.files[0].type
+    });
+    setSelectedFile(newFile);
     setIsFilePicked(true);
   };
   const handleSubmission = () => {
