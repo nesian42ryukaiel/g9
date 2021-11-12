@@ -66,7 +66,7 @@ function Uploader({id}) {
       alert(uploadError); return;
     }
     const newFileName = id+'-'+Base64.encode(selectedFile.name);
-    formData.append('articleFile', selectedFile, newFileName);
+    formData.append('articleFile', selectedFile, newFileName); // do I post a base64 string here instead...?
     formData.append('articleTitle', articleTitle);
     formData.append('articleText', articleText);
     console.log('Preparing upload...\n\n' + newFileName + '\n' + articleTitle + '\n' + articleText);
