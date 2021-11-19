@@ -18,26 +18,26 @@ console.log(store.getState());
  * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- *
  */
 
-const getData = (link) => {
-  fetch((link)
-  , {
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
-  })
-  .then(function(response) {
-    console.log(response);
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(myJson);
-    console.log('Final text data below:');
-    console.log(myJson.text);
-  })
-}
+// const getData = (link) => {
+//   fetch((link)
+//   , {
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json'
+//     }
+//   })
+//   .then(function(response) {
+//     console.log(response);
+//     return response.json();
+//   })
+//   .then(function(myJson) {
+//     console.log(myJson);
+//     console.log('Final text data below:');
+//     console.log(myJson.text);
+//   })
+// }
 
-getData(serverLink);
+// getData(serverLink);
 
 /**
 * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- *

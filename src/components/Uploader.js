@@ -69,11 +69,15 @@ function Uploader({id}) {
     formData.append('articleFile', selectedFile, newFileName); // do I post a base64 string here instead...?
     formData.append('articleTitle', articleTitle);
     formData.append('articleText', articleText);
-    console.log('Preparing upload...\n\n' + newFileName + '\n' + articleTitle + '\n' + articleText);
+    console.log('Preparing upload...\n\n' + newFileName + '\n' + articleTitle + '\n' + articleText + '\n');
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ': ' + pair[1]);
+    }
     fetch(
       serverLink,
       {
         method: 'POST',
+        mode: 'no-cors',
         body: formData,
       }
     )
@@ -86,7 +90,7 @@ function Uploader({id}) {
       })
       .catch((error) => {
         console.error('Error:', error);
-        resetUploader();
+        // resetUploader();
       });
   };
   return (
