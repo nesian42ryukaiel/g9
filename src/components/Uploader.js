@@ -74,7 +74,7 @@ function Uploader({id}) {
       console.log(pair[0] + ': ' + pair[1]);
     }
     fetch(
-      serverLink + 'posts',
+      serverLink,
       {
         method: 'POST',
         mode: 'no-cors',
