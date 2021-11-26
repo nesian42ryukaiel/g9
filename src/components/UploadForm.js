@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
 
+import serverLink from "../pseudoLinks/links";
+
 function UploadForm() {
   const [content, setContent] = useState(""); // state that stores sending image
   const [uploadedImg, setUploadedImg] = useState({
@@ -19,7 +21,7 @@ function UploadForm() {
       .then(res => {
         const { fileName } = res.data;
         console.log(fileName);
-        setUploadedImg({ fileName, filePath: `${BASE_URL}/img/${fileName}` });
+        setUploadedImg({ fileName, filePath: `${serverLink}/img/${fileName}` });
         alert("The file is successfully uploaded");
       })
       .catch(err => {
