@@ -17,7 +17,7 @@ function UploadForm() {
     const formData = new FormData();
     formData.append("img", content); 
     axios
-      .post(serverLink + "upload", formData)
+      .post(serverLink + "/upload", formData)
       .then(res => {
         const { fileName } = res.data;
         console.log(fileName);
