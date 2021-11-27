@@ -29,11 +29,12 @@ function UploadForm() {
       });
   };
   return (
-    <>
-      <form onSubmit={onSubmit}>
+    <div className='Uploader centralize corefunc'>
+      <form onSubmit={onSubmit} className='uploader__form'>
         {uploadedImg ? (
           <>
-            <img src={uploadedImg.filePath} alt="" />
+            <img src={uploadedImg.filePath} alt=""
+            id='ul--output' width='256' />
             <h3>{uploadedImg.fileName}</h3>
           </>
         ) : (
@@ -42,7 +43,7 @@ function UploadForm() {
         <input type="file" onChange={onChange} />
         <button type="submit">Upload</button>
       </form>
-    </>
+    </div>
   );
 }
 
