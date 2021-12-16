@@ -12,6 +12,8 @@ import serverLink from './pseudoLinks/links'; // test purposes
 const store = createStore(rootReducer);
 console.log(store.getState());
 
+// probably the point in which you call the true initState async...
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
