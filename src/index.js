@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 import rootReducer from './modules/rootReducer';
 import AppContainer from './containers/AppContainer';
+import configureStoreAsync from './modules/configureStoreAsync';
 
 import './css/index.css';
 
@@ -12,7 +13,17 @@ import serverLink from './pseudoLinks/links'; // test purposes
 const store = createStore(rootReducer);
 console.log(store.getState());
 
-// probably the point in which you call the true initState async...
+// configureStoreAsync().then(result => {
+//   const store = result;
+//   return ReactDOM.render(
+//     <React.StrictMode>
+//       <Provider store={store}>
+//         <AppContainer />
+//       </Provider>
+//     </React.StrictMode>,
+//     document.getElementById('root')
+//   );
+// }
 
 ReactDOM.render(
   <React.StrictMode>
