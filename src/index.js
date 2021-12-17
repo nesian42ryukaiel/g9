@@ -5,12 +5,11 @@ import { createStore } from 'redux'
 import rootReducer from './modules/rootReducer';
 import AppContainer from './containers/AppContainer';
 import configureStoreAsync from './modules/configureStoreAsync';
-
 import './css/index.css';
 
-import serverLink from './pseudoLinks/links'; // test purposes
+// import serverLink from './pseudoLinks/links'; // test purposes
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer); // should I move this to configureStoreAsync?
 console.log(store.getState());
 
 // configureStoreAsync().then(result => {
