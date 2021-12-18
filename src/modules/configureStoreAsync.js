@@ -38,8 +38,8 @@ export default function configureStoreAsync() {
       axios
         .get(pServerLink + "/" + appdata)
         .then(function (response) {
-          console.log(response);
-          console.log(response.data);
+          console.log("RSP: " + JSON.stringify(response));
+          console.log("RSD: " + response.data);
           initialState = response.data;
         })
         .catch(function (error) {
