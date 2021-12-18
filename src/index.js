@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux'
-import rootReducer from './modules/rootReducer';
-import AppContainer from './containers/AppContainer';
-import configureStoreAsync from './modules/configureStoreAsync';
-import './css/index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { createStore } from "redux"
+import rootReducer from "./modules/rootReducer";
+import AppContainer from "./containers/AppContainer";
+import configureStoreAsync from "./modules/configureStoreAsync";
+import "./css/index.css";
 
-// import serverLink from './pseudoLinks/links'; // test purposes
+// import serverLink from "./pseudoLinks/links"; // test purposes
 
 const store = createStore(rootReducer); // should I move this to configureStoreAsync?
 console.log(store.getState());
@@ -20,7 +20,7 @@ console.log(store.getState());
 //         <AppContainer />
 //       </Provider>
 //     </React.StrictMode>,
-//     document.getElementById('root')
+//     document.getElementById("root")
 //   );
 // }
 
@@ -30,5 +30,5 @@ ReactDOM.render(
       <AppContainer />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

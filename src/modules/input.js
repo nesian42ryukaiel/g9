@@ -1,5 +1,5 @@
-const INPUT_ID = 'input/ID';
-const INPUT_PASS = 'input/PASS';
+const INPUT_ID = "input/ID";
+const INPUT_PASS = "input/PASS";
 
 export const inputID = (task) => ({
   type: INPUT_ID,
@@ -15,8 +15,8 @@ export const inputPass = (task) => ({
 });
 
 const initialState = {
-  id: '',
-  password: ''
+  id: "",
+  password: ""
 }
 
 export default function inputReducer(state = initialState, action) {

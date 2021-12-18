@@ -1,7 +1,7 @@
-import React from 'react';
-// import MemberInput from './MemberInput';
-// import LoginButton from './LoginButton';
-// import SignupButton from './SignupButton';
+import React from "react";
+// import MemberInput from "./MemberInput";
+// import LoginButton from "./LoginButton";
+// import SignupButton from "./SignupButton";
 
 export default function SignupScreen({
   onInputID, onInputPass, onLogin, onSignup, loggedin, afterSuccess}) {
@@ -19,37 +19,37 @@ export default function SignupScreen({
   }
   const ifLoggedIn = () => {
     if (loggedin) {
-      console.log('passed!')
-      afterSuccess('index');
+      console.log("passed!")
+      afterSuccess("index");
     }
   }
   return (
-    <main className='SignupScreen centralize corefunc'>
+    <main className="SignupScreen centralize corefunc">
       {loggedin
       ? <>
           <div>
             <p>Success!</p>
-            <p><strong onClick={ifLoggedIn} style={{color: '#aaaaff'}}>Click</strong> to return to the main page.</p>
+            <p><strong onClick={ifLoggedIn} style={{color: "#aaaaff"}}>Click</strong> to return to the main page.</p>
           </div>
         </>
       : <>
-          <div className='signup__memberInput'>
+          <div className="signup__memberInput">
             <div>
               <input
-              type='text' className='user_id--input'
-              placeholder='ID' onChange={onChangeUserID}
+              type="text" className="user_id--input"
+              placeholder="ID" onChange={onChangeUserID}
               />
             </div>
             <div>
               <input
-              type='password' className='password--input'
-              placeholder='Password' onChange={onChangeUserPW}
+              type="password" className="password--input"
+              placeholder="Password" onChange={onChangeUserPW}
               />
             </div>
           </div>
-          <div className='memberInput'>
+          <div className="memberInput">
             <span>
-              <button className='login--button'
+              <button className="login--button"
               onClick={onClickLogin}>Login</button>
               <button className="signup--button"
               onClick={onClickSignup}>Sign-up</button>

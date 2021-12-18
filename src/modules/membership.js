@@ -1,7 +1,7 @@
-const INPUT_ID = 'membership/ID';
-const INPUT_PASS = 'membership/PASS';
-const LOGIN = 'membership/LOGIN';
-const SIGNUP = 'membership/SIGNUP';
+const INPUT_ID = "membership/ID";
+const INPUT_PASS = "membership/PASS";
+const LOGIN = "membership/LOGIN";
+const SIGNUP = "membership/SIGNUP";
 
 export const inputID = (task) => ({
   type: INPUT_ID,
@@ -26,8 +26,8 @@ const memberMap = new Map();
 
 const initialState = {
   loggedin: false,
-  id: '',
-  password: '',
+  id: "",
+  password: "",
   members: memberMap,
 }
 
@@ -68,7 +68,7 @@ export default function membership(state = initialState, action) {
       };
     case LOGIN:
       if (state.loggedin === true) {
-        console.log('You are already logged in!');
+        console.log("You are already logged in!");
         return state;
       } else {
         let auth = isMember(state);
@@ -77,14 +77,14 @@ export default function membership(state = initialState, action) {
           return {
             ...state,
             loggedin: true,
-            // currentPage: 'index'
+            // currentPage: "index"
           }
         } else {
-          let liblurb = '';
+          let liblurb = "";
           if (!auth[0]) {
-            liblurb += ' ID does not exist.';
+            liblurb += " ID does not exist.";
           } else if (auth[0] && !auth[1]) {
-            liblurb += ' Wrong password.';
+            liblurb += " Wrong password.";
           }
           console.log(`Login Failed!${liblurb}`);
           return state;
@@ -92,15 +92,15 @@ export default function membership(state = initialState, action) {
       }
     case SIGNUP:
       if (state.loggedin === true) {
-        console.log('You cannot sign up while logged in!');
+        console.log("You cannot sign up while logged in!");
         return state;
       } else {
         let auth = isMember(state);
         if (auth[0]) {
-          console.log('Member exists!');
+          console.log("Member exists!");
           return state;
-        } else if (state.id === '' || state.password === '') {
-          console.log('Please input new member properly!');
+        } else if (state.id === "" || state.password === "") {
+          console.log("Please input new member properly!");
           return state;
         } else {
           console.log(`Welcome to G9, ${state.id}!`);

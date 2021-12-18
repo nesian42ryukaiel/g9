@@ -29,12 +29,12 @@ function UploadForm() {
       });
   };
   return (
-    <div className='Uploader centralize corefunc'>
-      <form onSubmit={onSubmit} className='uploader__form'>
+    <div className="Uploader centralize corefunc">
+      <form onSubmit={onSubmit} className="uploader__form">
         {uploadedImg ? (
           <>
             <img src={uploadedImg.filePath} alt=""
-            id='ul--output' width='256' />
+            id="ul--output" width="256" />
             <h3>{uploadedImg.fileName}</h3>
           </>
         ) : (

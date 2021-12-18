@@ -1,7 +1,7 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Header from '../components/Header';
-import { movePage } from '../modules/pages';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Header from "../components/Header";
+import { movePage } from "../modules/pages";
 
 function HeaderContainer() {
   const { loggedin, id  } = useSelector(state => ({

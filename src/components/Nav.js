@@ -1,10 +1,10 @@
-import React from 'react';
-import Article from './Article';
+import React from "react";
+import Article from "./Article";
 
 function Nav({articles}) {
   let revart = articles.slice().reverse();
   return (
-    <nav className='Nav'>
+    <nav className="Nav">
       <div>
         <h4>Advertisement</h4>
       </div>
@@ -15,7 +15,7 @@ function Nav({articles}) {
         title={revart[1].title}
         image={revart[1].image}
         text={revart[1].text}
-        location='nav__featuredPosts'
+        location="nav__featuredPosts"
         />
       </div>
       </div>

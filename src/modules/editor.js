@@ -1,4 +1,4 @@
-const UPLOAD = 'editor/UPLOAD'
+const UPLOAD = "editor/UPLOAD"
 
 // action creators
 export const upload = (file, title, text) => ({
@@ -12,14 +12,14 @@ export const upload = (file, title, text) => ({
 
 const initialState = {
   uploader: {
-    ufile: '',
-    utitle: '',
-    utext: ''
+    ufile: "",
+    utitle: "",
+    utext: ""
   },
   editor: {
-    efile: '',
-    etitle: '',
-    etext: ''
+    efile: "",
+    etitle: "",
+    etext: ""
   },
 }
 

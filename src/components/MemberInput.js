@@ -6,14 +6,14 @@ export default function MemberInput() {
     <>
       <div>
         <input
-        type='text' className='user_id--input'
-        placeholder='ID' // onChange={(e) => store.dispatch(inputID(e.target.value))}
+        type="text" className="user_id--input"
+        placeholder="ID" // onChange={(e) => store.dispatch(inputID(e.target.value))}
         />
       </div>
       <div>
         <input
-        type='text' className='password--input'
-        placeholder='Password' // onChange={(e) => store.dispatch(inputPass(e.target.value))}
+        type="text" className="password--input"
+        placeholder="Password" // onChange={(e) => store.dispatch(inputPass(e.target.value))}
         />
       </div>
     </>

@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
 function Header({ loggedin, id, moveFunc }) {
   const onClickMoveToIndexPage = () => {
-    moveFunc('index');
+    moveFunc("index");
   }
   const onClickMoveToLoginPage = () => {
-    moveFunc('login');
+    moveFunc("login");
   }
   const onClickMoveToSignupPage = () => {
-    moveFunc('signup');
+    moveFunc("signup");
   }
   return (
     <>
       <span className="header__left">
-        <span className='hamburger'>🍔</span>
-        <span className='header--logo'
+        <span className="hamburger">🍔</span>
+        <span className="header--logo"
         onClick={onClickMoveToIndexPage}>G9</span>
       </span>
       <span className="header__middle">
@@ -27,9 +27,9 @@ function Header({ loggedin, id, moveFunc }) {
         {loggedin 
         ? <>Welcome, {id}!</>
         : <>
-          <button className='login--button'
+          <button className="login--button"
           onClick={onClickMoveToLoginPage}>Login</button>
-          <button className='signup--button'
+          <button className="signup--button"
           onClick={onClickMoveToSignupPage}>Sign-up</button>
         </>}
       </span>

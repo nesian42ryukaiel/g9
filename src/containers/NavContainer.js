@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import Nav from "../components/Nav";
 // import { movePage } from "../modules/pages";
 

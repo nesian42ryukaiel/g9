@@ -1,9 +1,9 @@
-import React from 'react';
-const wm = 'Lucas Yew';
+import React from "react";
+const wm = "Lucas Yew";
 
 function Footer() {
   return(
-    <footer className='Footer'>
+    <footer className="Footer">
       <em>Webmaster: {wm}</em>
     </footer>
   );

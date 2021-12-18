@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import App from '../components/App';
+import React, {useState} from "react";
+import { useSelector, useDispatch } from "react-redux";
+import App from "../components/App";
 
 function AppContainer() {
   const { currentPage } = useSelector(state => ({
