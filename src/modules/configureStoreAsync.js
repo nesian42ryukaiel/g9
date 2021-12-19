@@ -39,8 +39,9 @@ export default function configureStoreAsync() {
         .get(pServerLink + "/" + appdata)
         .then(function (response) {
           console.log("RSP: " + JSON.stringify(response));
-          console.log("RSD: " + response.data);
-          initialState = response.data;
+          console.log("RSD: " + JSON.stringify(response.data));
+          initialState = JSON.parse(JSON.stringify(response.data));
+          console.log("new initialState: " + initialState)
         })
         .catch(function (error) {
           console.log(error);
