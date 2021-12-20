@@ -30,7 +30,7 @@ const initialStoreState = {
 
 export default function configureStoreAsync() {
   return new Promise((resolve) => {
-    const initialState = initialStoreState;//default initial store state
+    let initialState = initialStoreState;//default initial store state
     try {
       // do some async stuff here to manipulate initial state
       // ...like read from local disk etc. 
