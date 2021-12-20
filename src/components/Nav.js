@@ -12,9 +12,9 @@ function Nav({articles}) {
       <h4>Featured Posts</h4>
       <div>
         <Article
-        title={revart[1].title}
-        image={revart[1].image}
-        text={revart[1].text}
+        title={revart[0].title}
+        image={revart[0].image}
+        text={revart[0].text}
         location="nav__featuredPosts"
         />
       </div>
