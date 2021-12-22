@@ -28,6 +28,8 @@ const initialStoreState = {
   }
 };
 
+// So apparently axios already returns a JS Promise, huh...
+
 export default function configureStoreAsync() {
   return new Promise((resolve) => {
     let initialState = initialStoreState;//default initial store state
