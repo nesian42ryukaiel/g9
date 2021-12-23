@@ -1,3 +1,6 @@
+import axios from "axios";
+import { pServerLink, artdata } from "../pseudoLinks/links";
+
 const MOVE = "pages/MOVE";
 
 export const movePage = (page) => ({
@@ -15,12 +18,14 @@ const articleFormat = (titleText, imageURL, textText) => ({
 
 const initialState = {
   currentPage: "index",
-  articles: [
-    articleFormat("Aum", "./mock/aum.png", "The letter Aum."),
-    articleFormat("Internet", "./mock/internet.png", "The basics of the Internet."),
-    articleFormat("OOP", "./mock/oop.png", "Object Oriented Programming."),
-    articleFormat("Link-test", "./logo192.png", "...in the public directory!"),
-  ]
+  articles: axios
+    .get(pServerLink + "/" + artdata)
+    .then(function (response) {
+      console.log("pages reducer got a "+ typeof response.data +": " + JSON.stringify(response.data));
+      let artarray = JSON.parse(JSON.stringify(response.data));
+      // console.log(artarray[1].text)
+      return artarray;
+    }) || []
 };
 
 export default function pages(state = initialState, action) {
