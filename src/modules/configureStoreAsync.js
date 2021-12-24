@@ -40,10 +40,10 @@ export default function configureStoreAsync() {
       axios
         .get(pServerLink + "/" + artdata)
         .then(function (response) {
-          console.log("RSP: " + JSON.stringify(response));
-          console.log("RSD: " + JSON.stringify(response.data));
+          // console.log("RSP: " + JSON.stringify(response));
+          // console.log("RSD: " + JSON.stringify(response.data));
           initialState.pages.articles = JSON.parse(JSON.stringify(response.data));
-          console.log("new initialState: " + initialState)
+          // console.log("new initialState: " + initialState)
         })
         .catch(function (error) {
           console.log(error);
@@ -51,7 +51,7 @@ export default function configureStoreAsync() {
         .finally(function () {
           // always executed
           const store = createStore(rootReducer, initialState);
-          console.log(store.getState());
+          // console.log(store.getState());
           resolve(store);
         });
     } catch (error) {
