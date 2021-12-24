@@ -2,7 +2,7 @@ import React from "react";
 import Article from "./Article";
 
 function Main({ articles, loggedin, move }) {
-  let revart = articles.slice().reverse();
+  let revart = (articles.length > 0) ? articles.slice().reverse() : [];
   const newPost = () => {
     move("upload");
   }

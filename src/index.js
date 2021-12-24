@@ -11,6 +11,17 @@ import "./css/index.css";
 
 const store = createStore(rootReducer); // should I move this to configureStoreAsync?
 
+console.log(store.getState());
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
 // configureStoreAsync().then(result => {
 //   const store = result;
 //   console.log(store.getState());
@@ -24,11 +35,15 @@ const store = createStore(rootReducer); // should I move this to configureStoreA
 //   );
 // });
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <AppContainer />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+// createStore(rootReducer).then(result => {
+//   const store = result;
+//   console.log(store.getState());
+//   return ReactDOM.render(
+//     <React.StrictMode>
+//       <Provider store={store}>
+//         <AppContainer />
+//       </Provider>
+//     </React.StrictMode>,
+//     document.getElementById("root")
+//   );
+// });
