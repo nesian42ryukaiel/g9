@@ -1,3 +1,6 @@
+import axios from "axios";
+import { pServerLink, memdata } from "../pseudoLinks/links";
+
 const INPUT_ID = "membership/ID";
 const INPUT_PASS = "membership/PASS";
 const LOGIN = "membership/LOGIN";
@@ -33,6 +36,7 @@ const initialState = {
 
 function isMember(state) {
   let auth = [false, false];
+  // replace with axios checking on memdata
   for (const [key, value] of state.members) {
     if (state.id === key) {
       auth[0] = true;
