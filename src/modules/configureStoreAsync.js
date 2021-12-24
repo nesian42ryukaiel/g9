@@ -1,6 +1,6 @@
 import { createStore } from "redux"
 import rootReducer from "../modules/rootReducer";
-import { pServerLink, appdata } from "../pseudoLinks/links";
+import { pServerLink, artdata } from "../pseudoLinks/links";
 import axios from "axios";
 
 const initialStoreState = {
@@ -38,11 +38,11 @@ export default function configureStoreAsync() {
       // ...like read from local disk etc. 
       // This is again wrapped in its own Promises.
       axios
-        .get(pServerLink + "/" + appdata)
+        .get(pServerLink + "/" + artdata)
         .then(function (response) {
           console.log("RSP: " + JSON.stringify(response));
           console.log("RSD: " + JSON.stringify(response.data));
-          initialState = JSON.parse(JSON.stringify(response.data));
+          initialState.pages.articles = JSON.parse(JSON.stringify(response.data));
           console.log("new initialState: " + initialState)
         })
         .catch(function (error) {

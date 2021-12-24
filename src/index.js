@@ -9,31 +9,30 @@ import "./css/index.css";
 
 // import serverLink from "./pseudoLinks/links"; // test purposes
 
-const store = createStore(rootReducer); // should I move this to configureStoreAsync?
+//const store = createStore(rootReducer); // should I move this to configureStoreAsync?
+//console.log(store.getState());
 
-console.log(store.getState());
+configureStoreAsync().then(result => {
+  const store = result;
+  console.log(store.getState());
+  return ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+});
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <AppContainer />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-
-// configureStoreAsync().then(result => {
-//   const store = result;
-//   console.log(store.getState());
-//   return ReactDOM.render(
-//     <React.StrictMode>
-//       <Provider store={store}>
-//         <AppContainer />
-//       </Provider>
-//     </React.StrictMode>,
-//     document.getElementById("root")
-//   );
-// });
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Provider store={store}>
+//       <AppContainer />
+//     </Provider>
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
 
 // createStore(rootReducer).then(result => {
 //   const store = result;

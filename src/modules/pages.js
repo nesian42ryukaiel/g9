@@ -18,14 +18,7 @@ const articleFormat = (titleText, imageURL, textText) => ({
 
 const initialState = {
   currentPage: "index",
-  articles: axios
-    .get(pServerLink + "/" + artdata)
-    .then(function (response) {
-      console.log("pages reducer got a "+ typeof response.data +": " + JSON.stringify(response.data));
-      let artarray = JSON.parse(JSON.stringify(response.data));
-      // console.log(artarray[1].text)
-      return artarray;
-    }) || []
+  articles: []
 };
 
 export default function pages(state = initialState, action) {
