@@ -31,7 +31,7 @@ const initialState = {
   loggedin: false,
   id: "",
   password: "",
-  members: memberMap,
+  members: memberMap, // this property MUST BE GONE
 }
 
 function isMember(state) {
