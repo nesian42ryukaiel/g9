@@ -25,27 +25,40 @@ export const signup = () => ({
   type: SIGNUP,
 });
 
-const memberMap = new Map();
+// const memberMap = new Map();
 
 const initialState = {
   loggedin: false,
   id: "",
   password: "",
-  members: memberMap, // this property MUST BE GONE
+  members: {}
 }
 
 function isMember(state) {
   let auth = [false, false];
   // replace with axios checking on memdata
-  for (const [key, value] of state.members) {
-    if (state.id === key) {
-      auth[0] = true;
-      if (state.password === value.mpw) {
-        auth[1] = true;
-      }
-      break;
-    }
+  let data = {
+    id: state.id,
+    pw: state.pw
   }
+  axios
+  .post(pServerLink + "/" + memdata,  JSON.stringify(data), {
+    headers: {
+      "Content-Type": `application/json`,
+    },
+  })
+  .then((res) => {
+    console.log(res); console.log(res.data);
+  });
+  // for (const [key, value] of state.members) {
+  //   if (state.id === key) {
+  //     auth[0] = true;
+  //     if (state.password === value.mpw) {
+  //       auth[1] = true;
+  //     }
+  //     break;
+  //   }
+  // }
   // for (let i = 0; i < state.members.length; i++) {
   //   if (state.id === state.members[i].mid) {
   //     auth[0] = true;
