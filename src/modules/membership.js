@@ -51,6 +51,7 @@ function isMember(state) {
   .get(pServerLink + "/auth", {headers : { 'Authorization' : Basic }})
   .then((res) => {
     console.log(res); console.log(res.data);
+    auth[0] = res.data[0]; auth[1] = res.data[1];
   });
   return auth;
 }
