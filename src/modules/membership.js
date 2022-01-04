@@ -1,4 +1,5 @@
 import axios from "axios";
+import Base64 from "./Base64";
 import { pServerLink, memdata } from "../pseudoLinks/links";
 
 const INPUT_ID = "membership/ID";
@@ -38,17 +39,16 @@ function isMember(state) {
   const auth = [false, false];
   const mid = state.id;
   const mpw = state.password;
+  const tok = mid + ":" + mpw;
+  const hash = Base64.encode(tok);
+  const Basic = "Basic " + hash;
+  console.log(tok + " -> " + hash);
   // const data = new FormData();
   // data.append("id", state.id);
   // data.append("pw", state.password)
   // console.log(data);
   axios
-  .post(pServerLink + "/auth",  {}, {
-    auth: {
-      username: mid,
-      password: mpw
-    },
-  })
+  .get(pServerLink + "/auth", {headers : { 'Authorization' : Basic }})
   .then((res) => {
     console.log(res); console.log(res.data);
   });
