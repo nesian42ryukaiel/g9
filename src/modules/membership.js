@@ -35,7 +35,7 @@ const initialState = {
   members: {},
 };
 
-function isMember(state) {
+function isMember(state, applyAuth) {
   const auth = [false, false];
   const mid = state.id;
   const mpw = state.password;
@@ -50,8 +50,8 @@ function isMember(state) {
       console.log(res.data);
       auth[0] = res.data[0];
       auth[1] = res.data[1];
+      applyAuth(auth);
     });
-  return auth;
 }
 
 export default function membership(state = initialState, action) {
@@ -71,7 +71,13 @@ export default function membership(state = initialState, action) {
         console.log("You are already logged in!");
         return state;
       } else {
-        let auth = isMember(state);
+        let auth = [false, false];
+        isMember(state, (arg) => {
+          auth[0] = arg[0];
+          auth[1] = arg[1];
+          console.log("mid-callback: " + auth[0] + " / " + auth[1]);
+        });
+        console.log("post-callback: " + auth[0] + " / " + auth[1]);
         if (auth[0] && auth[1]) {
           console.log(`Welcome back, ${state.id}!`);
           return {
@@ -95,7 +101,11 @@ export default function membership(state = initialState, action) {
         console.log("You cannot sign up while logged in!");
         return state;
       } else {
-        let auth = isMember(state);
+        let auth = [];
+        isMember(state, (arg) => {
+          auth[0] = arg[0];
+          auth[1] = arg[1];
+        });
         if (auth[0]) {
           console.log("Member exists!");
           return state;
