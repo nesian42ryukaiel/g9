@@ -10,14 +10,14 @@ const SIGNUP = "membership/SIGNUP";
 export const inputID = (task) => ({
   type: INPUT_ID,
   payload: {
-    task
-  }
+    task,
+  },
 });
 export const inputPass = (task) => ({
   type: INPUT_PASS,
   payload: {
-    task
-  }
+    task,
+  },
 });
 export const login = () => ({
   type: LOGIN,
@@ -32,8 +32,8 @@ const initialState = {
   loggedin: false,
   id: "",
   password: "",
-  members: {}
-}
+  members: {},
+};
 
 function isMember(state) {
   const auth = [false, false];
@@ -43,16 +43,14 @@ function isMember(state) {
   const hash = Base64.encode(tok);
   const Basic = "Basic " + hash;
   console.log(tok + " -> " + hash);
-  // const data = new FormData();
-  // data.append("id", state.id);
-  // data.append("pw", state.password)
-  // console.log(data);
   axios
-  .get(pServerLink + "/auth", {headers : { 'Authorization' : Basic }})
-  .then((res) => {
-    console.log(res); console.log(res.data);
-    auth[0] = res.data[0]; auth[1] = res.data[1];
-  });
+    .get(pServerLink + "/auth", { headers: { Authorization: Basic } })
+    .then((res) => {
+      console.log(res);
+      console.log(res.data);
+      auth[0] = res.data[0];
+      auth[1] = res.data[1];
+    });
   return auth;
 }
 
@@ -61,12 +59,12 @@ export default function membership(state = initialState, action) {
     case INPUT_ID:
       return {
         ...state,
-        id: action.payload.task
+        id: action.payload.task,
       };
     case INPUT_PASS:
       return {
-      ...state,
-      password: action.payload.task
+        ...state,
+        password: action.payload.task,
       };
     case LOGIN:
       if (state.loggedin === true) {
@@ -80,7 +78,7 @@ export default function membership(state = initialState, action) {
             ...state,
             loggedin: true,
             // currentPage: "index"
-          }
+          };
         } else {
           let liblurb = "";
           if (!auth[0]) {
@@ -109,11 +107,11 @@ export default function membership(state = initialState, action) {
           const newkey = state.id;
           const newmem = {
             mid: "u/" + state.id,
-            mpw: state.password
+            mpw: state.password,
           };
           return {
             ...state,
-            members: state.members.set(newkey, newmem)
+            members: state.members.set(newkey, newmem),
           };
         }
       }
