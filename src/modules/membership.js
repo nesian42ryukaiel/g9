@@ -35,7 +35,7 @@ const initialState = {
   members: {},
 };
 
-function isMember(state, applyAuth) {
+function checkAuth(state, applyAuth) {
   const auth = [false, false];
   const mid = state.id;
   const mpw = state.password;
@@ -43,7 +43,7 @@ function isMember(state, applyAuth) {
   const hash = Base64.encode(tok);
   const Basic = "Basic " + hash;
   console.log(tok + " -> " + hash);
-  axios
+  return axios
     .get(pServerLink + "/auth", { headers: { Authorization: Basic } })
     .then((res) => {
       console.log(res);
@@ -72,29 +72,30 @@ export default function membership(state = initialState, action) {
         return state;
       } else {
         let auth = [false, false];
-        isMember(state, (arg) => {
+        checkAuth(state, (arg) => {
           auth[0] = arg[0];
           auth[1] = arg[1];
           console.log("mid-callback: " + auth[0] + " / " + auth[1]);
-        });
-        console.log("post-callback: " + auth[0] + " / " + auth[1]);
-        if (auth[0] && auth[1]) {
-          console.log(`Welcome back, ${state.id}!`);
-          return {
-            ...state,
-            loggedin: true,
-            // currentPage: "index"
-          };
-        } else {
-          let liblurb = "";
-          if (!auth[0]) {
-            liblurb += " ID does not exist.";
-          } else if (auth[0] && !auth[1]) {
-            liblurb += " Wrong password.";
+        }).then((result) => {
+          console.log("post-callback: " + auth[0] + " / " + auth[1]);
+          if (auth[0] && auth[1]) {
+            console.log(`Welcome back, ${state.id}!`);
+            return {
+              ...state,
+              loggedin: true,
+              // currentPage: "index"
+            };
+          } else {
+            let liblurb = "";
+            if (!auth[0]) {
+              liblurb += " ID does not exist.";
+            } else if (auth[0] && !auth[1]) {
+              liblurb += " Wrong password.";
+            }
+            console.log(`Login Failed!${liblurb}`);
+            return state;
           }
-          console.log(`Login Failed!${liblurb}`);
-          return state;
-        }
+        });
       }
     case SIGNUP:
       if (state.loggedin === true) {
@@ -102,7 +103,7 @@ export default function membership(state = initialState, action) {
         return state;
       } else {
         let auth = [];
-        isMember(state, (arg) => {
+        checkAuth(state, (arg) => {
           auth[0] = arg[0];
           auth[1] = arg[1];
         });
