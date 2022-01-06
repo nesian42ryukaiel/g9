@@ -125,7 +125,7 @@ export default function membership(state = initialState, action) {
               ...state,
               members: {
                 ...state.members,
-                newkey: newmem, // fixing here
+                [newkey]: newmem, // fixing here
               },
             };
           }
