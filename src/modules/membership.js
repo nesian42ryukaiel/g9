@@ -75,9 +75,9 @@ export default function membership(state = initialState, action) {
         checkAuth(state, (arg) => {
           auth[0] = arg[0];
           auth[1] = arg[1];
-          console.log("mid-callback: " + auth[0] + " / " + auth[1]);
+          // console.log("mid-callback: " + auth[0] + " / " + auth[1]);
         }).then((result) => {
-          console.log("post-callback: " + auth[0] + " / " + auth[1]);
+          // console.log("post-callback: " + auth[0] + " / " + auth[1]);
           if (auth[0] && auth[1]) {
             console.log(`Welcome back, ${state.id}!`);
             return {
@@ -102,29 +102,34 @@ export default function membership(state = initialState, action) {
         console.log("You cannot sign up while logged in!");
         return state;
       } else {
-        let auth = [];
+        let auth = [false, false];
         checkAuth(state, (arg) => {
           auth[0] = arg[0];
           auth[1] = arg[1];
+        }).then((result) => {
+          if (auth[0]) {
+            console.log("Member exists!");
+            return state;
+          } else if (state.id === "" || state.password === "") {
+            console.log("Please input new member properly!");
+            return state;
+          } else {
+            console.log(`Welcome to G9, ${state.id}!`);
+            const newkey = state.id;
+            const newmem = {
+              id: state.id,
+              pw: state.password,
+              name: "u/" + state.id,
+            };
+            return {
+              ...state,
+              members: {
+                ...state.members,
+                newkey: newmem, // fixing here
+              },
+            };
+          }
         });
-        if (auth[0]) {
-          console.log("Member exists!");
-          return state;
-        } else if (state.id === "" || state.password === "") {
-          console.log("Please input new member properly!");
-          return state;
-        } else {
-          console.log(`Welcome to G9, ${state.id}!`);
-          const newkey = state.id;
-          const newmem = {
-            mid: "u/" + state.id,
-            mpw: state.password,
-          };
-          return {
-            ...state,
-            members: state.members.set(newkey, newmem),
-          };
-        }
       }
     default:
       return state;
