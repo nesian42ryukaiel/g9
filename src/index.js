@@ -82,6 +82,14 @@ configureStoreAsync().then((result) => {
   );
 });
 
+/**
+ * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- *
+ * basic react-redux structure below
+ * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- * -=-|-=- *
+ */
+
+// const store = createStore(rootReducer);
+
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <Provider store={store}>
@@ -90,16 +98,3 @@ configureStoreAsync().then((result) => {
 //   </React.StrictMode>,
 //   document.getElementById("root")
 // );
-
-// createStore(rootReducer).then(result => {
-//   const store = result;
-//   console.log(store.getState());
-//   return ReactDOM.render(
-//     <React.StrictMode>
-//       <Provider store={store}>
-//         <AppContainer />
-//       </Provider>
-//     </React.StrictMode>,
-//     document.getElementById("root")
-//   );
-// });
