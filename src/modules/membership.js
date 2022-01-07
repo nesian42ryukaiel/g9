@@ -1,6 +1,6 @@
 import axios from "axios";
 import Base64 from "./Base64";
-import { pServerLink, memdata } from "../pseudoLinks/links";
+import { pServerLink } from "../pseudoLinks/links";
 
 const INPUT_ID = "membership/ID";
 const INPUT_PASS = "membership/PASS";
