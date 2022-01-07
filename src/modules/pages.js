@@ -1,24 +1,24 @@
-import axios from "axios";
-import { pServerLink, artdata } from "../pseudoLinks/links";
+// import axios from "axios";
+// import { pServerLink, artdata } from "../pseudoLinks/links";
 
 const MOVE = "pages/MOVE";
 
 export const movePage = (page) => ({
   type: MOVE,
   payload: {
-    page
-  }
+    page,
+  },
 });
 
-const articleFormat = (titleText, imageURL, textText) => ({
-  title: titleText,
-  image: imageURL,
-  text: textText
-});
+// const articleFormat = (titleText, imageURL, textText) => ({
+//   title: titleText,
+//   image: imageURL,
+//   text: textText
+// });
 
 const initialState = {
   currentPage: "index",
-  articles: []
+  articles: [],
 };
 
 export default function pages(state = initialState, action) {
@@ -26,10 +26,9 @@ export default function pages(state = initialState, action) {
     case MOVE:
       return {
         ...state,
-        currentPage: action.payload.page
+        currentPage: action.payload.page,
       };
     default:
       return state;
   }
 }
-
