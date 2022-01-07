@@ -42,12 +42,12 @@ function checkAuth(state, applyAuth) {
   const tok = mid + ":" + mpw;
   const hash = Base64.encode(tok);
   const Basic = "Basic " + hash;
-  console.log(tok + " -> " + hash);
+  // console.log(tok + " -> " + hash);
   return axios
     .get(pServerLink + "/auth", { headers: { Authorization: Basic } })
     .then((res) => {
-      console.log(res);
-      console.log(res.data);
+      // console.log(res);
+      // console.log(res.data);
       auth[0] = res.data[0];
       auth[1] = res.data[1];
       applyAuth(auth);
@@ -97,6 +97,7 @@ export default function membership(state = initialState, action) {
           }
         });
       }
+    // break;
     case SIGNUP:
       if (state.loggedin === true) {
         console.log("You cannot sign up while logged in!");
@@ -131,6 +132,7 @@ export default function membership(state = initialState, action) {
           }
         });
       }
+    // break;
     default:
       return state;
   }
