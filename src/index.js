@@ -8,34 +8,14 @@ import { pServerLink, artdata } from "./pseudoLinks/links";
 import axios from "axios";
 import "./css/index.css";
 
-const initialStoreState = {
-  editor: {
-    uploader: {
-      ufile: "",
-      utitle: "",
-      utext: "",
-    },
-    editor: {
-      efile: "",
-      etitle: "",
-      etext: "",
-    },
-  },
-  membership: {
-    loggedin: false,
-    id: "",
-    password: "",
-    members: {},
-  },
-  pages: {
-    currentPage: "index",
-    articles: [],
-  },
-};
-
 function configureStoreAsync() {
   return new Promise((resolve) => {
-    let initialState = initialStoreState;
+    let initialState = {
+      pages: {
+        currentPage: "index",
+        articles: [],
+      },
+    };
     try {
       axios
         .get(pServerLink + "/" + artdata)
