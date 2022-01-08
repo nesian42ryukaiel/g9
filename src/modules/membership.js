@@ -30,7 +30,7 @@ export const signup = () => ({
 // const memberMap = new Map();
 
 const initialState = {
-  mauth: [false, false],
+  mauth: [false, false], // should I actually keep it here...?
   mlogin: false,
   mid: "",
   mpw: "",
