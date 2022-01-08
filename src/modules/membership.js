@@ -14,6 +14,7 @@ export const inputID = (task) => ({
   },
 });
 export const inputPass = (task) => ({
+  // might Base64.encode() here
   type: INPUT_PASS,
   payload: {
     task,
