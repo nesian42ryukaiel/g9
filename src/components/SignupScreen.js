@@ -4,60 +4,79 @@ import React from "react";
 // import SignupButton from "./SignupButton";
 
 export default function SignupScreen({
-  onInputID, onInputPass, onLogin, onSignup, loggedin, afterSuccess}) {
-  const onChangeUserID = e => {
+  onInputID,
+  onInputPass,
+  onLogin,
+  onSignup,
+  loggedin,
+  afterSuccess,
+}) {
+  const onChangeUserID = (e) => {
     onInputID(e.target.value);
-  }
-  const onChangeUserPW = e => {
+  };
+  const onChangeUserPW = (e) => {
     onInputPass(e.target.value);
-  }
+  };
   const onClickLogin = () => {
+    // do async checkAuth here, then...
     onLogin();
-  }
+  };
   const onClickSignup = () => {
+    // async
     onSignup();
-  }
+  };
   const ifLoggedIn = () => {
     if (loggedin) {
-      console.log("passed!")
+      console.log("passed!");
       afterSuccess("index");
     }
-  }
+  };
   return (
     <main className="SignupScreen centralize corefunc">
-      {loggedin
-      ? <>
+      {loggedin ? (
+        <>
           <div>
             <p>Success!</p>
-            <p><strong onClick={ifLoggedIn} style={{color: "#aaaaff"}}>Click</strong> to return to the main page.</p>
+            <p>
+              <strong onClick={ifLoggedIn} style={{ color: "#aaaaff" }}>
+                Click
+              </strong>{" "}
+              to return to the main page.
+            </p>
           </div>
         </>
-      : <>
+      ) : (
+        <>
           <div className="signup__memberInput">
             <div>
               <input
-              type="text" className="user_id--input"
-              placeholder="ID" onChange={onChangeUserID}
+                type="text"
+                className="user_id--input"
+                placeholder="ID"
+                onChange={onChangeUserID}
               />
             </div>
             <div>
               <input
-              type="password" className="password--input"
-              placeholder="Password" onChange={onChangeUserPW}
+                type="password"
+                className="password--input"
+                placeholder="Password"
+                onChange={onChangeUserPW}
               />
             </div>
           </div>
           <div className="memberInput">
             <span>
-              <button className="login--button"
-              onClick={onClickLogin}>Login</button>
-              <button className="signup--button"
-              onClick={onClickSignup}>Sign-up</button>
+              <button className="login--button" onClick={onClickLogin}>
+                Login
+              </button>
+              <button className="signup--button" onClick={onClickSignup}>
+                Sign-up
+              </button>
             </span>
           </div>
         </>
-      }
-      
+      )}
     </main>
   );
 }
