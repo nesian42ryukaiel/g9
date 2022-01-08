@@ -4,11 +4,12 @@ import React from "react";
 // import SignupButton from "./SignupButton";
 
 export default function SignupScreen({
+  authentication,
+  isloggedin,
   onInputID,
   onInputPass,
   onLogin,
   onSignup,
-  loggedin,
   afterSuccess,
 }) {
   const onChangeUserID = (e) => {
@@ -26,14 +27,14 @@ export default function SignupScreen({
     onSignup();
   };
   const ifLoggedIn = () => {
-    if (loggedin) {
+    if (isloggedin) {
       console.log("passed!");
       afterSuccess("index");
     }
   };
   return (
     <main className="SignupScreen centralize corefunc">
-      {loggedin ? (
+      {isloggedin ? (
         <>
           <div>
             <p>Success!</p>
