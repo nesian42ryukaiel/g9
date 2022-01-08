@@ -1,3 +1,7 @@
+import axios from "axios";
+import Base64 from "./Base64";
+import { pServerLink } from "../pseudoLinks/links";
+
 export default function checkAuth(state, applyAuth) {
   const auth = [false, false];
   const mid = state.id;
