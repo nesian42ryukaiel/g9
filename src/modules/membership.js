@@ -30,10 +30,11 @@ export const signup = () => ({
 // const memberMap = new Map();
 
 const initialState = {
-  loggedin: false,
-  id: "",
-  password: "",
-  members: {},
+  mauth: [false, false],
+  mlogin: false,
+  mid: "",
+  mpw: "",
+  members: {}, // this should be gone in some way or another
 };
 
 // function checkAuth(state, applyAuth) {
@@ -68,7 +69,7 @@ export default function membership(state = initialState, action) {
         password: action.payload.task,
       };
     case LOGIN:
-      if (state.loggedin === true) {
+      if (state.mlogin === true) {
         console.log("You are already logged in!");
         return state;
       } else {
@@ -80,7 +81,7 @@ export default function membership(state = initialState, action) {
         }).then((result) => {
           // console.log("post-callback: " + auth[0] + " / " + auth[1]);
           if (auth[0] && auth[1]) {
-            console.log(`Welcome back, ${state.id}!`);
+            console.log(`Welcome back, ${state.mid}!`);
             return {
               ...state,
               loggedin: true,
@@ -100,7 +101,7 @@ export default function membership(state = initialState, action) {
       }
     // break;
     case SIGNUP:
-      if (state.loggedin === true) {
+      if (state.mlogin === true) {
         console.log("You cannot sign up while logged in!");
         return state;
       } else {
@@ -112,16 +113,16 @@ export default function membership(state = initialState, action) {
           if (auth[0]) {
             console.log("Member exists!");
             return state;
-          } else if (state.id === "" || state.password === "") {
+          } else if (state.mid === "" || state.mpw === "") {
             console.log("Please input new member properly!");
             return state;
           } else {
-            console.log(`Welcome to G9, ${state.id}!`);
-            const newkey = state.id;
+            console.log(`Welcome to G9, ${state.mid}!`);
+            const newkey = state.mid;
             const newmem = {
-              id: state.id,
-              pw: state.password,
-              name: "u/" + state.id,
+              id: state.mid,
+              pw: state.mpw,
+              name: "u/" + state.mid,
             };
             return {
               ...state,
