@@ -4,8 +4,8 @@ import { pServerLink } from "../pseudoLinks/links";
 
 export default function checkAuth(state, applyAuth) {
   const auth = [false, false];
-  const mid = state.id;
-  const mpw = state.password;
+  const mid = state.mid;
+  const mpw = state.mpw;
   const tok = mid + ":" + mpw;
   const hash = Base64.encode(tok);
   const Basic = "Basic " + hash;

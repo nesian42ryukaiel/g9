@@ -1,4 +1,5 @@
 import React from "react";
+import checkAuth from "../modules/checkAuth";
 // import MemberInput from "./MemberInput";
 // import LoginButton from "./LoginButton";
 // import SignupButton from "./SignupButton";
