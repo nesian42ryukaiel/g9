@@ -7,6 +7,8 @@ import checkAuth from "../modules/checkAuth";
 export default function SignupScreen({
   authentication,
   isloggedin,
+  reqid,
+  reqpw,
   onInputID,
   onInputPass,
   onLogin,
@@ -20,12 +22,24 @@ export default function SignupScreen({
     onInputPass(e.target.value);
   };
   const onClickLogin = () => {
-    // do async checkAuth here, then...
-    onLogin();
+    const loginAuth = [false, false];
+    checkAuth(reqid, reqpw, loginAuth).then((res) => {
+      if (loginAuth[0] && loginAuth[1]) {
+        onLogin();
+      } else {
+        alert("Login failed!");
+      }
+    });
   };
   const onClickSignup = () => {
-    // async
-    onSignup();
+    const signupAuth = [false, false];
+    checkAuth(reqid, reqpw, signupAuth).then((res) => {
+      if (loginAuth[0] && loginAuth[1]) {
+        onSignup();
+      } else {
+        alert("Signup failed!");
+      }
+    });
   };
   const ifLoggedIn = () => {
     if (isloggedin) {
