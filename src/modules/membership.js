@@ -73,31 +73,10 @@ export default function membership(state = initialState, action) {
         console.log("You are already logged in!");
         return state;
       } else {
-        let auth = [false, false];
-        checkAuth(state, (arg) => {
-          auth[0] = arg[0];
-          auth[1] = arg[1];
-          // console.log("mid-callback: " + auth[0] + " / " + auth[1]);
-        }).then((result) => {
-          // console.log("post-callback: " + auth[0] + " / " + auth[1]);
-          if (auth[0] && auth[1]) {
-            console.log(`Welcome back, ${state.mid}!`);
-            return {
-              ...state,
-              loggedin: true,
-              // currentPage: "index"
-            };
-          } else {
-            let liblurb = "";
-            if (!auth[0]) {
-              liblurb += " ID does not exist.";
-            } else if (auth[0] && !auth[1]) {
-              liblurb += " Wrong password.";
-            }
-            console.log(`Login Failed!${liblurb}`);
-            return state;
-          }
-        });
+        return {
+          ...state,
+          loggedin: true,
+        };
       }
     // break;
     case SIGNUP:
@@ -105,36 +84,21 @@ export default function membership(state = initialState, action) {
         console.log("You cannot sign up while logged in!");
         return state;
       } else {
-        let auth = [false, false];
-        checkAuth(state, (arg) => {
-          auth[0] = arg[0];
-          auth[1] = arg[1];
-        }).then((result) => {
-          if (auth[0]) {
-            console.log("Member exists!");
-            return state;
-          } else if (state.mid === "" || state.mpw === "") {
-            console.log("Please input new member properly!");
-            return state;
-          } else {
-            console.log(`Welcome to G9, ${state.mid}!`);
-            const newkey = state.mid;
-            const newmem = {
-              id: state.mid,
-              pw: state.mpw,
-              name: "u/" + state.mid,
-            };
-            return {
-              ...state,
-              members: {
-                ...state.members,
-                [newkey]: newmem, // fixing here
-              },
-            };
-          }
-        });
+        console.log(`Welcome to G9, ${state.mid}!`);
+        const newkey = state.mid;
+        const newmem = {
+          id: state.mid,
+          pw: state.mpw,
+          name: "u/" + state.mid,
+        };
+        return {
+          ...state,
+          members: {
+            ...state.members,
+            [newkey]: newmem, // fixing here
+          },
+        };
       }
-    // break;
     default:
       return state;
   }
