@@ -75,7 +75,7 @@ export default function membership(state = initialState, action) {
       } else {
         return {
           ...state,
-          loggedin: true,
+          mlogin: true,
         };
       }
     // break;

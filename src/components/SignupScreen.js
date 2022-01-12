@@ -16,24 +16,26 @@ export default function SignupScreen({
   afterSuccess,
 }) {
   const onChangeUserID = (e) => {
-    console.log("changing user id to: " + e.target.value);
     onInputID(e.target.value);
-    console.log("-> " + reqid);
   };
   const onChangeUserPW = (e) => {
-    console.log("changing user pw to: " + e.target.value);
     onInputPass(e.target.value);
-    console.log("-> " + reqpw);
   };
   const onClickLogin = () => {
-    const loginAuth = [false, false];
-    checkAuth(reqid, reqpw, loginAuth).then((res) => {
-      if (loginAuth[0] && loginAuth[1]) {
-        onLogin();
-      } else {
-        alert("Login failed!");
-      }
-    });
+    console.log(isloggedin); // seems this supposed bool cannot be salvaged
+    if (isloggedin) {
+      alert("Already logged in!");
+      return;
+    } else {
+      const loginAuth = [false, false];
+      checkAuth(reqid, reqpw, loginAuth).then((res) => {
+        if (loginAuth[0] && loginAuth[1]) {
+          onLogin();
+        } else {
+          alert("Login failed!");
+        }
+      });
+    }
   };
   const onClickSignup = () => {
     const signupAuth = [false, false];
