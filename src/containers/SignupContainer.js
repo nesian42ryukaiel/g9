@@ -5,9 +5,9 @@ import { inputID, inputPass, login, signup } from "../modules/membership";
 import { movePage } from "../modules/pages";
 
 function SignupContainer() {
-  const { authentication, isloggedin, reqid, reqpw } = useSelector((state) => ({
+  const { authentication, loggedin, reqid, reqpw } = useSelector((state) => ({
     authentication: state.membership.mauth,
-    isloggedin: state.membership.mlogin,
+    loggedin: state.membership.mlogin,
     reqid: state.membership.mid,
     reqpw: state.membership.mpw,
   }));
@@ -20,7 +20,7 @@ function SignupContainer() {
   return (
     <SignupScreen
       authentication={authentication}
-      loggedin={isloggedin}
+      loggedin={loggedin}
       reqid={reqid}
       reqpw={reqpw}
       onInputID={onInputID}

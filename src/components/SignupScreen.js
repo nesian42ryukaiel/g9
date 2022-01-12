@@ -6,7 +6,7 @@ import checkAuth from "../modules/checkAuth";
 
 export default function SignupScreen({
   authentication,
-  isloggedin,
+  loggedin,
   reqid,
   reqpw,
   onInputID,
@@ -22,8 +22,7 @@ export default function SignupScreen({
     onInputPass(e.target.value);
   };
   const onClickLogin = () => {
-    console.log(isloggedin); // seems this supposed bool cannot be salvaged
-    if (isloggedin) {
+    if (loggedin) {
       alert("Already logged in!");
       return;
     } else {
@@ -40,7 +39,7 @@ export default function SignupScreen({
   const onClickSignup = () => {
     const signupAuth = [false, false];
     checkAuth(reqid, reqpw, signupAuth).then((res) => {
-      if (signupAuth[0] && signupAuth[1]) {
+      if (!signupAuth[0]) {
         onSignup();
       } else {
         alert("Signup failed!");
@@ -48,14 +47,14 @@ export default function SignupScreen({
     });
   };
   const ifLoggedIn = () => {
-    if (isloggedin) {
+    if (loggedin) {
       console.log("passed!");
       afterSuccess("index");
     }
   };
   return (
     <main className="SignupScreen centralize corefunc">
-      {isloggedin ? (
+      {loggedin ? (
         <>
           <div>
             <p>Success!</p>
