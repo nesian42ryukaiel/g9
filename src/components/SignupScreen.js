@@ -16,10 +16,14 @@ export default function SignupScreen({
   afterSuccess,
 }) {
   const onChangeUserID = (e) => {
+    console.log("changing user id to: " + e.target.value);
     onInputID(e.target.value);
+    console.log("-> " + reqid);
   };
   const onChangeUserPW = (e) => {
+    console.log("changing user pw to: " + e.target.value);
     onInputPass(e.target.value);
+    console.log("-> " + reqpw);
   };
   const onClickLogin = () => {
     const loginAuth = [false, false];
@@ -34,7 +38,7 @@ export default function SignupScreen({
   const onClickSignup = () => {
     const signupAuth = [false, false];
     checkAuth(reqid, reqpw, signupAuth).then((res) => {
-      if (loginAuth[0] && loginAuth[1]) {
+      if (signupAuth[0] && signupAuth[1]) {
         onSignup();
       } else {
         alert("Signup failed!");

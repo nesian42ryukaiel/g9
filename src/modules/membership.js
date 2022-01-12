@@ -61,12 +61,12 @@ export default function membership(state = initialState, action) {
     case INPUT_ID:
       return {
         ...state,
-        id: action.payload.task,
+        mid: action.payload.task,
       };
     case INPUT_PASS:
       return {
         ...state,
-        password: action.payload.task,
+        mpw: action.payload.task,
       };
     case LOGIN:
       if (state.mlogin === true) {
