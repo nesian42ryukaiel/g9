@@ -2,6 +2,8 @@
 // import Base64 from "./Base64";
 // import { pServerLink } from "../pseudoLinks/links";
 
+import Base64 from "./Base64";
+
 const INPUT_ID = "membership/ID";
 const INPUT_PASS = "membership/PASS";
 const LOGIN = "membership/LOGIN";
@@ -13,13 +15,15 @@ export const inputID = (task) => ({
     task,
   },
 });
-export const inputPass = (task) => ({
-  // might Base64.encode() here
-  type: INPUT_PASS,
-  payload: {
-    task,
-  },
-});
+export const inputPass = (task) => {
+  task = Base64.encode(task);
+  return {
+    type: INPUT_PASS,
+    payload: {
+      task,
+    },
+  };
+};
 export const login = () => ({
   type: LOGIN,
 });
