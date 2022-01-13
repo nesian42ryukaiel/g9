@@ -76,6 +76,7 @@ export default function membership(state = initialState, action) {
         return {
           ...state,
           mlogin: true,
+          mpw: "",
         };
       }
     // break;
