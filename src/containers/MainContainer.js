@@ -4,19 +4,13 @@ import Main from "../components/Main";
 import { movePage } from "../modules/pages";
 
 function MainContainer() {
-  const { articles, loggedin } = useSelector(state => ({
+  const { articles, loggedin } = useSelector((state) => ({
     articles: state.pages.articles,
-    loggedin: state.membership.loggedin
+    loggedin: state.membership.mlogin,
   }));
   const dispatch = useDispatch();
   const onMovePage = (page) => dispatch(movePage(page));
-  return (
-    <Main
-    articles={articles}
-    loggedin={loggedin}
-    move={onMovePage}
-    />
-  );
+  return <Main articles={articles} loggedin={loggedin} move={onMovePage} />;
 }
 
 export default MainContainer;
