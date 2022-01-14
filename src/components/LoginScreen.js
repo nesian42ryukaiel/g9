@@ -12,7 +12,6 @@ export default function LoginScreen({
   onInputID,
   onInputPass,
   onLogin,
-  onSignup,
   move,
 }) {
   const onChangeUserID = (e) => {
@@ -36,21 +35,14 @@ export default function LoginScreen({
       });
     }
   };
-  const onClickSignup = () => {
-    const signupAuth = [false, false];
-    checkAuth(reqid, reqpw, signupAuth).then((res) => {
-      if (!signupAuth[0]) {
-        onSignup();
-      } else {
-        alert("Signup failed!");
-      }
-    });
-  };
   const ifLoggedIn = () => {
     if (loggedin) {
       console.log("passed!");
       move("index");
     }
+  };
+  const cancelAndGoBack = () => {
+    move("index");
   };
   return (
     <main className="SignupScreen centralize corefunc">
@@ -88,14 +80,14 @@ export default function LoginScreen({
           </div>
           <div className="memberInput">
             <span>
-              <button className="login--button" onClick={onClickLogin}>
-                Login
+              <button className="cancel--button" onClick={cancelAndGoBack}>
+                Cancel
               </button>
               <button
-                className="signup--button focus--button"
-                onClick={onClickSignup}
+                className="login--button focus--button"
+                onClick={onClickLogin}
               >
-                Sign-up
+                Login
               </button>
             </span>
           </div>

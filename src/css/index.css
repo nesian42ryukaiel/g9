@@ -102,6 +102,7 @@ span {
   margin: 4px;
 }
 button,
+.cancel--button,
 .input--button,
 .input--file {
   padding: 4px;

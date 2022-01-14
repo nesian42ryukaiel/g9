@@ -15,7 +15,6 @@ function LoginContainer() {
   const onInputID = (input) => dispatch(inputID(input));
   const onInputPass = (input) => dispatch(inputPass(input));
   const onLogin = () => dispatch(login());
-  const onSignup = () => dispatch(signup());
   const move = (page) => dispatch(movePage(page));
   return (
     <LoginScreen
@@ -26,7 +25,6 @@ function LoginContainer() {
       onInputID={onInputID}
       onInputPass={onInputPass}
       onLogin={onLogin}
-      onSignup={onSignup}
       move={move}
     />
   );
