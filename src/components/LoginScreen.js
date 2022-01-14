@@ -13,7 +13,7 @@ export default function LoginScreen({
   onInputPass,
   onLogin,
   onSignup,
-  afterSuccess,
+  move,
 }) {
   const onChangeUserID = (e) => {
     onInputID(e.target.value);
@@ -49,7 +49,7 @@ export default function LoginScreen({
   const ifLoggedIn = () => {
     if (loggedin) {
       console.log("passed!");
-      afterSuccess("index");
+      move("index");
     }
   };
   return (

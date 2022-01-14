@@ -16,7 +16,7 @@ function SignupContainer() {
   const onInputPass = (input) => dispatch(inputPass(input));
   const onLogin = () => dispatch(login());
   const onSignup = () => dispatch(signup());
-  const afterSuccess = (page) => dispatch(movePage(page));
+  const move = (page) => dispatch(movePage(page));
   return (
     <SignupScreen
       authentication={authentication}
@@ -27,7 +27,7 @@ function SignupContainer() {
       onInputPass={onInputPass}
       onLogin={onLogin}
       onSignup={onSignup}
-      afterSuccess={afterSuccess}
+      move={move}
     />
   );
 }

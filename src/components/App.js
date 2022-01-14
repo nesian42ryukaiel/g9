@@ -5,10 +5,11 @@ import NavContainer from "../containers/NavContainer";
 import Footer from "../components/Footer";
 import MainContainer from "../containers/MainContainer";
 import UploadContainer from "../containers/UploaderContainer";
+import LoginContainer from "../containers/LoginContainer";
 import SignupContainer from "../containers/SignupContainer";
 
 function defaultLayout(page) {
-  return(
+  return (
     <div className="App">
       <HeaderContainer />
       {page}
@@ -18,17 +19,15 @@ function defaultLayout(page) {
   );
 }
 
-function App({page, move}) {
+function App({ page, move }) {
   const pagelist = {
-    "index": <MainContainer />,
-    "upload": <UploadContainer />,
-    "login": <SignupContainer />,
-    "signup": <SignupContainer />
-  }
+    index: <MainContainer />,
+    upload: <UploadContainer />,
+    login: <LoginContainer />,
+    signup: <SignupContainer />,
+  };
   // console.log("pagekey:", pagekey.page);
-  return (
-    defaultLayout(pagelist[page])
-  );
+  return defaultLayout(pagelist[page]);
 }
 
 export default App;
