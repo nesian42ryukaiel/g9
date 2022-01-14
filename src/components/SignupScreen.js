@@ -24,6 +24,9 @@ export default function SignupScreen({
     const signupAuth = [false, false];
     checkAuth(reqid, reqpw, signupAuth).then((res) => {
       if (!signupAuth[0]) {
+        // create new member object here
+        // then send it to be written in the server
+        // if successful run onSignup then
         onSignup();
       } else {
         alert("Signup failed!");
