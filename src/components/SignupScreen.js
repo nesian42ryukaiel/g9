@@ -32,11 +32,13 @@ export default function SignupScreen({
         // create new member object here
         const newkey = reqid;
         const newmem = {
-          id: reqid,
-          pw: reqpw,
-          name: reqnm,
+          [newkey]: {
+            id: reqid,
+            pw: reqpw,
+            name: reqnm,
+          },
         };
-        // then send it to be written in the server
+        // then send it to be written in the server (Object.assign()?)
         // if successful run onSignup then
         onSignup();
       } else {
