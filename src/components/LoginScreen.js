@@ -25,8 +25,8 @@ export default function LoginScreen({
       alert("Already logged in!");
       return;
     } else {
-      const loginAuth = [false, false];
-      checkAuth(reqid, reqpw, loginAuth).then((res) => {
+      const loginAuth = [false, false, false];
+      checkAuth(reqid, reqpw, "", loginAuth).then((res) => {
         if (loginAuth[0] && loginAuth[1]) {
           onLogin();
         } else {

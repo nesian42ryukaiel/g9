@@ -6,6 +6,7 @@ import Base64 from "./Base64";
 
 const INPUT_ID = "membership/ID";
 const INPUT_PASS = "membership/PASS";
+const INPUT_NAME = "membership/NAME";
 const LOGIN = "membership/LOGIN";
 const SIGNUP = "membership/SIGNUP";
 
@@ -24,6 +25,12 @@ export const inputPass = (task) => {
     },
   };
 };
+export const inputName = (task) => ({
+  type: INPUT_NAME,
+  payload: {
+    task,
+  },
+});
 export const login = () => ({
   type: LOGIN,
 });
@@ -38,6 +45,7 @@ const initialState = {
   mlogin: false,
   mid: "",
   mpw: "",
+  mname: "",
   members: {}, // this should be gone in some way or another
 };
 
@@ -71,6 +79,11 @@ export default function membership(state = initialState, action) {
       return {
         ...state,
         mpw: action.payload.task,
+      };
+    case INPUT_NAME:
+      return {
+        ...state,
+        mname: action.payload.task,
       };
     case LOGIN:
       if (state.mlogin === true) {

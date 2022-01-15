@@ -9,8 +9,10 @@ export default function SignupScreen({
   loggedin,
   reqid,
   reqpw,
+  reqnm,
   onInputID,
   onInputPass,
+  onInputName,
   onSignup,
   move,
 }) {
@@ -20,16 +22,25 @@ export default function SignupScreen({
   const onChangeUserPW = (e) => {
     onInputPass(e.target.value);
   };
+  const onChangeUserName = (e) => {
+    onInputName(e.target.value);
+  };
   const onClickSignup = () => {
-    const signupAuth = [false, false];
-    checkAuth(reqid, reqpw, signupAuth).then((res) => {
+    const signupAuth = [false, false, false];
+    checkAuth(reqid, reqpw, reqnm, signupAuth).then((res) => {
       if (!signupAuth[0]) {
         // create new member object here
+        const newkey = reqid;
+        const newmem = {
+          id: reqid,
+          pw: reqpw,
+          name: reqnm,
+        };
         // then send it to be written in the server
         // if successful run onSignup then
         onSignup();
       } else {
-        alert("Signup failed!");
+        alert("Signup failed! (extant ID)");
       }
     });
   };
@@ -73,6 +84,14 @@ export default function SignupScreen({
                 className="password--input"
                 placeholder="Password"
                 onChange={onChangeUserPW}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                className="user_name--input"
+                placeholder="Name"
+                onChange={onChangeUserName}
               />
             </div>
           </div>
