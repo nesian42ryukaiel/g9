@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import LoginScreen from "../components/LoginScreen";
-import { inputID, inputPass, login, signup } from "../modules/membership";
+import { inputID, inputPass, login } from "../modules/membership";
 import { movePage } from "../modules/pages";
 
 function LoginContainer() {

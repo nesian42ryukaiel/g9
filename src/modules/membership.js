@@ -103,19 +103,20 @@ export default function membership(state = initialState, action) {
         return state;
       } else {
         console.log(`Welcome to G9, ${state.mid}!`);
-        const newkey = state.mid;
-        const newmem = {
-          id: state.mid,
-          pw: state.mpw,
-          name: "u/" + state.mid,
-        };
-        return {
-          ...state,
-          members: {
-            ...state.members,
-            [newkey]: newmem, // fixing here
-          },
-        };
+        // const newkey = state.mid;
+        // const newmem = {
+        //   id: state.mid,
+        //   pw: state.mpw,
+        //   name: "u/" + state.mid,
+        // };
+        // return {
+        //   ...state,
+        //   members: {
+        //     ...state.members,
+        //     [newkey]: newmem, // fixing here
+        //   },
+        // };
+        return state;
       }
     default:
       return state;
