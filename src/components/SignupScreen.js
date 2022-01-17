@@ -1,5 +1,6 @@
 import React from "react";
 import checkAuth from "../modules/checkAuth";
+import registerMember from "../modules/registerMember";
 // import MemberInput from "./MemberInput";
 // import LoginButton from "./LoginButton";
 // import SignupButton from "./SignupButton";
@@ -39,6 +40,7 @@ export default function SignupScreen({
           },
         };
         // then send it to be written in the server (Object.assign()?)
+        registerMember(reqid, reqpw, reqnm);
         // if successful run onSignup then
         onSignup();
       } else {
