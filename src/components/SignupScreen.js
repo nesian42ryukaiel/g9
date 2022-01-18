@@ -6,7 +6,6 @@ import registerMember from "../modules/registerMember";
 // import SignupButton from "./SignupButton";
 
 export default function SignupScreen({
-  authentication,
   loggedin,
   reqid,
   reqpw,
@@ -28,13 +27,17 @@ export default function SignupScreen({
   };
   const onClickSignup = () => {
     const signupAuth = [false, false, false];
+    const doSignup = [false];
     checkAuth(reqid, reqpw, reqnm, signupAuth).then((res) => {
       if (!signupAuth[0]) {
-        registerMember(reqid, reqpw, reqnm).then((res) => {
-          console.log(res);
+        registerMember(reqid, reqpw, reqnm, doSignup).then((res) => {
+          if (doSignup[0]) {
+            console.log("Signup complete!");
+            onSignup();
+          } else {
+            alert("Error during registration!");
+          }
         });
-        // if successful run onSignup then
-        onSignup();
       } else {
         alert("Signup failed! (extant ID)");
       }
