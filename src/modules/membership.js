@@ -39,7 +39,6 @@ export const signup = () => ({
 });
 
 const initialState = {
-  mauth: [false, false], // should I actually keep it here...?
   mlogin: false,
   mid: "",
   mpw: "",

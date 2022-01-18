@@ -5,7 +5,6 @@ import checkAuth from "../modules/checkAuth";
 // import SignupButton from "./SignupButton";
 
 export default function LoginScreen({
-  authentication,
   loggedin,
   reqid,
   reqpw,
