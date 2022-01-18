@@ -12,10 +12,11 @@ export default function registerMember(id, pw, name) {
   };
   console.log(newmem);
   console.log(typeof newmem);
-  axios
+  return axios
     .post(pServerLink + "/auth", newmem)
     .then((res) => {
       console.log(res.data);
+      console.log("New member!");
     })
     .catch((error) => {
       console.log(error);

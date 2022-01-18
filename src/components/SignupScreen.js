@@ -30,17 +30,9 @@ export default function SignupScreen({
     const signupAuth = [false, false, false];
     checkAuth(reqid, reqpw, reqnm, signupAuth).then((res) => {
       if (!signupAuth[0]) {
-        // create new member object here
-        const newkey = reqid;
-        const newmem = {
-          [newkey]: {
-            id: reqid,
-            pw: reqpw,
-            name: reqnm,
-          },
-        };
-        // then send it to be written in the server (Object.assign()?)
-        registerMember(reqid, reqpw, reqnm);
+        registerMember(reqid, reqpw, reqnm).then((res) => {
+          console.log(res);
+        });
         // if successful run onSignup then
         onSignup();
       } else {
