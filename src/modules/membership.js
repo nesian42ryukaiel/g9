@@ -80,7 +80,12 @@ export default function membership(state = initialState, action) {
         return state;
       } else {
         alert(`Welcome to G9, ${state.mname}!`);
-        return state;
+        return {
+          ...state,
+          mid: "",
+          mpw: "",
+          mname: "",
+        };
       }
     default:
       return state;

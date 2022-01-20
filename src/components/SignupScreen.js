@@ -34,6 +34,7 @@ export default function SignupScreen({
           if (doSignup[0]) {
             console.log("Signup complete!");
             onSignup();
+            move("index");
           } else {
             alert("Error during registration!");
           }
