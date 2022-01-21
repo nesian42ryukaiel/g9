@@ -3,6 +3,12 @@ import axios from "axios";
 
 import serverLink from "../pseudoLinks/links";
 
+// for ( var i in obj ){
+//   if ( !obj[i] || obj[i].length == 0 ) {
+//       delete i
+//   }
+// }
+
 function Uploader({ mid }) {
   // needs user id from state
   const [content, setContent] = useState(""); // state that stores sending image
@@ -19,7 +25,7 @@ function Uploader({ mid }) {
     setContent(e.target.files[0]);
   };
   const onTitleType = (e) => {
-    setRestOfArticle;
+    setRestOfArticle(e.target.value);
   };
   const onSubmit = (e) => {
     e.preventDefault();
