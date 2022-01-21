@@ -3,14 +3,23 @@ import axios from "axios";
 
 import serverLink from "../pseudoLinks/links";
 
-function Uploader() {
+function Uploader({ mid }) {
+  // needs user id from state
   const [content, setContent] = useState(""); // state that stores sending image
   const [uploadedImg, setUploadedImg] = useState({
     fileName: "",
     fillPath: "",
   });
-  const onChange = (e) => {
+  const [restOfArticle, setRestOfArticle] = useState({
+    title: "",
+    text: "",
+    writer: mid,
+  });
+  const onFileLoad = (e) => {
     setContent(e.target.files[0]);
+  };
+  const onTitleType = (e) => {
+    setRestOfArticle;
   };
   const onSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +53,9 @@ function Uploader() {
         ) : (
           ""
         )}
-        <input type="file" onChange={onChange} />
+        <input type="file" onChange={onFileLoad} />
+        <input type="text" onChange={onFileLoad} /> {/* title */}
+        <input type="text" onChange={onFileLoad} /> {/* text  */}
         <button type="submit">Upload</button>
       </form>
     </div>

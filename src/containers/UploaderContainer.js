@@ -5,14 +5,14 @@ import UploadForm from "../components/UploadForm";
 // import { movePage } from "../modules/pages";
 
 function UploadContainer() {
-  // const { id } = useSelector((state) => ({
-  //   id: state.membership.id,
-  // }));
+  const { id } = useSelector((state) => ({
+    mid: state.membership.mid,
+  }));
   // const dispatch = useDispatch();
   // function to concat new article
   return (
-    // <Uploader id={id}/>
-    <UploadForm />
+    <Uploader mid={mid} />
+    // <UploadForm />
   );
 }
 
