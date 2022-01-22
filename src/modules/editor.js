@@ -1,4 +1,4 @@
-const UPLOAD = "editor/UPLOAD"
+const UPLOAD = "editor/UPLOAD";
 
 // action creators
 export const upload = (file, title, text) => ({
@@ -6,22 +6,22 @@ export const upload = (file, title, text) => ({
   payload: {
     file,
     title,
-    text
-  }
+    text,
+  },
 });
 
 const initialState = {
   uploader: {
     ufile: "",
     utitle: "",
-    utext: ""
+    utext: "",
   },
   editor: {
     efile: "",
     etitle: "",
-    etext: ""
+    etext: "",
   },
-}
+};
 
 // reducer
 export default function editor(state = initialState, action) {
@@ -29,10 +29,9 @@ export default function editor(state = initialState, action) {
     case UPLOAD:
       return {
         ...state,
-        page: action.payload.page
+        page: action.payload.page,
       };
     default:
       return state;
   }
 }
-
