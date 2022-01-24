@@ -3,7 +3,7 @@ import axios from "axios";
 
 import serverLink from "../pseudoLinks/links";
 
-function Uploader({ mid }) {
+function Uploader({ mid, move }) {
   // needs user id from state
   const [content, setContent] = useState(""); // state that stores sending image
   const [uploadedImg, setUploadedImg] = useState({
@@ -37,6 +37,9 @@ function Uploader({ mid }) {
         console.error(err);
       });
   };
+  const cancelAndGoBack = (e) => {
+    move("index");
+  };
   return (
     <div className="Uploader centralize corefunc">
       <form onSubmit={onSubmit} className="uploader__form">
@@ -54,8 +57,11 @@ function Uploader({ mid }) {
           ""
         )}
         <input type="file" onChange={onFileLoad} />
-        <input type="text" onChange={onFileLoad} /> {/* title */}
-        <input type="text" onChange={onFileLoad} /> {/* text  */}
+        <input type="text" onChange={onFileLoad} placeholder="Title" />
+        <input type="text" onChange={onFileLoad} placeholder="Text" />
+        <span>
+          <button onClick={cancelAndGoBack}>Cancel</button>
+        </span>
         <button type="submit">Upload</button>
       </form>
     </div>
