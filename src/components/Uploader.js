@@ -57,12 +57,16 @@ function Uploader({ mid, move }) {
           ""
         )}
         <input type="file" onChange={onFileLoad} />
+        <br />
         <input type="text" onChange={onFileLoad} placeholder="Title" />
+        <br />
         <input type="text" onChange={onFileLoad} placeholder="Text" />
         <span>
-          <button onClick={cancelAndGoBack}>Cancel</button>
+          <button type="button" onClick={cancelAndGoBack}>
+            Cancel
+          </button>
+          <button type="submit">Upload</button>
         </span>
-        <button type="submit">Upload</button>
       </form>
     </div>
   );
