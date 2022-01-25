@@ -12,7 +12,7 @@ function configureStoreAsync() {
   return new Promise((resolve) => {
     let initialState = {
       pages: {
-        currentPage: "index",
+        currentPage: "upload",
         articles: [],
       },
     };

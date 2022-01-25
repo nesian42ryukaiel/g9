@@ -42,7 +42,7 @@ function Uploader({ mid, move }) {
   };
   return (
     <div className="Uploader centralize corefunc">
-      <form onSubmit={onSubmit} className="uploader__form">
+      <div className="uploadPreview">
         {uploadedImg ? (
           <>
             <img
@@ -56,17 +56,33 @@ function Uploader({ mid, move }) {
         ) : (
           ""
         )}
-        <input type="file" onChange={onFileLoad} />
-        <br />
-        <input type="text" onChange={onFileLoad} placeholder="Title" />
-        <br />
-        <input type="text" onChange={onFileLoad} placeholder="Text" />
-        <span>
-          <button type="button" onClick={cancelAndGoBack}>
-            Cancel
-          </button>
-          <button type="submit">Upload</button>
-        </span>
+      </div>
+      <form
+        onSubmit={onSubmit}
+        className="uploader__form"
+        action=""
+        method="post"
+      >
+        <div>
+          {/* <label htmlFor="file">File: </label> */}
+          <input type="file" onChange={onFileLoad} />
+        </div>
+        <div>
+          <label htmlFor="title">Title: </label>
+          <input type="text" onChange={onFileLoad} placeholder="Title" />
+        </div>
+        <div>
+          <label htmlFor="text">Text: </label>
+          <input type="text" onChange={onFileLoad} placeholder="Text" />
+        </div>
+        <div>
+          <span>
+            <button type="button" onClick={cancelAndGoBack}>
+              Cancel
+            </button>
+            <button type="submit">Upload</button>
+          </span>
+        </div>
       </form>
     </div>
   );
