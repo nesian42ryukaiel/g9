@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import serverLink from "../pseudoLinks/links";
@@ -19,7 +19,18 @@ function Uploader({ mid, move }) {
     setContent(e.target.files[0]);
   };
   const onTitleType = (e) => {
-    setRestOfArticle(e.target.value);
+    setRestOfArticle((prevState) => ({
+      ...prevState,
+      title: e.target.value,
+    }));
+    // console.log(restOfArticle);
+  };
+  const onTextType = (e) => {
+    setRestOfArticle((prevState) => ({
+      ...prevState,
+      text: e.target.value,
+    }));
+    // console.log(restOfArticle);
   };
   const onSubmit = (e) => {
     e.preventDefault();
@@ -40,6 +51,12 @@ function Uploader({ mid, move }) {
   const cancelAndGoBack = (e) => {
     move("index");
   };
+  useEffect(() => {
+    console.log("컴포넌트가 화면에 나타남");
+    return () => {
+      console.log("컴포넌트가 화면에서 사라짐");
+    };
+  }, []);
   return (
     <div className="Uploader centralize corefunc">
       <div className="uploadPreview">
@@ -69,11 +86,11 @@ function Uploader({ mid, move }) {
         </div>
         <div>
           <label htmlFor="title">Title: </label>
-          <input type="text" onChange={onFileLoad} placeholder="Title" />
+          <input type="text" onChange={onTitleType} placeholder="Title" />
         </div>
         <div>
           <label htmlFor="text">Text: </label>
-          <input type="text" onChange={onFileLoad} placeholder="Text" />
+          <input type="text" onChange={onTextType} placeholder="Text" />
         </div>
         <div>
           <span>
