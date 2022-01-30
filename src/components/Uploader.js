@@ -82,15 +82,31 @@ function Uploader({ mid, move }) {
       >
         <div>
           {/* <label htmlFor="file">File: </label> */}
-          <input type="file" onChange={onFileLoad} />
+          <input
+            type="file"
+            name="articleFile"
+            onChange={onFileLoad}
+            required
+          />
         </div>
         <div>
           <label htmlFor="title">Title: </label>
-          <input type="text" onChange={onTitleType} placeholder="Title" />
+          <input
+            type="text"
+            name="articleTitle"
+            onChange={onTitleType}
+            placeholder="Title"
+            required
+          />
         </div>
         <div>
           <label htmlFor="text">Text: </label>
-          <input type="text" onChange={onTextType} placeholder="Text" />
+          <input
+            type="text"
+            name="articleText"
+            onChange={onTextType}
+            placeholder="Text"
+          />
         </div>
         <div>
           <span>
