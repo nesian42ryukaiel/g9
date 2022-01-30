@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-import serverLink from "../pseudoLinks/links";
+import serverLink from "../pseudoLinks/links"; // probably will be omitted
+import { pServerLink } from "../pseudoLinks/links";
 
 function Uploader({ mid, move }) {
   // needs user id from state
@@ -77,7 +77,7 @@ function Uploader({ mid, move }) {
       <form
         onSubmit={onSubmit}
         className="uploader__form"
-        action=""
+        action={pServerLink + "/upload"}
         method="post"
       >
         <div>
