@@ -90,7 +90,7 @@ function Uploader({ mid, move }) {
           />
         </div>
         <div>
-          <label htmlFor="title">Title: </label>
+          <label htmlFor="title">Title</label>
           <input
             type="text"
             name="articleTitle"
@@ -100,9 +100,10 @@ function Uploader({ mid, move }) {
           />
         </div>
         <div>
-          <label htmlFor="text">Text: </label>
-          <input
-            type="text"
+          <label htmlFor="text">
+            Text {"("}optional{")"}
+          </label>
+          <textarea
             name="articleText"
             onChange={onTextType}
             placeholder="Text"
