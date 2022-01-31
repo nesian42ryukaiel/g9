@@ -81,7 +81,8 @@ function Uploader({ mid, move }) {
         method="post"
       >
         <div>
-          {/* <label htmlFor="file">File: </label> */}
+          {/* <label htmlFor="file">File: </label>
+          <br /> */}
           <input
             type="file"
             name="articleFile"
@@ -90,23 +91,29 @@ function Uploader({ mid, move }) {
           />
         </div>
         <div>
-          <label htmlFor="title">Title</label>
+          {/* <label htmlFor="title">Title</label>
+          <br /> */}
           <input
             type="text"
             name="articleTitle"
             onChange={onTitleType}
             placeholder="Title"
+            style={{ width: "50%" }}
             required
           />
         </div>
         <div>
-          <label htmlFor="text">
+          {/* <label htmlFor="text">
             Text {"("}optional{")"}
           </label>
+          <br /> */}
           <textarea
             name="articleText"
             onChange={onTextType}
-            placeholder="Text"
+            style={{ width: "50%" }}
+            // cols={40}
+            rows={5}
+            placeholder="Text (optional)"
           />
         </div>
         <div>
