@@ -91,6 +91,15 @@ function Uploader({ mid, move }) {
           />
         </div>
         <div>
+          <input
+            type="text"
+            name="articleWriter"
+            value={mid !== "" ? mid : "PH"}
+            style={{ width: "50%" }}
+            readOnly
+          />
+        </div>
+        <div>
           {/* <label htmlFor="title">Title</label>
           <br /> */}
           <input
