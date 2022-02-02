@@ -33,20 +33,20 @@ function Uploader({ mid, move }) {
     // console.log(restOfArticle);
   };
   const onSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("img", content);
-    axios
-      .post(serverLink + "/upload", formData)
-      .then((res) => {
-        const { fileName } = res.data;
-        console.log(fileName);
-        setUploadedImg({ fileName, filePath: `${serverLink}/img/${fileName}` });
-        alert("The file is successfully uploaded");
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    // e.preventDefault();
+    // const formData = new FormData();
+    // formData.append("img", content);
+    // axios
+    //   .post(serverLink + "/upload", formData)
+    //   .then((res) => {
+    //     const { fileName } = res.data;
+    //     console.log(fileName);
+    //     setUploadedImg({ fileName, filePath: `${serverLink}/img/${fileName}` });
+    //     alert("The file is successfully uploaded");
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //   });
   };
   const cancelAndGoBack = (e) => {
     move("index");
@@ -75,7 +75,7 @@ function Uploader({ mid, move }) {
         )}
       </div>
       <form
-        onSubmit={onSubmit}
+        onSubmit={onSubmit} // get confirmation message during test
         className="uploader__form"
         action={pServerLink + "/upload"}
         method="post"
