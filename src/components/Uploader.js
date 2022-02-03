@@ -33,6 +33,9 @@ function Uploader({ mid, move }) {
     // console.log(restOfArticle);
   };
   const onSubmit = (e) => {
+    // do something here to encode file name
+    // and move to a custom landing page if successful
+    return true;
     // e.preventDefault();
     // const formData = new FormData();
     // formData.append("img", content);
