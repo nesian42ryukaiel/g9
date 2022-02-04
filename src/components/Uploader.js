@@ -17,6 +17,8 @@ function Uploader({ mid, move }) {
   });
   const onFileLoad = (e) => {
     setContent(e.target.files[0]);
+    console.log(content);
+    //
   };
   const onTitleType = (e) => {
     setRestOfArticle((prevState) => ({
@@ -63,19 +65,18 @@ function Uploader({ mid, move }) {
   return (
     <div className="Uploader centralize corefunc">
       <div className="uploadPreview">
-        {uploadedImg ? (
+        {/* {content ? (
           <>
-            <img
-              src={uploadedImg.filePath}
-              alt=""
-              id="ul--output"
-              width="256"
-            />
-            <h3>{uploadedImg.fileName}</h3>
+            <img src={content.filePath} alt="" id="ul--output" width="256" />
+            <h3>{content.fileName}</h3>
           </>
         ) : (
           ""
-        )}
+        )} */}
+        <>
+          <img src={content.filePath} alt="" id="ulOutput" width="256" />
+          <h3>{content.fileName}</h3>
+        </>
       </div>
       <form
         onSubmit={onSubmit} // get confirmation message during test
