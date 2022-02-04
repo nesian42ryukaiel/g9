@@ -18,7 +18,10 @@ function Uploader({ mid, move }) {
   const onFileLoad = (e) => {
     setContent(e.target.files[0]);
     console.log(content);
-    //
+    // const [imageFile] = this.files;
+    // if (imageFile) {
+    //   ulOutput.src = URL.createObjectURL(imageFile);
+    // }
   };
   const onTitleType = (e) => {
     setRestOfArticle((prevState) => ({
@@ -73,10 +76,6 @@ function Uploader({ mid, move }) {
         ) : (
           ""
         )} */}
-        <>
-          <img src={content.filePath} alt="" id="ulOutput" width="256" />
-          <h3>{content.fileName}</h3>
-        </>
       </div>
       <form
         onSubmit={onSubmit} // get confirmation message during test
@@ -84,6 +83,10 @@ function Uploader({ mid, move }) {
         action={pServerLink + "/upload"}
         method="post"
       >
+        <div className="uploadPreview">
+          <img src={content.filePath} alt="" id="ulOutput" width="256" />
+          <h3>{content.fileName}</h3>
+        </div>
         <div>
           {/* <label htmlFor="file">File: </label>
           <br /> */}
