@@ -31,12 +31,28 @@ function Uploader({
   const onSubmit = (e) => {
     console.log("Now testing FormData creation: ");
     const uploadForm = new FormData();
-    uploadForm.append("image", efile);
-    uploadForm.append("title", etitle);
-    uploadForm.append("text", etext);
-    uploadForm.append("writer", mid);
+    if (efile instanceof File) {
+      uploadForm.set("image", efile, Base64.encode(efile.name));
+    } else {
+      alert("Please upload a file!");
+      return false;
+    }
+    if (etitle !== "") {
+      uploadForm.set("title", etitle);
+    } else {
+      alert("Please type a title!");
+      return false;
+    }
+    uploadForm.set("text", etext);
+    uploadForm.set("writer", mid);
     for (let pair of uploadForm.entries()) {
-      console.log(pair[0] + ", " + pair[1]);
+      let val;
+      if (pair[1] instanceof File) {
+        val = pair[1].name;
+      } else {
+        val = pair[1];
+      }
+      console.log(pair[0] + ", " + val);
     }
     // do something here to encode file name
     // create FormData with redux state to send off to server
