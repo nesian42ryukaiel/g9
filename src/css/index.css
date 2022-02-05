@@ -71,6 +71,7 @@ body {
   /* grid-column: 1 / 3; */
   background-color: #404040;
 }
+.Uploader__pseudoForm,
 .uploader__form {
   background-color: #505050;
 }

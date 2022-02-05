@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import serverLink from "../pseudoLinks/links"; // probably will be omitted
 import { pServerLink } from "../pseudoLinks/links";
+import Base64 from "../modules/Base64";
 
 function Uploader({ mid, move }) {
   // needs user id from state
-  const [content, setContent] = useState(""); // state that stores sending image
+  const [mainContent, setMainContent] = useState([]); // state that stores sending image
   const [uploadedImg, setUploadedImg] = useState({
     fileName: "",
     fillPath: "",
@@ -16,8 +17,9 @@ function Uploader({ mid, move }) {
     writer: mid,
   });
   const onFileLoad = (e) => {
-    setContent(e.target.files[0]);
-    console.log(content);
+    setMainContent(e.target.files[0]);
+    console.log(mainContent);
+    console.log(mainContent.name);
     // const [imageFile] = this.files;
     // if (imageFile) {
     //   ulOutput.src = URL.createObjectURL(imageFile);
@@ -38,6 +40,7 @@ function Uploader({ mid, move }) {
     // console.log(restOfArticle);
   };
   const onSubmit = (e) => {
+    console.log("honk");
     // do something here to encode file name
     // and move to a custom landing page if successful
     return true;
@@ -67,29 +70,24 @@ function Uploader({ mid, move }) {
   }, []);
   return (
     <div className="Uploader centralize corefunc">
+      <div></div>
       <div className="uploadPreview">
-        {/* {content ? (
+        {mainContent ? (
           <>
-            <img src={content.filePath} alt="" id="ul--output" width="256" />
-            <h3>{content.fileName}</h3>
+            <img
+              src={mainContent.filePath}
+              alt=""
+              id="ul--output"
+              width="256"
+            />
+            <h3>{mainContent.fileName}</h3>
           </>
         ) : (
           ""
-        )} */}
+        )}
       </div>
-      <form
-        onSubmit={onSubmit} // get confirmation message during test
-        className="uploader__form"
-        action={pServerLink + "/upload"}
-        method="post"
-      >
-        <div className="uploadPreview">
-          <img src={content.filePath} alt="" id="ulOutput" width="256" />
-          <h3>{content.fileName}</h3>
-        </div>
+      <div className="Uploader__pseudoForm" id="Uploader__pseudoForm">
         <div>
-          {/* <label htmlFor="file">File: </label>
-          <br /> */}
           <input
             type="file"
             name="articleFile"
@@ -107,8 +105,6 @@ function Uploader({ mid, move }) {
           />
         </div>
         <div>
-          {/* <label htmlFor="title">Title</label>
-          <br /> */}
           <input
             type="text"
             name="articleTitle"
@@ -119,10 +115,6 @@ function Uploader({ mid, move }) {
           />
         </div>
         <div>
-          {/* <label htmlFor="text">
-            Text {"("}optional{")"}
-          </label>
-          <br /> */}
           <textarea
             name="articleText"
             onChange={onTextType}
@@ -137,12 +129,91 @@ function Uploader({ mid, move }) {
             <button type="button" onClick={cancelAndGoBack}>
               Cancel
             </button>
-            <button type="submit">Upload</button>
+            <button type="button" onClick={onSubmit}>
+              Upload
+            </button>
           </span>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
 
 export default Uploader;
+
+// <div className="Uploader centralize corefunc">
+//   <div className="uploadPreview">
+//     {/* {content ? (
+//       <>
+//         <img src={content.filePath} alt="" id="ul--output" width="256" />
+//         <h3>{content.fileName}</h3>
+//       </>
+//     ) : (
+//       ""
+//     )} */}
+//   </div>
+//   <form
+//     onSubmit={onSubmit} // get confirmation message during test
+//     className="uploader__form"
+//     action={pServerLink + "/upload"}
+//     method="post"
+//   >
+//     <div className="uploadPreview">
+//       <img src={content.filePath} alt="" id="ulOutput" width="256" />
+//       <h3>{content.fileName}</h3>
+//     </div>
+//     <div>
+//       {/* <label htmlFor="file">File: </label>
+//       <br /> */}
+//       <input
+//         type="file"
+//         name="articleFile"
+//         onChange={onFileLoad}
+//         required
+//       />
+//     </div>
+//     <div>
+//       <input
+//         type="text"
+//         name="articleWriter"
+//         value={mid !== "" ? mid : "PH"}
+//         style={{ width: "50%" }}
+//         readOnly
+//       />
+//     </div>
+//     <div>
+//       {/* <label htmlFor="title">Title</label>
+//       <br /> */}
+//       <input
+//         type="text"
+//         name="articleTitle"
+//         onChange={onTitleType}
+//         placeholder="Title"
+//         style={{ width: "50%" }}
+//         required
+//       />
+//     </div>
+//     <div>
+//       {/* <label htmlFor="text">
+//         Text {"("}optional{")"}
+//       </label>
+//       <br /> */}
+//       <textarea
+//         name="articleText"
+//         onChange={onTextType}
+//         style={{ width: "50%" }}
+//         // cols={40}
+//         rows={5}
+//         placeholder="Text (optional)"
+//       />
+//     </div>
+//     <div>
+//       <span>
+//         <button type="button" onClick={cancelAndGoBack}>
+//           Cancel
+//         </button>
+//         <button type="submit">Upload</button>
+//       </span>
+//     </div>
+//   </form>
+// </div>
