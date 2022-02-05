@@ -15,39 +15,18 @@ function Uploader({
   setTitle,
   setText,
 }) {
-  // needs user id from state
-  const [mainContent, setMainContent] = useState([]); // state that stores sending image
-  const [uploadedImg, setUploadedImg] = useState({
-    fileName: "",
-    fillPath: "",
-  });
-  const [restOfArticle, setRestOfArticle] = useState({
-    title: "",
-    text: "",
-    writer: mid,
-  });
   const onFileLoad = (e) => {
-    setMainContent(e.target.files[0]);
-    console.log(mainContent);
-    console.log(mainContent.name);
-    // const [imageFile] = this.files;
-    // if (imageFile) {
-    //   ulOutput.src = URL.createObjectURL(imageFile);
-    // }
+    setFile(e.target.files[0]);
+    console.log(efile);
+    console.log(efile.filePath);
   };
   const onTitleType = (e) => {
-    setRestOfArticle((prevState) => ({
-      ...prevState,
-      title: e.target.value,
-    }));
-    // console.log(restOfArticle);
+    setTitle(e.target.value);
+    console.log(etitle);
   };
   const onTextType = (e) => {
-    setRestOfArticle((prevState) => ({
-      ...prevState,
-      text: e.target.value,
-    }));
-    // console.log(restOfArticle);
+    setText(e.target.value);
+    console.log(etext);
   };
   const onSubmit = (e) => {
     console.log("honk");
@@ -73,24 +52,19 @@ function Uploader({
     move("index");
   };
   useEffect(() => {
-    console.log("컴포넌트가 화면에 나타남");
+    console.log("업로드 컴포넌트가 화면에 나타남");
     return () => {
-      console.log("컴포넌트가 화면에서 사라짐");
+      console.log("업로드 컴포넌트가 화면에서 사라짐");
     };
   }, []);
   return (
     <div className="Uploader centralize corefunc">
       <div></div>
       <div className="uploadPreview">
-        {mainContent ? (
+        {efile ? (
           <>
-            <img
-              src={mainContent.filePath}
-              alt=""
-              id="ul--output"
-              width="256"
-            />
-            <h3>{mainContent.fileName}</h3>
+            <img src={efile.filePath} alt="" id="ul--output" width="256" />
+            <h3>{efile.fileName}</h3>
           </>
         ) : (
           ""
