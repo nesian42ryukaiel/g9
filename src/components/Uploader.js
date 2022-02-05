@@ -30,12 +30,12 @@ function Uploader({
   };
   const onSubmit = (e) => {
     console.log("Now testing FormData creation: ");
-    const formData = new FormData();
-    formData.append("image", efile);
-    formData.append("title", etitle);
-    formData.append("text", etext);
-    formData.append("writer", mid);
-    for (let pair of formData.entries()) {
+    const uploadForm = new FormData();
+    uploadForm.append("image", efile);
+    uploadForm.append("title", etitle);
+    uploadForm.append("text", etext);
+    uploadForm.append("writer", mid);
+    for (let pair of uploadForm.entries()) {
       console.log(pair[0] + ", " + pair[1]);
     }
     // do something here to encode file name
