@@ -4,7 +4,17 @@ import serverLink from "../pseudoLinks/links"; // probably will be omitted
 import { pServerLink } from "../pseudoLinks/links";
 import Base64 from "../modules/Base64";
 
-function Uploader({ mid, move }) {
+function Uploader({
+  mid,
+  efile,
+  etitle,
+  etext,
+  move,
+  upload,
+  setFile,
+  setTitle,
+  setText,
+}) {
   // needs user id from state
   const [mainContent, setMainContent] = useState([]); // state that stores sending image
   const [uploadedImg, setUploadedImg] = useState({
