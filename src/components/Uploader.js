@@ -22,15 +22,16 @@ function Uploader({
   };
   const onTitleType = (e) => {
     setTitle(e.target.value);
-    console.log(etitle);
+    // console.log(etitle);
   };
   const onTextType = (e) => {
     setText(e.target.value);
-    console.log(etext);
+    // console.log(etext);
   };
   const onSubmit = (e) => {
     console.log("honk");
     // do something here to encode file name
+    // create FormData with redux state to send off to server
     // and move to a custom landing page if successful
     return true;
     // e.preventDefault();
@@ -49,6 +50,9 @@ function Uploader({
     //   });
   };
   const cancelAndGoBack = (e) => {
+    setFile([]);
+    setTitle("");
+    setText("");
     move("index");
   };
   useEffect(() => {
@@ -124,80 +128,3 @@ function Uploader({
 }
 
 export default Uploader;
-
-// <div className="Uploader centralize corefunc">
-//   <div className="uploadPreview">
-//     {/* {content ? (
-//       <>
-//         <img src={content.filePath} alt="" id="ul--output" width="256" />
-//         <h3>{content.fileName}</h3>
-//       </>
-//     ) : (
-//       ""
-//     )} */}
-//   </div>
-//   <form
-//     onSubmit={onSubmit} // get confirmation message during test
-//     className="uploader__form"
-//     action={pServerLink + "/upload"}
-//     method="post"
-//   >
-//     <div className="uploadPreview">
-//       <img src={content.filePath} alt="" id="ulOutput" width="256" />
-//       <h3>{content.fileName}</h3>
-//     </div>
-//     <div>
-//       {/* <label htmlFor="file">File: </label>
-//       <br /> */}
-//       <input
-//         type="file"
-//         name="articleFile"
-//         onChange={onFileLoad}
-//         required
-//       />
-//     </div>
-//     <div>
-//       <input
-//         type="text"
-//         name="articleWriter"
-//         value={mid !== "" ? mid : "PH"}
-//         style={{ width: "50%" }}
-//         readOnly
-//       />
-//     </div>
-//     <div>
-//       {/* <label htmlFor="title">Title</label>
-//       <br /> */}
-//       <input
-//         type="text"
-//         name="articleTitle"
-//         onChange={onTitleType}
-//         placeholder="Title"
-//         style={{ width: "50%" }}
-//         required
-//       />
-//     </div>
-//     <div>
-//       {/* <label htmlFor="text">
-//         Text {"("}optional{")"}
-//       </label>
-//       <br /> */}
-//       <textarea
-//         name="articleText"
-//         onChange={onTextType}
-//         style={{ width: "50%" }}
-//         // cols={40}
-//         rows={5}
-//         placeholder="Text (optional)"
-//       />
-//     </div>
-//     <div>
-//       <span>
-//         <button type="button" onClick={cancelAndGoBack}>
-//           Cancel
-//         </button>
-//         <button type="submit">Upload</button>
-//       </span>
-//     </div>
-//   </form>
-// </div>
