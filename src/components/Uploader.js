@@ -29,7 +29,15 @@ function Uploader({
     // console.log(etext);
   };
   const onSubmit = (e) => {
-    console.log("honk");
+    console.log("Now testing FormData creation: ");
+    const formData = new FormData();
+    formData.append("image", efile);
+    formData.append("title", etitle);
+    formData.append("text", etext);
+    formData.append("writer", mid);
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ", " + pair[1]);
+    }
     // do something here to encode file name
     // create FormData with redux state to send off to server
     // and move to a custom landing page if successful
