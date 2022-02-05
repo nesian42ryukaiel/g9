@@ -12,12 +12,12 @@ export const upload = (file, title, text) => ({
 
 const initialState = {
   uploader: {
-    ufile: "",
+    ufile: [],
     utitle: "",
     utext: "",
   },
   editor: {
-    efile: "",
+    efile: [],
     etitle: "",
     etext: "",
   },
