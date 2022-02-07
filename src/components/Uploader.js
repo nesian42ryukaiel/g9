@@ -46,6 +46,7 @@ function Uploader({
     uploadForm.set("text", etext);
     uploadForm.set("writer", mid);
     for (let pair of uploadForm.entries()) {
+      // checking FormData by logging
       let val;
       if (pair[1] instanceof File) {
         val = pair[1].name;
@@ -54,6 +55,16 @@ function Uploader({
       }
       console.log(pair[0] + ", " + val);
     }
+    axios
+      .post(pServerLink + "/upload", uploadForm)
+      .then((res) => {
+        alert("Success in sending!");
+        upload();
+        move("index");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
     // do something here to encode file name
     // create FormData with redux state to send off to server
     // and move to a custom landing page if successful
