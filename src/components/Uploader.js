@@ -44,7 +44,12 @@ function Uploader({
       return false;
     }
     uploadForm.set("text", etext);
-    uploadForm.set("writer", mid);
+    if (mid !== "") {
+      uploadForm.set("writer", mid);
+    } else {
+      alert("Are you a ghost writer? ;)");
+      return false;
+    }
     for (let pair of uploadForm.entries()) {
       // checking FormData by logging
       let val;
