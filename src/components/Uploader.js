@@ -59,13 +59,13 @@ function Uploader({
       .post(pServerLink + "/upload", uploadForm)
       .then((res) => {
         // console.log(res);
-        if (res.data) {
+        if (res.data.hasWriter) {
           // I designed res.data to be a boolean value
-          alert("Success in sending!");
+          alert(`Success in sending to ${res.data.filePath}!`);
           upload(); // should append new article in-client on the reducer
           move("index");
         } else {
-          alert("Writer empty!");
+          alert(`Writer empty for ${res.data.filePath}!`);
         }
       })
       .catch((err) => {
