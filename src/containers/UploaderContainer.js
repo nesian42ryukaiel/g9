@@ -14,7 +14,7 @@ function UploadContainer() {
   }));
   const dispatch = useDispatch();
   const move = (page) => dispatch(movePage(page));
-  const upload = () => dispatch(editUpload());
+  const upload = (article) => dispatch(editUpload(article));
   const setFile = (file) => dispatch(editFile(file));
   const setTitle = (title) => dispatch(editTitle(title));
   const setText = (text) => dispatch(editText(text));

@@ -4,8 +4,11 @@ const EDIT_TITLE = "editor/TITLE";
 const EDIT_TEXT = "editor/TEXT";
 
 // action creators
-export const editUpload = () => ({
+export const editUpload = (task) => ({
   type: EDIT_UPLOAD,
+  payload: {
+    task,
+  },
 });
 export const editFile = (task) => ({
   type: EDIT_FILE,
