@@ -55,12 +55,18 @@ function Uploader({
       }
       console.log(pair[0] + ", " + val);
     }
-    axios
+    return axios
       .post(pServerLink + "/upload", uploadForm)
       .then((res) => {
-        alert("Success in sending!");
-        upload();
-        move("index");
+        // console.log(res);
+        if (res.data) {
+          // I designed res.data to be a boolean value
+          alert("Success in sending!");
+          upload(); // should append new article in-client on the reducer
+          move("index");
+        } else {
+          alert("Writer empty!");
+        }
       })
       .catch((err) => {
         console.error(err);
