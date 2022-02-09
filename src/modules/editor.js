@@ -1,14 +1,11 @@
-const EDIT_UPLOAD = "editor/UPLOAD";
+const EDIT_CLEAN = "editor/CLEAN";
 const EDIT_FILE = "editor/FILE";
 const EDIT_TITLE = "editor/TITLE";
 const EDIT_TEXT = "editor/TEXT";
 
 // action creators
-export const editUpload = (task) => ({
-  type: EDIT_UPLOAD,
-  payload: {
-    task,
-  },
+export const editClean = () => ({
+  type: EDIT_CLEAN,
 });
 export const editFile = (task) => ({
   type: EDIT_FILE,
@@ -38,7 +35,7 @@ const initialState = {
 // reducer
 export default function editor(state = initialState, action) {
   switch (action.type) {
-    case EDIT_UPLOAD:
+    case EDIT_CLEAN:
       return {
         ...state,
         efile: [],

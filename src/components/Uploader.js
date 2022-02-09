@@ -11,6 +11,7 @@ function Uploader({
   etext,
   move,
   upload,
+  cleanup,
   setFile,
   setTitle,
   setText,
@@ -68,9 +69,11 @@ function Uploader({
           // I designed res.data to be a boolean value
           alert(`Success in sending to ${res.data.article.image}!`);
           upload(res.data.article); // should append new article in-client on the reducer
+          cleanup();
           move("index");
         } else {
           alert(`Didn't upload well!`);
+          cleanup();
         }
       })
       .catch((err) => {

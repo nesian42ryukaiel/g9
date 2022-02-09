@@ -2,11 +2,18 @@
 // import { pServerLink, artdata } from "../pseudoLinks/links";
 
 const MOVE = "pages/MOVE";
+const UPLOAD = "pages/UPLOAD";
 
 export const movePage = (page) => ({
   type: MOVE,
   payload: {
     page,
+  },
+});
+export const uploadPage = (article) => ({
+  type: UPLOAD,
+  payload: {
+    article,
   },
 });
 
@@ -27,6 +34,11 @@ export default function pages(state = initialState, action) {
       return {
         ...state,
         currentPage: action.payload.page,
+      };
+    case UPLOAD:
+      return {
+        ...state,
+        articles: [...state.articles, action.payload.article],
       };
     default:
       return state;

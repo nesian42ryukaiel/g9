@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Uploader from "../components/Uploader";
 // import UploadForm from "../components/UploadForm";
-import { movePage } from "../modules/pages";
-import { editFile, editTitle, editText, editUpload } from "../modules/editor";
+import { movePage, uploadPage } from "../modules/pages";
+import { editFile, editTitle, editText, editClean } from "../modules/editor";
 
 function UploadContainer() {
   const { mid, efile, etitle, etext } = useSelector((state) => ({
@@ -14,7 +14,8 @@ function UploadContainer() {
   }));
   const dispatch = useDispatch();
   const move = (page) => dispatch(movePage(page));
-  const upload = (article) => dispatch(editUpload(article));
+  const upload = (article) => dispatch(uploadPage(article));
+  const cleanup = () => dispatch(editClean());
   const setFile = (file) => dispatch(editFile(file));
   const setTitle = (title) => dispatch(editTitle(title));
   const setText = (text) => dispatch(editText(text));
@@ -27,6 +28,7 @@ function UploadContainer() {
       etext={etext}
       move={move}
       upload={upload}
+      cleanup={cleanup}
       setFile={setFile}
       setTitle={setTitle}
       setText={setText}
