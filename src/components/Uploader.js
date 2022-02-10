@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import serverLink from "../pseudoLinks/links"; // probably will be omitted
 import { pServerLink } from "../pseudoLinks/links";
 import Base64 from "../modules/Base64";
 
