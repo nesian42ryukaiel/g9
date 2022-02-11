@@ -22,11 +22,9 @@ function Uploader({
   };
   const onTitleType = (e) => {
     setTitle(e.target.value);
-    // console.log(etitle);
   };
   const onTextType = (e) => {
     setText(e.target.value);
-    // console.log(etext);
   };
   const onSubmit = (e) => {
     console.log("Now testing FormData creation: ");
@@ -63,11 +61,9 @@ function Uploader({
     return axios
       .post(pServerLink + "/upload", uploadForm)
       .then((res) => {
-        // console.log(res);
         if (res.data.success) {
-          // I designed res.data to be a boolean value
           alert(`Success in sending to ${res.data.article.image}!`);
-          upload(res.data.article); // should append new article in-client on the reducer
+          upload(res.data.article);
           cleanup();
           move("index");
         } else {
@@ -78,24 +74,6 @@ function Uploader({
       .catch((err) => {
         console.error(err);
       });
-    // do something here to encode file name
-    // create FormData with redux state to send off to server
-    // and move to a custom landing page if successful
-    return true;
-    // e.preventDefault();
-    // const formData = new FormData();
-    // formData.append("img", content);
-    // axios
-    //   .post(serverLink + "/upload", formData)
-    //   .then((res) => {
-    //     const { fileName } = res.data;
-    //     console.log(fileName);
-    //     setUploadedImg({ fileName, filePath: `${serverLink}/img/${fileName}` });
-    //     alert("The file is successfully uploaded");
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
   };
   const cancelAndGoBack = (e) => {
     setFile([]);
