@@ -7,7 +7,7 @@ import { logout } from "../modules/membership";
 function NavContainer() {
   const { articles, loggedin } = useSelector((state) => ({
     articles: state.pages.articles,
-    loggedin: state.pages.mlogin,
+    loggedin: state.membership.mlogin,
   }));
   const dispatch = useDispatch();
   const move = (page) => dispatch(movePage(page));
