@@ -8,6 +8,7 @@ const INPUT_ID = "membership/ID";
 const INPUT_PASS = "membership/PASS";
 const INPUT_NAME = "membership/NAME";
 const LOGIN = "membership/LOGIN";
+const LOGOUT = "membership/LOGOUT";
 const SIGNUP = "membership/SIGNUP";
 
 export const inputID = (task) => ({
@@ -33,6 +34,9 @@ export const inputName = (task) => ({
 });
 export const login = () => ({
   type: LOGIN,
+});
+export const logout = () => ({
+  type: LOGOUT,
 });
 export const signup = () => ({
   type: SIGNUP,
@@ -73,7 +77,20 @@ export default function membership(state = initialState, action) {
           mpw: "",
         };
       }
-    // break;
+    case LOGOUT:
+      if (state.mlogin !== true) {
+        alert("You must be logged in to log out!");
+        return state;
+      } else {
+        alert(`Good bye, ${state.mname}!`);
+        return {
+          ...state,
+          mlogin: false,
+          mid: "",
+          mpw: "",
+          mname: "",
+        };
+      }
     case SIGNUP:
       if (state.mlogin === true) {
         alert("You cannot sign up while logged in!");
