@@ -1,16 +1,25 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Nav from "../components/Nav";
-// import { movePage } from "../modules/pages";
+import { movePage } from "../modules/pages";
+import { logout } from "../modules/membership";
 
 function NavContainer() {
-  const { articles } = useSelector((state) => ({
+  const { articles, loggedin } = useSelector((state) => ({
     articles: state.pages.articles,
+    loggedin: state.pages.mlogin,
   }));
-  /**
-   * functions go here
-   */
-  return <Nav articles={articles} />;
+  const dispatch = useDispatch();
+  const move = (page) => dispatch(movePage(page));
+  const onlogout = () => dispatch(logout());
+  return (
+    <Nav
+      articles={articles}
+      loggedin={loggedin}
+      move={move}
+      onlogout={onlogout}
+    />
+  );
 }
 
 export default NavContainer;

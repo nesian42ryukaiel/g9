@@ -1,14 +1,19 @@
 import React from "react";
 import Article from "./Article";
 
-function Nav({ articles }) {
+function Nav({ articles, loggedin, move, onlogout }) {
   let revart = articles.slice().reverse();
+  const onLogoutClick = () => {
+    alert("LOGOUT!");
+    onlogout();
+    move("index");
+  };
   return (
     <nav className="Nav">
-      <div>
+      <div className="Nav__advertisement">
         <h4>Advertisement</h4>
       </div>
-      <div>
+      <div className="Nav__featuredPosts">
         <h4>Featured Posts</h4>
         <div>
           <Article
@@ -18,6 +23,17 @@ function Nav({ articles }) {
             location="nav__featuredPosts"
           />
         </div>
+      </div>
+      <div className="Nav__logoutSection">
+        {loggedin ? (
+          <>
+            <button type="button" onClick={onLogoutClick}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
     </nav>
   );
