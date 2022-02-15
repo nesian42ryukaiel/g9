@@ -8,18 +8,28 @@ import UploadContainer from "../containers/UploaderContainer";
 import LoginContainer from "../containers/LoginContainer";
 import SignupContainer from "../containers/SignupContainer";
 
-function defaultLayout(page) {
+function defaultLayout(page, move, brighten, darken) {
   return (
-    <div className="App">
-      <HeaderContainer />
-      {page}
-      <NavContainer />
-      <Footer />
-    </div>
+    <>
+      <div className="App">
+        <HeaderContainer />
+        {page}
+        <NavContainer />
+        <Footer />
+      </div>
+      <div>
+        <button type="button" onClick={() => brighten(1)}>
+          Brighten
+        </button>
+        <button type="button" onClick={() => darken(1)}>
+          Darken
+        </button>
+      </div>
+    </>
   );
 }
 
-function App({ page, move }) {
+function App({ page, red, green, blue, move, brighten, darken }) {
   const pagelist = {
     index: <MainContainer />,
     upload: <UploadContainer />,
@@ -27,7 +37,7 @@ function App({ page, move }) {
     signup: <SignupContainer />,
   };
   // console.log("pagekey:", pagekey.page);
-  return defaultLayout(pagelist[page]);
+  return defaultLayout(pagelist[page], move, brighten, darken);
 }
 
 export default App;

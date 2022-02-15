@@ -23,7 +23,8 @@ function Header({ loggedin, id, moveFunc }) {
       <span className="header__middle">
         {/* <span>Options</span> */}
         <span>
-          <input type="text" placeholder="Search" />
+          <input type="text" placeholder="Search" />{" "}
+          {/* new mode toggle goes here */}
         </span>
       </span>
       <span className="header__right">
