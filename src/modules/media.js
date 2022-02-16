@@ -3,11 +3,11 @@ const MEDIA_DARKEN = "media/darken";
 const MEDIA_TOGGLE = "media/toggle";
 
 export const mediaBrighten = (task) => ({
-  type: MEDIA_TOGGLE,
+  type: MEDIA_BRIGHTEN,
   payload: { task },
 });
 export const mediaDarken = (task) => ({
-  type: MEDIA_TOGGLE,
+  type: MEDIA_DARKEN,
   payload: { task },
 });
 export const mediaToggle = (task) => ({

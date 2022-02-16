@@ -36,8 +36,36 @@ function App({ page, red, green, blue, move, brighten, darken }) {
     login: <LoginContainer />,
     signup: <SignupContainer />,
   };
-  // console.log("pagekey:", pagekey.page);
-  return defaultLayout(pagelist[page], move, brighten, darken);
+  const onClickBrighten = () => {
+    console.log("LIGHT");
+    brighten(1);
+  };
+  const onClickDarken = () => {
+    console.log("SHADOW");
+    darken(1);
+  };
+  // return defaultLayout(pagelist[page], move, brighten, darken);
+  return (
+    <>
+      <div className="App">
+        <HeaderContainer />
+        {pagelist[page]}
+        <NavContainer />
+        <Footer />
+        <div
+          className="lighting_testbed"
+          style={{ textAlign: "center", width: "100%" }}
+        >
+          <button type="button" onClick={onClickBrighten}>
+            Brighten
+          </button>
+          <button type="button" onClick={onClickDarken}>
+            Darken
+          </button>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default App;
