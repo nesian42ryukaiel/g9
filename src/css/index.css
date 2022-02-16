@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+:root {
+  --app-main-color: #2020ff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +22,7 @@
 }
 .focus--button,
 .signup--button {
-  background-color: #2020ff;
+  background-color: var(--app-main-color);
   color: #e0e0e0;
   text-align: center;
 }
