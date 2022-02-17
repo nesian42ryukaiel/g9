@@ -4,8 +4,9 @@
   --app-main-color: #2020ff;
   /* color (example) */
   --color-black: #3f454d;
-  --color-white: #ffffff;
+  --color-white: #e0e0e0;
   --color-yellow: #fbbe28;
+  --color-gold: #ffd700;
   /* size (example) */
   --base-space: 8px;
   --size-button: 60px;
@@ -148,6 +149,7 @@ b {
 }
 a {
   color: gold;
+  accent-color: black;
 }
 
 /* Default CSS below */

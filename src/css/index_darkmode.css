@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+:root {
+  --app-main-color: #2020ff;
+  /* color (example) */
+  --color-black: #3f454d;
+  --color-white: #e0e0e0;
+  --color-gold: #ffd700;
+  /* size (example) */
+  --base-space: 8px;
+  --size-button: 60px;
+  --size-border: 4px;
+  --font-size: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
