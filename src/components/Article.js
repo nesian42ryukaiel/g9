@@ -1,22 +1,27 @@
 import React from "react";
 
-function Article({title, image, text, location}) {
+function Article({ title, image, text, location }) {
   // const pic = require(image);
   // so far no usage for key
-  return(
+  return (
     <article className="Article">
-      {(location === "main__articles")
-      ? <div className="article__title">{title}</div>
-      : <></>}
-      <div className="article__image_box">
-        <img src={image}
-        className={`article__image ${location}`}
-        alt="the main dish"
+      {location === "Main__articles" || location === "main__articles" ? (
+        <div className="Article__title">{title}</div>
+      ) : (
+        <></>
+      )}
+      <div className="Article__imageBox">
+        <img
+          src={image}
+          className={`Article__image ${location}`}
+          alt="the main dish"
         />
       </div>
-      {(location === "main__articles")
-      ? <div className="article__text">{text}</div>
-      : <></>}
+      {location === "Main__articles" || location === "main__articles" ? (
+        <div className="article__text">{text}</div>
+      ) : (
+        <></>
+      )}
     </article>
   );
 }

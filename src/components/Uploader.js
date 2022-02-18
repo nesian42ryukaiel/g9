@@ -90,7 +90,7 @@ function Uploader({
   return (
     <div className="Uploader centralize corefunc">
       <div></div>
-      <div className="uploadPreview">
+      <div className="Uploader__preview">
         {efile ? (
           <>
             <img src={efile.filePath} alt="" id="ul--output" width="256" />

@@ -7,7 +7,7 @@ function Main({ articles, loggedin, move }) {
     move("upload");
   };
   return (
-    <main className="corefunc Main">
+    <main className="Main corefunc">
       <div className="access_uploader" style={{ outline: "solid 1px white" }}>
         {loggedin ? (
           <button style={{ width: "100%" }} onClick={newPost}>
@@ -23,7 +23,7 @@ function Main({ articles, loggedin, move }) {
           title={object.title}
           image={object.image}
           text={object.text}
-          location="main__articles"
+          location="Main__articles"
         />
       ))}
     </main>

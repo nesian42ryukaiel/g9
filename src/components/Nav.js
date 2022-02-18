@@ -20,7 +20,7 @@ function Nav({ articles, loggedin, move, onlogout }) {
             title={revart.length > 0 ? revart[0].title : "PH Title"}
             image={revart.length > 0 ? revart[0].image : "PH image"}
             text={revart.length > 0 ? revart[0].text : "PH text"}
-            location="nav__featuredPosts"
+            location="Nav__featuredPosts"
           />
         </div>
       </div>
