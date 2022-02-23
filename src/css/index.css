@@ -85,7 +85,7 @@ body {
   text-align: center;
 }
 .corefunc {
-  grid-row: 2 / 12;
+  /* grid-row: 2 / 12; */ /* required to be disabled for scroll */
   grid-column: 1 / 10;
   background-color: #404040;
 }
