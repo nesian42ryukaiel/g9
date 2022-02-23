@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Beta(brighten, darken) {
+function Beta(brighten, darken) {
   const onClickBrighten = () => {
     console.log("LIGHT");
     brighten(1);
@@ -25,3 +25,5 @@ export default function Beta(brighten, darken) {
     </div>
   );
 }
+
+export default Beta;
