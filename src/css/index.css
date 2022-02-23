@@ -21,6 +21,7 @@
 #root {
   height: 100%;
 }
+.align_center,
 .centralize {
   text-align: center;
 }
