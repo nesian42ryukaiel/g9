@@ -20,14 +20,14 @@ function Header({ loggedin, id, moveFunc }) {
           G9
         </span>
       </span>
-      <span className="Header__middle header__middle">
+      <span className="Header__middle header__middle centralize">
         {/* <span>Options</span> */}
         <span>
           <input type="text" placeholder="Search" />{" "}
           {/* new mode toggle goes here */}
         </span>
       </span>
-      <span className="Header__right header__right">
+      <span className="Header__right header__right centralize">
         {loggedin ? (
           <>Welcome, {id}!</>
         ) : (
