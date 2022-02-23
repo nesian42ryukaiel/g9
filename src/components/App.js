@@ -7,6 +7,7 @@ import MainContainer from "../containers/MainContainer";
 import UploadContainer from "../containers/UploaderContainer";
 import LoginContainer from "../containers/LoginContainer";
 import SignupContainer from "../containers/SignupContainer";
+import BetaContainer from "../containers/BetaContainer";
 
 function defaultLayout(page, move, brighten, darken) {
   return (
@@ -44,6 +45,7 @@ function App({ page, move }) {
         {pagelist[page]}
         <NavContainer />
         <FooterContainer />
+        <BetaContainer />
       </div>
     </>
   );

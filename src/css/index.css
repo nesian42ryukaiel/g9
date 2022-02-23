@@ -99,7 +99,12 @@ body {
 }
 .Footer {
   grid-row: 12 / 13;
-  grid-column: 1 / 13;
+  grid-column: 1 / 7;
+  background-color: #252525;
+}
+.Beta {
+  grid-row: 12 / 13;
+  grid-column: 7 / 13;
   background-color: #252525;
 }
 .access_uploader {
