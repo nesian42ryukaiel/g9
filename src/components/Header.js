@@ -12,7 +12,7 @@ function Header({ loggedin, id, moveFunc }) {
   };
   return (
     <>
-      <span className="header__left">
+      <span className="Header__left header__left">
         <span role="img" aria-label="hamburger" className="hamburger">
           🍔
         </span>
@@ -20,14 +20,14 @@ function Header({ loggedin, id, moveFunc }) {
           G9
         </span>
       </span>
-      <span className="header__middle">
+      <span className="Header__middle header__middle">
         {/* <span>Options</span> */}
         <span>
           <input type="text" placeholder="Search" />{" "}
           {/* new mode toggle goes here */}
         </span>
       </span>
-      <span className="header__right">
+      <span className="Header__right header__right">
         {loggedin ? (
           <>Welcome, {id}!</>
         ) : (
