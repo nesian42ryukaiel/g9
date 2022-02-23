@@ -31,6 +31,8 @@
   grid-template-rows: [row--topmost] auto [row--header_to_main] 1fr [row--main_to_footer] auto [row--bottommost];
   grid-template-columns: [col--leftmost] auto [col2] 1fr [col--main_to_sidebar] auto [col--rightmost];
 }
+.button--focus,
+.button--signup,
 .focus--button,
 .signup--button {
   background-color: var(--app-main-color);
@@ -130,6 +132,7 @@ span {
   margin: 4px;
 }
 button,
+.button--cancel,
 .cancel--button,
 .input--button,
 .input--file {
