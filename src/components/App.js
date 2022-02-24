@@ -46,6 +46,7 @@ function App({ page, move }) {
         <NavContainer />
         <FooterContainer />
         <BetaContainer />
+        {/* <div className="Beta__veil"></div> */}
       </div>
     </>
   );

@@ -28,10 +28,13 @@
 .App {
   height: 100%;
   display: grid;
-  /* grid-template-rows: [row--topmost] auto [row--header_to_main] 1fr [row--main_to_footer] auto [row--bottommost]; */
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  /* grid-template-columns: [col--leftmost] auto [col2] 1fr [col--main_to_sidebar] auto [col--rightmost]; */
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.Beta__veil {
+  background-color: rgba(255, 127, 255, 127);
+  grid-row: 1 / 13;
+  grid-column: 1 / 13;
 }
 .button--focus,
 .button--signup,
@@ -121,6 +124,7 @@ body {
 .Article__imageBox,
 .Article__image_box,
 .article__image_box {
+  background-color: #505050;
   text-align: center;
 }
 .Article__image,
@@ -129,12 +133,12 @@ body {
   max-height: 512px;
 }
 .Article__image--blur {
-  background-color: black;
+  /* background-color: black;
   border-radius: 8px;
   border-style: solid;
   border-width: 4px;
-  border-color: #000000;
-  box-shadow: 0 0 8px 8px #000000 inset;
+  border-color: #000000; */
+  box-shadow: 0 0 80px 80px #505050 inset;
 }
 .Nav__featuredPosts,
 .nav__featuredPosts {

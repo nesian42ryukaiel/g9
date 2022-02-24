@@ -13,7 +13,7 @@ function Article({ title, image, text, location }) {
       <div className="Article__imageBox">
         <img
           src={image}
-          className={`Article__image ${location}`}
+          className={`Article__image Article__image--blur ${location}`}
           alt="the main dish"
         />
       </div>
