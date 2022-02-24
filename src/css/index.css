@@ -130,7 +130,9 @@ body {
 }
 .Nav__featuredPosts,
 .nav__featuredPosts {
-  max-width: 128px;
+  /* max-width: 128px; */
+  /* max-height: 128px; */
+  text-align: center;
 }
 span {
   margin: 4px;
