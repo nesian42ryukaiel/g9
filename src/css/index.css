@@ -40,13 +40,6 @@ body {
   grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr auto;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.Main {
-  background-color: var(--color-fade);
-}
-.Main__articles {
-  padding-left: 16px;
-  padding-right: 16px;
-}
 .Header {
   margin: 0;
   margin-bottom: 2px;
@@ -79,6 +72,45 @@ body {
   grid-row: 1 / 2;
   grid-column: 10 / 13;
   text-align: center;
+}
+.Nav {
+  /* grid-row: 2 / 12; */ /* required to be disabled for scroll */
+  grid-column: 10 / 13;
+  background-color: var(--color-fade);
+  text-align: center;
+}
+.Nav__featuredPosts,
+.nav__featuredPosts {
+  text-align: center;
+}
+.Nav__featuredPosts--padding {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.Footer {
+  grid-row: 12 / 13;
+  grid-column: 1 / 7;
+  background-color: var(--color-fade);
+  margin: 2px;
+  padding: 2px;
+}
+.Beta {
+  grid-row: 12 / 13;
+  grid-column: 7 / 13;
+  background-color: #252525;
+}
+.Beta__veil {
+  background-color: rgb(255, 127, 255);
+  grid-row: 1 / 13;
+  grid-column: 1 / 13;
+  opacity: 0.5;
+}
+.Main {
+  background-color: var(--color-fade);
+}
+.Main__articles--padding {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .Article {
   margin: 8px;
@@ -119,36 +151,6 @@ body {
   background-color: var(--app-main-color);
   color: #e0e0e0;
   text-align: center;
-}
-.Nav {
-  /* grid-row: 2 / 12; */ /* required to be disabled for scroll */
-  grid-column: 10 / 13;
-  background-color: var(--color-fade);
-  text-align: center;
-}
-.Nav__featuredPosts,
-.nav__featuredPosts {
-  /* padding-left: 16px;
-  padding-right: 16px; */
-  text-align: center;
-}
-.Footer {
-  grid-row: 12 / 13;
-  grid-column: 1 / 7;
-  background-color: var(--color-fade);
-  margin: 2px;
-  padding: 2px;
-}
-.Beta {
-  grid-row: 12 / 13;
-  grid-column: 7 / 13;
-  background-color: #252525;
-}
-.Beta__veil {
-  background-color: rgb(255, 127, 255);
-  grid-row: 1 / 13;
-  grid-column: 1 / 13;
-  opacity: 0.5;
 }
 .corefunc {
   /* grid-row: 2 / 12; */ /* required to be disabled for scroll */
