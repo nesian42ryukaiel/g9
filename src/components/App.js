@@ -46,7 +46,7 @@ function App({ page, move }) {
         <NavContainer />
         <FooterContainer />
         <BetaContainer />
-        {/* <div className="Beta__veil"></div> */}
+        {/* <div className="Beta__veil centralize">VEIL</div> */}
       </div>
     </>
   );
