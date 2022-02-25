@@ -69,6 +69,7 @@ export default function SignupScreen({
         </>
       ) : (
         <>
+          <h4>Sign Up on G9!</h4>
           <div className="signup__memberInput">
             <div>
               <input

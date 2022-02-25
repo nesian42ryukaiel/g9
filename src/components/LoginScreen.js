@@ -44,7 +44,7 @@ export default function LoginScreen({
     move("index");
   };
   return (
-    <main className="SignupScreen centralize corefunc">
+    <main className="LoginScreen centralize corefunc">
       {loggedin ? (
         <>
           <div>
@@ -59,6 +59,7 @@ export default function LoginScreen({
         </>
       ) : (
         <>
+          <h4>Log In to G9</h4>
           <div className="signup__memberInput">
             <div>
               <input

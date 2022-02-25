@@ -91,12 +91,29 @@ body {
   background-color: var(--color-fade);
   text-align: center;
 }
+.Nav__featuredPosts,
+.nav__featuredPosts {
+  /* max-width: 128px; */
+  /* max-height: 128px; */
+  text-align: center;
+}
 .Footer {
   grid-row: 12 / 13;
   grid-column: 1 / 7;
   background-color: var(--color-fade);
   margin: 2px;
   padding: 2px;
+}
+.Beta {
+  grid-row: 12 / 13;
+  grid-column: 7 / 13;
+  background-color: #252525;
+}
+.Beta__veil {
+  background-color: rgb(255, 127, 255);
+  grid-row: 1 / 13;
+  grid-column: 1 / 13;
+  opacity: 0.5;
 }
 .corefunc {
   /* grid-row: 2 / 12; */ /* required to be disabled for scroll */
@@ -105,31 +122,32 @@ body {
 .Main {
   background-color: var(--color-fade);
 }
+.LoginScreen,
+.SignupScreen {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--color-fade);
+}
 .Uploader__pseudoForm,
 .Uploader__form,
 .uploader__form {
-  background-color: #505050;
-}
-.Beta {
-  grid-row: 12 / 13;
-  grid-column: 7 / 13;
-  background-color: #252525;
+  background-color: var(--color-focus);
 }
 .access_uploader {
   margin: 8px;
   padding: 4px;
-  background-color: #505050;
+  background-color: var(--color-focus);
 }
 .Article {
   margin: 8px;
   padding: 4px;
-  background-color: #505050;
+  background-color: var(--color-focus);
   outline: solid 1px white;
 }
 .Article__imageBox,
 .Article__image_box,
 .article__image_box {
-  background-color: #505050;
+  background-color: var(--color-focus);
   text-align: center;
 }
 .Article__image,
@@ -143,19 +161,7 @@ body {
   border-style: solid;
   border-width: 4px;
   border-color: #000000; */
-  box-shadow: 0 0 80px 80px #505050 inset;
-}
-.Nav__featuredPosts,
-.nav__featuredPosts {
-  /* max-width: 128px; */
-  /* max-height: 128px; */
-  text-align: center;
-}
-.Beta__veil {
-  background-color: rgb(255, 127, 255);
-  grid-row: 1 / 13;
-  grid-column: 1 / 13;
-  opacity: 0.5;
+  box-shadow: 0 0 80px 80px var(--color-focus) inset;
 }
 span {
   margin: 4px;
@@ -166,7 +172,7 @@ button,
 .input--button,
 .input--file {
   padding: 4px;
-  background-color: #252525;
+  background-color: var(--color-fade);
   color: #e0e0e0;
 }
 ul {
