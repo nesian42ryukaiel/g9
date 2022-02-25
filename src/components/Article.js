@@ -4,7 +4,7 @@ function Article({ title, image, text, location }) {
   // const pic = require(image);
   // so far no usage for key
   return (
-    <article className="Article">
+    <article className={`Article ${location}`}>
       {location === "Main__articles" || location === "main__articles" ? (
         <div className="Article__title">{title}</div>
       ) : (
