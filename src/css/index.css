@@ -63,6 +63,7 @@ body {
 }
 .Header__middle,
 .header__middle {
+  /* display: none; */
   grid-row: 1 / 2;
   grid-column: 3 / 10;
   text-align: center;
