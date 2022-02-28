@@ -1,4 +1,5 @@
 import React from "react";
+import MediaQuery from "react-responsive/dist/Component";
 
 function Header({ loggedin, id, moveFunc }) {
   const onClickMoveToIndexPage = () => {

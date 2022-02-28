@@ -1,5 +1,6 @@
 import React from "react";
 import Article from "./Article";
+import MediaQuery from "react-responsive/dist/Component";
 
 function Nav({ articles, loggedin, move, onlogout }) {
   let revart = articles.slice().reverse();
