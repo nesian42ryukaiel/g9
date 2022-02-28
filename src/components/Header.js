@@ -1,5 +1,5 @@
 import React from "react";
-import MediaQuery from "react-responsive/dist/Component";
+import MediaQuery from "react-responsive";
 
 function Header({ loggedin, id, moveFunc }) {
   const onClickMoveToIndexPage = () => {
@@ -21,13 +21,15 @@ function Header({ loggedin, id, moveFunc }) {
           G9
         </span>
       </span>
-      <span className="Header Header__middle header__middle centralize">
-        {/* <span>Options</span> */}
-        <span>
-          <input type="text" placeholder="Search" />{" "}
-          {/* new mode toggle goes here */}
+      <MediaQuery minWidth={640}>
+        <span className="Header Header__middle header__middle centralize">
+          {/* <span>Options</span> */}
+          <span>
+            <input type="text" placeholder="Search" />{" "}
+            {/* new mode toggle goes here */}
+          </span>
         </span>
-      </span>
+      </MediaQuery>
       <span className="Header Header__right header__right centralize">
         {loggedin ? (
           <>Welcome, {id}!</>
