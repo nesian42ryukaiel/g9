@@ -1,4 +1,5 @@
 import React from "react";
+import MediaQuery from "react-responsive";
 
 import HeaderContainer from "../containers/HeaderContainer";
 import NavContainer from "../containers/NavContainer";
@@ -45,7 +46,9 @@ function App({ page, move }) {
         {pagelist[page]}
         <NavContainer />
         <FooterContainer />
-        <BetaContainer />
+        <MediaQuery minWidth={640}>
+          <BetaContainer />
+        </MediaQuery>
         {/* <div className="Beta__veil centralize">VEIL</div> */}
       </div>
     </>

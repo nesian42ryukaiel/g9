@@ -17,16 +17,25 @@
   --font-size: 18px;
 }
 
+@media only screen and (max-width: 1920px) {
+  .App {
+    grid-template-areas:
+      "hl hm hr"
+      "main main nv"
+      "ft ft beta";
+  }
+}
+
 @media only screen and (max-width: 640px) {
   .App {
     display: grid;
     grid-template-areas:
-      "hl hl hl hr hr hr"
-      "main main main main main main"
-      "ft ft ft ft ft ft";
+      "hl hl hr"
+      "main main main"
+      "ft ft ft";
   }
   .Header__middle {
-    display: none;
+    display: none !important;
     /* position: absolute !important;
     top: -9999px !important;
     left: -9999px !important; */
@@ -36,15 +45,6 @@
   }
   .Beta {
     display: none;
-  }
-}
-
-@media only screen and (max-width: 1920px) {
-  .App {
-    grid-template-areas:
-      "hl hl hm hm hr hr"
-      "main main main main nv nv"
-      "ft ft ft ft beta beta";
   }
 }
 
