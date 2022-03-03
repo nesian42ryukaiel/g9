@@ -10,6 +10,8 @@
   --color-fade: #252525;
   --color-focus: #454545;
   --color-text: #e0e0e0;
+  --color-button: #252525;
+  --color-label: #e0e0e0;
   /* size (example) */
   --base-space: 8px;
   --size-button: 60px;
@@ -197,7 +199,7 @@ body {
 .focus--button,
 .signup--button {
   background-color: var(--app-main-color);
-  color: #e0e0e0;
+  color: var(--color-label);
   text-align: center;
 }
 .corefunc {
@@ -230,8 +232,8 @@ button,
 .input--button,
 .input--file {
   padding: 4px;
-  background-color: var(--color-fade);
-  color: var(--color-text);
+  background-color: var(--color-button);
+  color: var(--color-label);
 }
 ul {
   list-style-position: outside;
