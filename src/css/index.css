@@ -17,6 +17,14 @@
   --font-size: 18px;
 }
 
+@media only screen and (prefers-color-scheme: light) {
+  :root {
+    --color-fade: #dadada;
+    --color-focus: #bababa;
+    --color-text: #1f1f1f;
+  }
+}
+
 @media only screen and (max-width: 1920px) {
   .App {
     grid-template-areas:
@@ -222,7 +230,7 @@ button,
 .input--file {
   padding: 4px;
   background-color: var(--color-fade);
-  color: #e0e0e0;
+  color: var(--color-text);
 }
 ul {
   list-style-position: outside;
