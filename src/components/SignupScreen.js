@@ -55,62 +55,64 @@ export default function SignupScreen({
   };
   return (
     <main className="SignupScreen centralize corefunc">
-      {loggedin ? (
-        <>
-          <div>
-            <p>Success!</p>
-            <p>
-              <strong onClick={ifLoggedIn} style={{ color: "#aaaaff" }}>
-                Click
-              </strong>{" "}
-              to return to the main page.
-            </p>
-          </div>
-        </>
-      ) : (
-        <>
-          <h4>Sign Up on G9!</h4>
-          <div className="signup__memberInput">
+      <div className="focusBox">
+        {loggedin ? (
+          <>
             <div>
-              <input
-                type="text"
-                className="user_id--input"
-                placeholder="ID"
-                onChange={onChangeUserID}
-              />
+              <p>Success!</p>
+              <p>
+                <strong onClick={ifLoggedIn} style={{ color: "#aaaaff" }}>
+                  Click
+                </strong>{" "}
+                to return to the main page.
+              </p>
             </div>
-            <div>
-              <input
-                type="password"
-                className="password--input"
-                placeholder="Password"
-                onChange={onChangeUserPW}
-              />
+          </>
+        ) : (
+          <>
+            <h4>Sign Up on G9!</h4>
+            <div className="signup__memberInput">
+              <div>
+                <input
+                  type="text"
+                  className="user_id--input"
+                  placeholder="ID"
+                  onChange={onChangeUserID}
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  className="password--input"
+                  placeholder="Password"
+                  onChange={onChangeUserPW}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  className="user_name--input"
+                  placeholder="Name"
+                  onChange={onChangeUserName}
+                />
+              </div>
             </div>
-            <div>
-              <input
-                type="text"
-                className="user_name--input"
-                placeholder="Name"
-                onChange={onChangeUserName}
-              />
+            <div className="memberInput">
+              <span>
+                <button className="cancel--button" onClick={cancelAndGoBack}>
+                  Cancel
+                </button>
+                <button
+                  className="signup--button focus--button"
+                  onClick={onClickSignup}
+                >
+                  Sign-up
+                </button>
+              </span>
             </div>
-          </div>
-          <div className="memberInput">
-            <span>
-              <button className="cancel--button" onClick={cancelAndGoBack}>
-                Cancel
-              </button>
-              <button
-                className="signup--button focus--button"
-                onClick={onClickSignup}
-              >
-                Sign-up
-              </button>
-            </span>
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </div>
     </main>
   );
 }

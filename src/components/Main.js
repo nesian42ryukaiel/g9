@@ -8,7 +8,7 @@ function Main({ articles, loggedin, move }) {
   };
   return (
     <main className="Main corefunc">
-      <div className="access_uploader" style={{ outline: "solid 1px white" }}>
+      <div className="focusBox">
         {loggedin ? (
           <button style={{ width: "100%" }} onClick={newPost}>
             POST

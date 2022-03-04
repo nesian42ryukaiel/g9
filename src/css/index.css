@@ -166,7 +166,8 @@ body {
   padding-left: 32px;
   padding-right: 32px;
 }
-.Article {
+.Article,
+.focusBox {
   margin: 8px;
   padding: 4px;
   background-color: var(--color-focus);
@@ -220,11 +221,6 @@ body {
 .Uploader__pseudoForm,
 .Uploader__form,
 .uploader__form {
-  background-color: var(--color-focus);
-}
-.access_uploader {
-  margin: 8px;
-  padding: 4px;
   background-color: var(--color-focus);
 }
 span {
