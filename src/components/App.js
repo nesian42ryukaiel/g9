@@ -10,27 +10,6 @@ import LoginContainer from "../containers/LoginContainer";
 import SignupContainer from "../containers/SignupContainer";
 import BetaContainer from "../containers/BetaContainer";
 
-function defaultLayout(page, move, brighten, darken) {
-  return (
-    <>
-      <div className="App">
-        <HeaderContainer />
-        {page}
-        <NavContainer />
-        <FooterContainer />
-      </div>
-      <div>
-        <button type="button" onClick={() => brighten(1)}>
-          Brighten
-        </button>
-        <button type="button" onClick={() => darken(1)}>
-          Darken
-        </button>
-      </div>
-    </>
-  );
-}
-
 function App({ page, move }) {
   const pagelist = {
     index: <MainContainer />,
@@ -38,7 +17,6 @@ function App({ page, move }) {
     login: <LoginContainer />,
     signup: <SignupContainer />,
   };
-  // return defaultLayout(pagelist[page], move, brighten, darken);
   return (
     <>
       <div className="App">
