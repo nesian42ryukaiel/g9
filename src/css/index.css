@@ -29,6 +29,8 @@
 
 @media only screen and (max-width: 1920px) {
   .App {
+    grid-template-rows: fit-content(32px) 1fr fit-content(32px);
+    grid-template-columns: fit-content(20%) 1fr fit-content(20%);
     grid-template-areas:
       "hl hm hr"
       "main main nv"
@@ -38,6 +40,8 @@
 
 @media only screen and (max-width: 640px) {
   .App {
+    grid-template-rows: fit-content(32px) 1fr fit-content(32px);
+    grid-template-columns: 1fr 2fr fit-content(50%);
     grid-template-areas:
       "hl hl hr"
       "main main main"
