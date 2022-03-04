@@ -89,64 +89,65 @@ function Uploader({
   }, []);
   return (
     <div className="Uploader centralize corefunc">
-      <div></div>
-      <div className="Uploader__preview">
-        {efile ? (
-          <>
-            <img src={efile.filePath} alt="" id="ul--output" width="256" />
-            <h3>{efile.fileName}</h3>
-          </>
-        ) : (
-          ""
-        )}
-      </div>
-      <div className="Uploader__pseudoForm" id="Uploader__pseudoForm">
-        <div>
-          <input
-            type="file"
-            name="articleFile"
-            onChange={onFileLoad}
-            required
-          />
+      <div className="focusBox">
+        <div className="Uploader__preview">
+          {efile ? (
+            <>
+              <img src={efile.filePath} alt="" id="ul--output" width="256" />
+              <h3>{efile.fileName}</h3>
+            </>
+          ) : (
+            ""
+          )}
         </div>
-        <div>
-          <input
-            type="text"
-            name="articleWriter"
-            value={mid !== "" ? mid : "PH"}
-            style={{ width: "50%" }}
-            readOnly
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            name="articleTitle"
-            onChange={onTitleType}
-            placeholder="Title"
-            style={{ width: "50%" }}
-            required
-          />
-        </div>
-        <div>
-          <textarea
-            name="articleText"
-            onChange={onTextType}
-            style={{ width: "50%" }}
-            // cols={40}
-            rows={5}
-            placeholder="Text (optional)"
-          />
-        </div>
-        <div>
-          <span>
-            <button type="button" onClick={cancelAndGoBack}>
-              Cancel
-            </button>
-            <button type="button" onClick={onSubmit}>
-              Upload
-            </button>
-          </span>
+        <div className="Uploader__pseudoForm" id="Uploader__pseudoForm">
+          <div>
+            <input
+              type="file"
+              name="articleFile"
+              onChange={onFileLoad}
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="articleWriter"
+              value={mid !== "" ? mid : "PH"}
+              style={{ width: "50%" }}
+              readOnly
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="articleTitle"
+              onChange={onTitleType}
+              placeholder="Title"
+              style={{ width: "50%" }}
+              required
+            />
+          </div>
+          <div>
+            <textarea
+              name="articleText"
+              onChange={onTextType}
+              style={{ width: "50%" }}
+              // cols={40}
+              rows={5}
+              placeholder="Text (optional)"
+            />
+          </div>
+          <div>
+            <span>
+              <button type="button" onClick={cancelAndGoBack}>
+                Cancel
+              </button>
+              <button className="button--post" type="button" onClick={onSubmit}>
+                Upload
+              </button>
+            </span>
+          </div>
         </div>
       </div>
     </div>

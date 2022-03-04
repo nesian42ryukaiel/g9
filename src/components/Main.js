@@ -10,8 +10,12 @@ function Main({ articles, loggedin, move }) {
     <main className="Main corefunc">
       <div className="focusBox">
         {loggedin ? (
-          <button style={{ width: "100%" }} onClick={newPost}>
-            POST
+          <button
+            className="button--post"
+            style={{ width: "100%" }}
+            onClick={newPost}
+          >
+            <strong>POST</strong>
           </button>
         ) : (
           <p style={{ textAlign: "center" }}>Welcome to G9!</p>
