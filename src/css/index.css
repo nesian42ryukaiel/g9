@@ -18,12 +18,12 @@
   --size-border: 4px;
   --font-size: 18px;
 }
-:root[colorTheme="light"] {
+:root[colorTheme="dark"] {
   --color-fade: #252525;
   --color-focus: #454545;
   --color-text: #e0e0e0;
 }
-:root[colorTheme="dark"] {
+:root[colorTheme="light"] {
   --color-fade: #dadada;
   --color-focus: #bababa;
   --color-text: #1f1f1f;
@@ -160,7 +160,7 @@ body {
   /* grid-row: 12 / 13;
   grid-column: 7 / 13; */
   grid-area: beta;
-  background-color: #252525;
+  background-color: var(--color-fade);
   /* max-width: 192px; */
 }
 .Beta__veil {
