@@ -3,11 +3,11 @@ import React from "react";
 function Beta(brighten, darken) {
   const onClickBrighten = () => {
     console.log("LIGHT");
-    // brighten();
+    document.documentElement.setAttribute("colorTheme", "light");
   };
   const onClickDarken = () => {
     console.log("SHADOW");
-    // darken();
+    document.documentElement.setAttribute("colorTheme", "dark");
   };
   return (
     <div className="Beta">
