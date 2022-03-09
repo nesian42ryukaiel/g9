@@ -10,7 +10,7 @@ import LoginContainer from "../containers/LoginContainer";
 import SignupContainer from "../containers/SignupContainer";
 import BetaContainer from "../containers/BetaContainer";
 
-function App({ page, move }) {
+function App({ page, colormode, move }) {
   const pagelist = {
     index: <MainContainer />,
     upload: <UploadContainer />,
@@ -19,7 +19,7 @@ function App({ page, move }) {
   };
   return (
     <>
-      <div className="App">
+      <div className="App" colormode={colormode}>
         <HeaderContainer />
         {pagelist[page]}
         <NavContainer />

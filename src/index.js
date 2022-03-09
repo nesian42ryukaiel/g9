@@ -10,10 +10,15 @@ import "./css/index.css";
 
 function configureStoreAsync() {
   return new Promise((resolve) => {
+    const initColorValue = localStorage.getItem("colormode");
+    const colorValue = initColorValue !== null ? initColorValue : "light";
     let initialState = {
       pages: {
         currentPage: "index",
         articles: [],
+      },
+      media: {
+        mediaColorMode: colorValue,
       },
     };
     try {

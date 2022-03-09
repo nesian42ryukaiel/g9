@@ -8,12 +8,12 @@ export const mediaBrighten = () => ({
 export const mediaDarken = () => ({
   type: MEDIA_DARKEN,
 });
-export const mediaToggle = (task) => ({
+export const mediaToggle = () => ({
   type: MEDIA_TOGGLE,
-  payload: { task },
 });
 
 const initialState = {
+  mediaColorMode: "dark",
   darkmode: false,
   mediaColorR: 0,
   mediaColorG: 0,
@@ -57,10 +57,19 @@ export default function media(state = initialState, action) {
         return state;
       }
     case MEDIA_TOGGLE:
-      return {
-        ...state,
-        darkmode: !state.darkmode,
-      };
+      if (state.mediaColorMode === "light") {
+        return {
+          ...state,
+          mediaColorMode: "dark",
+        };
+      } else if (state.mediaColorMode === "dark") {
+        return {
+          ...state,
+          mediaColorMode: "light",
+        };
+      } else {
+        return state;
+      }
     default:
       return state;
   }
