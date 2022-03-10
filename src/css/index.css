@@ -164,7 +164,7 @@ body {
   grid-column: 1 / 7; */
   grid-area: ft;
   background-color: var(--color-fade);
-  margin: 2px;
+  /* margin: 2px; */
   padding: 2px;
 }
 .Beta {
