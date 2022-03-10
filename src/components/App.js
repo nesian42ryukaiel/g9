@@ -8,7 +8,7 @@ import MainContainer from "../containers/MainContainer";
 import UploadContainer from "../containers/UploaderContainer";
 import LoginContainer from "../containers/LoginContainer";
 import SignupContainer from "../containers/SignupContainer";
-import BetaContainer from "../containers/BetaContainer";
+// import BetaContainer from "../containers/BetaContainer";
 
 function App({ page, colormode, move }) {
   const pagelist = {
@@ -25,7 +25,7 @@ function App({ page, colormode, move }) {
         <NavContainer />
         <FooterContainer />
 
-        <BetaContainer />
+        {/* <BetaContainer /> */}
 
         {/* <div className="Beta__veil centralize">VEIL</div> */}
       </div>

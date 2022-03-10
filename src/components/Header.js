@@ -1,7 +1,7 @@
 import React from "react";
 // import MediaQuery from "react-responsive";
 
-function Header({ loggedin, id, moveFunc }) {
+function Header({ loggedin, id, moveFunc, swapcolor }) {
   const onClickMoveToIndexPage = () => {
     moveFunc("index");
   };
@@ -10,6 +10,10 @@ function Header({ loggedin, id, moveFunc }) {
   };
   const onClickMoveToSignupPage = () => {
     moveFunc("signup");
+  };
+  const onClickSwapColor = () => {
+    console.log("SWAP");
+    swapcolor();
   };
   return (
     <>
@@ -25,7 +29,9 @@ function Header({ loggedin, id, moveFunc }) {
         {/* <span>Options</span> */}
         <span>
           <input type="text" placeholder="Search" />{" "}
-          {/* new mode toggle goes here */}
+          <button type="button" onClick={onClickSwapColor}>
+            SWAP
+          </button>
         </span>
       </span>
       <span className="Header Header__right header__right centralize">

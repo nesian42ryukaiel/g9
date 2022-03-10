@@ -44,7 +44,7 @@
     grid-template-areas:
       "hl hm hr"
       "main main nv"
-      "ft ft beta";
+      "ft ft ft";
   }
 }
 
