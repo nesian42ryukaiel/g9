@@ -11,6 +11,7 @@ import "./css/index.css";
 function configureStoreAsync() {
   return new Promise((resolve) => {
     const initColorValue = localStorage.getItem("colormode");
+    console.log("local storage color mode:", initColorValue);
     const colorValue = initColorValue !== null ? initColorValue : "light";
     let initialState = {
       pages: {
@@ -47,6 +48,7 @@ function configureStoreAsync() {
 configureStoreAsync().then((result) => {
   const store = result;
   console.log(store.getState());
+  //
   return ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
