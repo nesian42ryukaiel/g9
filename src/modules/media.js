@@ -1,5 +1,3 @@
-const MEDIA_BRIGHTEN = "media/brighten";
-const MEDIA_DARKEN = "media/darken";
 const MEDIA_TOGGLE = "media/toggle";
 
 export const mediaToggle = () => ({
