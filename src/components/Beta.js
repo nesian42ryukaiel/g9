@@ -1,14 +1,6 @@
 import React from "react";
 
 function Beta({ swap }) {
-  const onClickBrighten = () => {
-    console.log("LIGHT");
-    document.documentElement.setAttribute("colorTheme", "light");
-  };
-  const onClickDarken = () => {
-    console.log("SHADOW");
-    document.documentElement.setAttribute("colorTheme", "dark");
-  };
   const onClickSwap = () => {
     console.log("SWAP");
     swap();
@@ -21,12 +13,6 @@ function Beta({ swap }) {
       >
         <button type="button" onClick={onClickSwap}>
           SWAP
-        </button>
-        <button type="button" onClick={onClickBrighten}>
-          Brighten
-        </button>
-        <button type="button" onClick={onClickDarken}>
-          Darken
         </button>
       </div>
     </div>
