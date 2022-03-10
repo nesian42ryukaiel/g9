@@ -13,12 +13,12 @@ function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
   };
   const onClickSwapColor = () => {
     console.log("SWAP");
-    swapcolor();
-    localStorage.setItem("colormode", colormode);
+    localStorage.setItem("colormode", colormode === "light" ? "dark" : "light");
     console.log(
       "local storage color mode [new]:",
       localStorage.getItem("colormode")
     );
+    swapcolor();
   };
   return (
     <>
