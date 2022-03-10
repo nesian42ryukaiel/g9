@@ -48,7 +48,15 @@ function configureStoreAsync() {
 configureStoreAsync().then((result) => {
   const store = result;
   console.log(store.getState());
-  //
+  console.log(store.getState().media.mediaColorMode);
+  store.subscribe(() => {
+    const colormode = store.getState().media.mediaColorMode;
+    localStorage.setItem("colormode", colormode);
+    console.log(
+      "local storage color mode [new]:",
+      localStorage.getItem("colormode")
+    );
+  });
   return ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>
