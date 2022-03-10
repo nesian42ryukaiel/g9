@@ -24,10 +24,6 @@ function App({ page, colormode, move }) {
         {pagelist[page]}
         <NavContainer />
         <FooterContainer />
-
-        {/* <BetaContainer /> */}
-
-        {/* <div className="Beta__veil centralize">VEIL</div> */}
       </div>
     </>
   );

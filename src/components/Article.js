@@ -1,8 +1,6 @@
 import React from "react";
 
 function Article({ title, image, text, location }) {
-  // const pic = require(image);
-  // so far no usage for key
   return (
     <article className={`Article`}>
       {location === "Main__articles" || location === "main__articles" ? (

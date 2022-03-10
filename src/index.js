@@ -11,8 +11,8 @@ import "./css/index.css";
 function configureStoreAsync() {
   return new Promise((resolve) => {
     const initColorValue = localStorage.getItem("colormode");
-    console.log("local storage color mode:", initColorValue);
     const colorValue = initColorValue !== null ? initColorValue : "light";
+    console.log("[DEBUG] local storage color mode:", initColorValue);
     let initialState = {
       pages: {
         currentPage: "index",
@@ -48,15 +48,10 @@ function configureStoreAsync() {
 configureStoreAsync().then((result) => {
   const store = result;
   console.log(store.getState());
-  console.log(store.getState().media.mediaColorMode);
-  // store.subscribe(() => {
-  //   const colormode = store.getState().media.mediaColorMode;
-  //   localStorage.setItem("colormode", colormode);
-  //   console.log(
-  //     "local storage color mode [new]:",
-  //     localStorage.getItem("colormode")
-  //   );
-  // });
+  console.log(
+    "[DEBUG] redux store color mode:",
+    store.getState().media.mediaColorMode
+  );
   return ReactDOM.render(
     <React.StrictMode>
       <Provider store={store}>

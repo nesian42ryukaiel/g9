@@ -1,5 +1,4 @@
 import React from "react";
-// import MediaQuery from "react-responsive";
 
 function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
   const onClickMoveToIndexPage = () => {
@@ -12,10 +11,10 @@ function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
     moveFunc("signup");
   };
   const onClickSwapColor = () => {
-    console.log("SWAP");
+    console.log("[DEBUG] Color mode change!");
     localStorage.setItem("colormode", colormode === "light" ? "dark" : "light");
     console.log(
-      "local storage color mode [new]:",
+      "[DEBUG] [new] local storage color mode:",
       localStorage.getItem("colormode")
     );
     swapcolor();
