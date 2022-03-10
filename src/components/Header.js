@@ -1,4 +1,5 @@
 import React from "react";
+import Emoji from "./Emoji";
 
 function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
   const cmdisplay = colormode === "light" ? "DARK" : "LIGHT";
@@ -23,9 +24,7 @@ function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
   return (
     <>
       <span className="Header Header__left header__left">
-        <span role="img" aria-label="hamburger" className="Header__hamburger">
-          🍔
-        </span>
+        <Emoji symbol="🍔" label="hamburger" />
         <span className="header--logo" onClick={onClickMoveToIndexPage}>
           G9
         </span>
