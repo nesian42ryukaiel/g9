@@ -1,6 +1,7 @@
 import React from "react";
 
 function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
+  const cmdisplay = colormode === "light" ? "DARK" : "LIGHT";
   const onClickMoveToIndexPage = () => {
     moveFunc("index");
   };
@@ -33,8 +34,16 @@ function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
         {/* <span>Options</span> */}
         <span>
           <input type="text" placeholder="Search" />{" "}
-          <button type="button" onClick={onClickSwapColor}>
-            SWAP
+          <button
+            type="button"
+            onClick={onClickSwapColor}
+            style={
+              colormode === "light"
+                ? {}
+                : { backgroundColor: "gold", color: "black" }
+            }
+          >
+            {cmdisplay}
           </button>
         </span>
       </span>
