@@ -1,6 +1,6 @@
 import React from "react";
 
-function Beta(brighten, darken, swap) {
+function Beta(swap) {
   const onClickBrighten = () => {
     console.log("LIGHT");
     document.documentElement.setAttribute("colorTheme", "light");
