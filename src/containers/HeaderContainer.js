@@ -5,9 +5,10 @@ import { movePage } from "../modules/pages";
 import { mediaToggle } from "../modules/media";
 
 function HeaderContainer() {
-  const { loggedin, id } = useSelector((state) => ({
+  const { loggedin, id, colormode } = useSelector((state) => ({
     loggedin: state.membership.mlogin,
     id: state.membership.mid,
+    colormode: state.media.mediaColorMode,
   }));
   const dispatch = useDispatch();
   const onMovePage = (page) => dispatch(movePage(page));
@@ -16,6 +17,7 @@ function HeaderContainer() {
     <Header
       loggedin={loggedin}
       id={id}
+      colormode={colormode}
       moveFunc={onMovePage}
       swapcolor={toggle}
     />
