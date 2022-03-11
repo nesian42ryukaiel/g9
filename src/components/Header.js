@@ -41,7 +41,11 @@ function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
           <button
             type="button"
             onClick={onClickSwapColor}
-            style={colormode === "light" ? {} : { backgroundColor: "#bfa100" }}
+            style={
+              colormode === "light"
+                ? { backgroundColor: "#0f3f7f" }
+                : { backgroundColor: "#bf3f00" }
+            }
           >
             {cmdisplay}
           </button>
