@@ -2,7 +2,12 @@ import React from "react";
 import Emoji from "./Emoji";
 
 function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
-  const cmdisplay = colormode === "light" ? "DARK" : "LIGHT";
+  const cmdisplay =
+    colormode === "light" ? (
+      <Emoji symbol="🌙" label="moon" />
+    ) : (
+      <Emoji symbol="☀️" label="sun" />
+    ); // replace result with Emoji?
   const onClickMoveToIndexPage = () => {
     moveFunc("index");
   };
@@ -36,11 +41,7 @@ function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
           <button
             type="button"
             onClick={onClickSwapColor}
-            style={
-              colormode === "light"
-                ? {}
-                : { backgroundColor: "gold", color: "black" }
-            }
+            style={colormode === "light" ? {} : { backgroundColor: "#bfa100" }}
           >
             {cmdisplay}
           </button>
