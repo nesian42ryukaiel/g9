@@ -2,12 +2,12 @@ import React from "react";
 import Emoji from "./Emoji";
 
 function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
-  const cmdisplay =
+  const colorModeIcon =
     colormode === "light" ? (
       <Emoji symbol="🌙" label="moon" />
     ) : (
       <Emoji symbol="☀️" label="sun" />
-    ); // replace result with Emoji?
+    );
   const onClickMoveToIndexPage = () => {
     moveFunc("index");
   };
@@ -35,7 +35,6 @@ function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
         </span>
       </span>
       <span className="Header Header__middle header__middle centralize">
-        {/* <span>Options</span> */}
         <span>
           <input type="text" placeholder="Search" />{" "}
           <button
@@ -47,7 +46,7 @@ function Header({ loggedin, id, colormode, moveFunc, swapcolor }) {
                 : { backgroundColor: "#bf3f00" }
             }
           >
-            {cmdisplay}
+            {colorModeIcon}
           </button>
         </span>
       </span>
