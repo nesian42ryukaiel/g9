@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Uploader from "../components/Uploader";
-// import UploadForm from "../components/UploadForm";
 import { movePage, uploadPage } from "../modules/pages";
 import { editFile, editTitle, editText, editClean } from "../modules/editor";
 
@@ -33,7 +32,6 @@ function UploadContainer() {
       setTitle={setTitle}
       setText={setText}
     />
-    // <UploadForm />
   );
 }
 
