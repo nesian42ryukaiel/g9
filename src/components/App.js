@@ -8,7 +8,6 @@ import MainContainer from "../containers/MainContainer";
 import UploadContainer from "../containers/UploaderContainer";
 import LoginContainer from "../containers/LoginContainer";
 import SignupContainer from "../containers/SignupContainer";
-// import BetaContainer from "../containers/BetaContainer";
 
 function App({ page, colormode, move }) {
   const pagelist = {
