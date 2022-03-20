@@ -49,7 +49,6 @@ function Uploader({
       return false;
     }
     for (let pair of uploadForm.entries()) {
-      // checking FormData by logging
       let val;
       if (pair[1] instanceof File) {
         val = pair[1].name;
@@ -133,7 +132,6 @@ function Uploader({
               name="articleText"
               onChange={onTextType}
               style={{ width: "50%" }}
-              // cols={40}
               rows={5}
               placeholder="Text (optional)"
             />
