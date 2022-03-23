@@ -4,11 +4,8 @@ import Base64 from "../modules/Base64";
 import serverLink from "../pseudoLinks/links";
 
 function Uploader({ id }) {
-  // const author = "u/author";
-  // fetch a function through reducer to add new article when clicked
-  // tips from https://www.pluralsight.com/guides/uploading-files-with-reactjs
-  const [selectedFile, setSelectedFile] = useState(); // should contain info on currently picked file
-  const [isFilePicked, setIsFilePicked] = useState(false); // should determine if a file has been picked or not
+  const [selectedFile, setSelectedFile] = useState();
+  const [isFilePicked, setIsFilePicked] = useState(false);
   const [articleTitle, setArticleTitle] = useState("");
   const [hasArticleTitle, setHasArticleTitle] = useState(false);
   const [articleText, setArticleText] = useState("");
@@ -42,23 +39,19 @@ function Uploader({ id }) {
       document.getElementById("input-article-file").value = null;
       setSelectedFile(null);
       setIsFilePicked(false);
-      // console.log(selectedFile.name + isFilePicked);
     }
     if (hasArticleTitle) {
       document.getElementById("input-article-title").value = "";
       setArticleTitle("");
       setHasArticleTitle(false);
-      // console.log(articleTitle);
     }
     if (hasArticleText) {
       document.getElementById("input-article-text").value = "";
       setArticleText("");
       setHasArticleText(false);
-      // console.log(articleText);
     }
   };
   const handleSubmission = () => {
-    // intended for testing via association with "https://freeimage.host/":
     const formData = new FormData();
     if (!isFilePicked || !hasArticleTitle) {
       let uploadError = "";
@@ -68,7 +61,7 @@ function Uploader({ id }) {
       return;
     }
     const newFileName = id + "-" + Base64.encode(selectedFile.name);
-    formData.append("articleFile", selectedFile, newFileName); // do I post a base64 string here instead...?
+    formData.append("articleFile", selectedFile, newFileName);
     formData.append("articleTitle", articleTitle);
     formData.append("articleText", articleText);
     console.log(
@@ -91,13 +84,10 @@ function Uploader({ id }) {
       .then((response) => response.json())
       .then((result) => {
         console.log("Success:", result);
-        // post received URI as new article;
-        // as such, add the received dispatch function HERE!
         resetUploader();
       })
       .catch((error) => {
         console.error("Error:", error);
-        // resetUploader();
       });
   };
   return (
