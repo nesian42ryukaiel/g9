@@ -1,30 +1,30 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import serverLink from "../pseudoLinks/links";
 
 function UploadForm() {
-  const [content, setContent] = useState(""); // state that stores sending image
+  const [content, setContent] = useState("");
   const [uploadedImg, setUploadedImg] = useState({
     fileName: "",
-    fillPath: ""
+    fillPath: "",
   });
-  const onChange = e => {
+  const onChange = (e) => {
     setContent(e.target.files[0]);
   };
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("img", content); 
+    formData.append("img", content);
     axios
       .post(serverLink + "/upload", formData)
-      .then(res => {
+      .then((res) => {
         const { fileName } = res.data;
         console.log(fileName);
         setUploadedImg({ fileName, filePath: `${serverLink}/img/${fileName}` });
         alert("The file is successfully uploaded");
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
   };
@@ -33,8 +33,12 @@ function UploadForm() {
       <form onSubmit={onSubmit} className="uploader__form">
         {uploadedImg ? (
           <>
-            <img src={uploadedImg.filePath} alt=""
-            id="ul--output" width="256" />
+            <img
+              src={uploadedImg.filePath}
+              alt=""
+              id="ul--output"
+              width="256"
+            />
             <h3>{uploadedImg.fileName}</h3>
           </>
         ) : (
