@@ -13,5 +13,4 @@ function AppContainer() {
   return <App page={currentPage} colormode={colorMode} move={move} />;
 }
 
-// 대충 원하는 component 수 만큼 각각 connect로 연결하기
 export default AppContainer;
