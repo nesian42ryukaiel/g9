@@ -1,5 +1,4 @@
 import axios from "axios";
-// import Base64 from "./Base64";
 import { pServerLink } from "../pseudoLinks/links";
 
 export default async function registerMember(id, pw, name, doSignup) {
