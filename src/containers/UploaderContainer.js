@@ -18,7 +18,6 @@ function UploadContainer() {
   const setFile = (file) => dispatch(editFile(file));
   const setTitle = (title) => dispatch(editTitle(title));
   const setText = (text) => dispatch(editText(text));
-  // function to concat new article
   return (
     <Uploader
       mid={mid}
