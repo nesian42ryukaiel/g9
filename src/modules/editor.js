@@ -32,7 +32,6 @@ const initialState = {
   etext: "",
 };
 
-// reducer
 export default function editor(state = initialState, action) {
   switch (action.type) {
     case EDIT_CLEAN:
