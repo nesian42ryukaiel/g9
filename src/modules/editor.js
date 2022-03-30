@@ -3,7 +3,6 @@ const EDIT_FILE = "editor/FILE";
 const EDIT_TITLE = "editor/TITLE";
 const EDIT_TEXT = "editor/TEXT";
 
-// action creators
 export const editClean = () => ({
   type: EDIT_CLEAN,
 });
